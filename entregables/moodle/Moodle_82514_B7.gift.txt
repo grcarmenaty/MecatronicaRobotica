@@ -1,0 +1,97 @@
+$CATEGORY: $course$/82514/Bloque 7
+
+::B7-01::En ROS 2, un nodo es… {
+=Un proceso independiente que hace una cosa y se comunica por mensajes
+~Un fichero de configuración del robot
+~Un hilo del programa principal
+~Un punto del árbol de transformadas
+####El sistema es un grafo de nodos, no un programa único (S32).
+}
+
+::B7-02::ROS 2 no tiene nodo maestro central (a diferencia de ROS 1) porque… {
+=Se apoya en DDS, un estándar industrial con descubrimiento automático
+~Cada nodo lleva su propio maestro embebido
+~El maestro se sustituyó por un servidor web
+~Ya no hace falta descubrir nodos
+####DDS aporta el transporte publicación-suscripción y el descubrimiento (S32).
+}
+
+::B7-03::Para un LiDAR publicando a 40 Hz, el perfil de QoS razonable es… {
+=Best effort\: si se pierde un barrido, llega otro en 25 ms
+~Reliable con reintentos ilimitados
+~Transient local con historial profundo
+~Cualquiera\: el QoS no afecta a sensores
+####Reliable para órdenes críticas (parada); best effort para flujos de sensor densos (S32).
+}
+
+::B7-04::Un publicador y un suscriptor con perfiles de QoS incompatibles… {
+=No se conectan y no aparece ningún error visible\: causa clásica de «no llega nada»
+~Se conectan degradando al perfil menor
+~Generan una excepción en ambos nodos
+~Funcionan solo en la misma máquina
+####El fallo silencioso que más tiempo consume a los principiantes (S32).
+}
+
+::B7-05::Una tarea de larga duración que puede querer cancelarse (navegar hasta un punto) se modela en ROS 2 como… {
+=Acción\: objetivo, retroalimentación y cancelación
+~Topic de alta frecuencia
+~Servicio bloqueante
+~Parámetro dinámico
+####Nav2 y MoveIt 2 exponen sus interfaces principales como acciones (S33).
+}
+
+::B7-06::La convención REP 105 encadena los marcos como… {
+=map → odom → base_link, con odom→base continua pero derivante y map→odom corrigiendo a saltos
+~odom → map → base_link, con map fijo al robot
+~base_link → map → odom, sin deriva
+~map → base_link directamente, sin marco intermedio
+####Por eso el robot «salta» en RViz al cerrar un bucle (S34).
+}
+
+::B7-07::Inflar los obstáculos del mapa con el radio del robot sirve para… {
+=Tratar al robot como un punto en el espacio de configuraciones
+~Aumentar la resolución del mapa
+~Reducir el número de celdas del costmap
+~Evitar la localización global
+####El truco fundacional del C-space, implementado en la capa de inflado del costmap (S35).
+}
+
+::B7-08::A* garantiza el camino óptimo solo si la heurística es admisible, es decir… {
+=Nunca sobreestima el coste restante hasta la meta
+~Es exactamente igual al coste real
+~Es cero en todas las celdas
+~Crece con la distancia recorrida
+####Con h admisible, A* es óptimo y expande menos nodos que Dijkstra (S35).
+}
+
+::B7-09::RRT domina la planificación en alta dimensión porque… {
+=El árbol crece hacia muestras aleatorias sin discretizar todo el espacio
+~Garantiza siempre el camino más corto
+~No necesita detectar colisiones
+~Funciona solo en dos dimensiones
+####«Las muestras tiran del árbol»; admite además restricciones no holonómicas (S35).
+}
+
+::B7-10::En Nav2, los costmaps se organizan en capas. Las tres típicas son… {
+=Estática (mapa), obstáculos (sensores en vivo) e inflado (margen del robot)
+~Global, local y de emergencia
+~LiDAR, cámara y ultrasonidos
+~Planificación, control y recuperación
+####Se combinan en un único mapa de coste maestro (S36).
+}
+
+::B7-11::La localización que usa Nav2 (AMCL) es… {
+=El filtro de partículas adaptativo del bloque 6, convertido en un nodo
+~Un EKF sobre balizas artificiales
+~GPS diferencial filtrado
+~Odometría pura de las ruedas
+####La teoría de MCL corriendo en producción (S36).
+}
+
+::B7-12::En MoveIt 2, planificar sin planning scene es un error porque… {
+=Se planifica «contra el aire»\: sin el modelo del mundo no hay comprobación de colisiones
+~El robot no puede recibir objetivos
+~OMPL no arranca sin escena
+~La cinemática inversa deja de funcionar
+####La escena integra robot, obstáculos y objetos percibidos (percepción de B6) (S37).
+}

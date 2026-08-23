@@ -1,0 +1,97 @@
+$CATEGORY: $course$/82514/Bloque 5
+
+::B5-01::La función de transferencia de un motor DC en velocidad es de primer orden. Al controlar posición… {
+=Se añade un integrador\: un polo en s \= 0, al borde de la estabilidad
+~El sistema pasa a ser de orden cero
+~Aparece un cero en el origen que acelera la respuesta
+~La constante de tiempo se duplica
+####Θ(s)/U(s) añade 1/s a la planta de velocidad (S20).
+}
+
+::B5-02::En un sistema de primer orden, en t \= τ (una constante de tiempo) la respuesta al escalón ha alcanzado aproximadamente… {
+=El 63 % del valor final
+~El 37 % del valor final
+~El 50 % del valor final
+~El 95 % del valor final
+####Queda e^(−1) ≈ 37 % por recorrer; establecimiento al 2 % en unas 4τ (S21).
+}
+
+::B5-03::La sobreoscilación Mp de un segundo orden subamortiguado depende… {
+=Solo del amortiguamiento ζ
+~Solo de la frecuencia natural ωn
+~Del producto ζ·ωn
+~De la amplitud del escalón de entrada
+####Mp \= e^(−πζ/√(1−ζ²)); ζ \= 0.5 da ≈ 16 % (S21).
+}
+
+::B5-04::Un sistema lineal es estable si y solo si… {
+=Todas las raíces del polinomio característico tienen parte real negativa
+~Su ganancia estática es menor que 1
+~No tiene ceros en el semiplano derecho
+~Su respuesta en frecuencia es plana
+####El criterio del mapa del plano s; válido también en orden superior (S21).
+}
+
+::B5-05::En la ley PID aplicada a una articulación, Kp y Kd actúan como… {
+=Un muelle y un amortiguador virtuales
+~Un filtro paso-bajo y otro paso-alto
+~Dos ganancias redundantes con el mismo efecto
+~Compensadores de gravedad y de fricción
+####Lectura física de Lynch y Park\: muelle y amortiguador virtuales (S22).
+}
+
+::B5-06::Un controlador PD sobre un eslabón con gravedad deja error estacionario porque… {
+=Sostener el eslabón exige un par no nulo, y el término P solo da par si hay error
+~El término D amplifica el ruido del encoder
+~La gravedad hace inestable el lazo
+~El modelo del motor es de primer orden
+####Kp·e \= m·g·r·cosθ en el reposo; el término I lo elimina (S22).
+}
+
+::B5-07::El «windup» del integrador aparece cuando… {
+=El actuador se satura y la integral del error sigue acumulándose
+~La ganancia Kd es demasiado alta
+~El periodo de muestreo es demasiado corto
+~La referencia cambia lentamente
+####Al llegar al objetivo el par «tarda en desenrollarse»\: gran sobreoscilación. Remedios\: integración condicional o límite del integrador (S22).
+}
+
+::B5-08::En la representación de espacio de estados, el estado x es… {
+=La memoria mínima del sistema\: lo que hay que conocer hoy para predecir mañana dadas las entradas
+~El vector de salidas medidas por los sensores
+~El error entre referencia y salida
+~Una variable auxiliar sin significado físico
+####x contiene toda la información dinámica necesaria (S23).
+}
+
+::B5-09::La condición de controlabilidad de Kalman exige que… {
+=La matriz [B, AB, A²B, …] tenga rango igual al orden del sistema
+~A sea invertible
+~B tenga tantas columnas como estados
+~Todos los polos sean reales
+####Si las direcciones de empuje no llenan el espacio, hay estados inalcanzables (S23).
+}
+
+::B5-10::En la ecuación del manipulador M(q)·q̈ + C(q,q̇)·q̇ + g(q) \= τ, el término que suele dominar es… {
+=La gravedad g(q), que actúa incluso con el robot parado
+~La matriz de inercia M(q)
+~Los términos de Coriolis
+~La fricción viscosa
+####Corke\: g es «generalmente el término dominante»; después la fricción (S24).
+}
+
+::B5-11::Los términos de Coriolis y centrífugos de la dinámica del manipulador… {
+=Solo aparecen en movimiento y crecen con el cuadrado de la velocidad articular
+~Actúan también con el robot parado
+~Son independientes de la configuración
+~Se anulan con una reductora suficientemente grande
+####Términos con productos de velocidades articulares (S24).
+}
+
+::B5-12::El control por par calculado logra, con modelo perfecto, que la dinámica del error sea… {
+=Lineal, desacoplada e independiente de la configuración
+~No lineal pero estable
+~De primer orden en todos los ejes
+~Idéntica a la del PID articular independiente
+####Cancela la dinámica con el modelo inverso\: e¨ + Kv·ė + Kp·e \= 0 (S24).
+}

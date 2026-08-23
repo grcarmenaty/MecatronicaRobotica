@@ -1,0 +1,97 @@
+$CATEGORY: $course$/82514/Bloque 8
+
+::B8-01::Los cinco elementos de un MDP son… {
+=Estado, acción, transición, recompensa y descuento
+~Sensor, actuador, controlador, planta y referencia
+~Política, valor, modelo, crítico y actor
+~Entrada, salida, estado, ruido y ganancia
+####El esqueleto matemático del RL (S38).
+}
+
+::B8-02::La mayoría de los fracasos prácticos del RL en robótica provienen de… {
+=Recompensas mal especificadas que el agente explota de formas imprevistas
+~Falta de potencia de cálculo
+~Usar un factor de descuento igual a 1
+~Sensores demasiado precisos
+####Diseñar la recompensa es la parte difícil (S38).
+}
+
+::B8-03::El objetivo del agente de RL es maximizar… {
+=El retorno acumulado (con descuento), no la recompensa inmediata
+~La recompensa del siguiente paso
+~El número de estados visitados
+~La entropía de su política
+####La acción buena de ahora puede pagarse mucho después\: recompensa retardada (S38).
+}
+
+::B8-04::La estrategia epsilon-greedy responde al dilema… {
+=Exploración frente a explotación
+~Sesgo frente a varianza
+~Modelo frente a datos
+~Precisión frente a recall
+####Con probabilidad ε explora una acción aleatoria; si no, explota la mejor conocida (S38).
+}
+
+::B8-05::En la actualización de Q-learning, el corchete r + γ·max Q(s',a') − Q(s,a) es… {
+=El error de diferencia temporal\: la sorpresa entre lo esperado y lo observado
+~La recompensa media del episodio
+~El gradiente de la política
+~La varianza del retorno
+####α decide cuánto corregir con esa sorpresa (S38).
+}
+
+::B8-06::Q-learning se llama «libre de modelo» porque… {
+=Aprende solo de transiciones observadas (s, a, r, s'), sin conocer las probabilidades de transición
+~No necesita función de recompensa
+~No usa ninguna estructura de datos
+~Funciona sin explorar
+####Basta la experiencia; el modelo del mundo no se estima (S38).
+}
+
+::B8-07::El Q-learning tabular no escala a un brazo de 6 ejes porque… {
+=El estado es continuo y de alta dimensión\: no cabe en una tabla y discretizar explota combinatoriamente
+~La tabla converge demasiado rápido
+~Los motores no admiten acciones discretas
+~El descuento no está definido en continuo
+####La maldición de la dimensionalidad; la salida es aproximar con redes (S38/S39).
+}
+
+::B8-08::PPO se impuso como algoritmo de referencia en robótica porque… {
+=Limita cuánto puede cambiar la política en cada paso y tolera hiperparámetros razonables
+~Garantiza el óptimo global
+~No necesita simulación
+~Funciona sin red neuronal
+####El recorte evita saltos destructivos; robusto sin ajuste fino (S39).
+}
+
+::B8-09::El RL profundo se entrena en simulación y no directamente en el robot real porque… {
+=Necesita millones de interacciones\: en el robot serían años y varios robots rotos
+~Los simuladores son más precisos que la realidad
+~El hardware real no puede ejecutar redes
+~La normativa lo prohíbe
+####Simulación paralela masiva\: horas en vez de años (S39).
+}
+
+::B8-10::La aleatorización de dominio (domain randomization) consiste en… {
+=Entrenar bajo parámetros físicos variables para forzar políticas robustas que crucen la brecha sim-to-real
+~Elegir aleatoriamente el algoritmo de RL
+~Cambiar el robot en cada episodio real
+~Añadir ruido solo a las recompensas
+####Fricción, masas, retardos y apariencia variables durante el entrenamiento (S39).
+}
+
+::B8-11::El fallo característico del behavior cloning es que… {
+=Al desviarse de lo demostrado entra en estados no vistos y el error se acumula
+~Necesita una función de recompensa muy precisa
+~Solo aprende tareas de locomoción
+~Requiere explorar millones de estados
+####Deriva por errores compuestos; motiva DAgger, ACT y las diffusion policies (S39).
+}
+
+::B8-12::Ante un obstáculo que puede esquivarse por la izquierda o la derecha, una red que predice «la acción media» choca. Las diffusion policies lo resuelven porque… {
+=Generan la distribución completa de acciones en lugar de su media
+~Eligen siempre la izquierda por convenio
+~Predicen con mayor frecuencia de muestreo
+~Usan una recompensa más densa
+####La multimodalidad exige modelar la distribución, no promediarla (S39).
+}

@@ -1,0 +1,3119 @@
+{
+ "P1": [
+  {
+   "version": "A",
+   "test": [
+    {
+     "enun": "El Cociente de Diseño Mecatrónico (MDQ) se define como…",
+     "ops": [
+      "Un cociente que compara el índice de diseño del conjunto interconectado con el de los subsistemas aislados",
+      "El producto de fiabilidad por eficiencia del sistema",
+      "La diferencia entre coste previsto y coste real del prototipo",
+      "La suma de los índices de diseño eléctrico y mecánico"
+     ],
+     "corr": "A"
+    },
+    {
+     "enun": "El primer robot industrial (Unimate) entró en producción en 1961 en…",
+     "ops": [
+      "Una planta de General Motors en Nueva Jersey",
+      "Una fábrica textil de Lyon",
+      "Los laboratorios Bell",
+      "La cadena de montaje de Toyota en Nagoya"
+     ],
+     "corr": "A"
+    },
+    {
+     "enun": "La diferencia esencial entre un robot industrial clásico y un cobot es que el cobot…",
+     "ops": [
+      "Solo puede mover cargas inferiores a 1 kg",
+      "Sustituye el vallado por sensórica y control que garantizan la seguridad ante el contacto",
+      "Es siempre más rápido y preciso",
+      "No necesita evaluación de riesgos"
+     ],
+     "corr": "B"
+    },
+    {
+     "enun": "Una plataforma con dirección Ackermann (tipo coche) es «no holonómica» porque…",
+     "ops": [
+      "Su odometría no acumula error",
+      "No puede girar sobre sí misma más de 360 grados",
+      "Necesita un mapa para poder moverse",
+      "No puede desplazarse lateralmente: sus velocidades posibles están restringidas"
+     ],
+     "corr": "D"
+    },
+    {
+     "enun": "En la reducción de riesgos, la jerarquía correcta es…",
+     "ops": [
+      "Informar primero, proteger después, rediseñar si hay presupuesto",
+      "Formar al operario y señalizar: el diseño no se toca",
+      "Eliminar por diseño, después proteger, e informar solo en último lugar",
+      "Proteger siempre con vallado antes de cualquier otra medida"
+     ],
+     "corr": "C"
+    },
+    {
+     "enun": "Los dos canales A y B en cuadratura (90°) de un encoder incremental permiten…",
+     "ops": [
+      "Duplicar la velocidad máxima medible",
+      "Medir la posición absoluta al arrancar",
+      "Conocer el sentido de giro y multiplicar por 4 la resolución de cuenta",
+      "Compensar la temperatura del disco"
+     ],
+     "corr": "C"
+    },
+    {
+     "enun": "Montar 4 galgas activas en puente de Wheatstone completo sirve para…",
+     "ops": [
+      "Eliminar la necesidad de amplificador",
+      "Medir cuatro fuerzas independientes",
+      "Compensar la temperatura y cuadruplicar la sensibilidad",
+      "Reducir el consumo a la cuarta parte"
+     ],
+     "corr": "C"
+    },
+    {
+     "enun": "El bloqueo de cardán (gimbal lock) ocurre cuando…",
+     "ops": [
+      "Dos ejes de la secuencia de tres ángulos se alinean y se pierde un grado de libertad de representación",
+      "El determinante de la matriz de rotación se hace cero",
+      "Se usan cuaterniones no unitarios",
+      "El robot alcanza el límite físico de una articulación"
+     ],
+     "corr": "A"
+    },
+    {
+     "enun": "La condición que permite resolver la IK de un 6R en forma cerrada es…",
+     "ops": [
+      "Que el robot no tenga reductoras",
+      "Que todos los eslabones tengan la misma longitud",
+      "Una muñeca esférica: tres ejes que se cortan en un punto, que desacopla posición y orientación",
+      "Que la base esté fija al suelo"
+     ],
+     "corr": "C"
+    },
+    {
+     "enun": "Según De Silva, la mecatrónica es la aplicación sinérgica de mecánica, electrónica, control e informática. ¿Qué significa aquí «sinérgica»?",
+     "ops": [
+      "Que los subsistemas se conciben y optimizan conjuntamente desde el inicio del diseño",
+      "Que el producto final contiene componentes de todos los dominios",
+      "Que la electrónica sustituye progresivamente a la mecánica",
+      "Que cada subsistema lo diseña un especialista de ese dominio"
+     ],
+     "corr": "A"
+    }
+   ],
+   "B": {
+    "f": 820,
+    "fs_min": 1640,
+    "fs_prac": 2099,
+    "fs_err": 900,
+    "alias": 80,
+    "Ie": 0.82,
+    "Im": 0.76,
+    "Iue": 0.95,
+    "Ium": 0.9,
+    "mdq": 0.73
+   },
+   "C": {
+    "a1": 0.5,
+    "a2": 0.3,
+    "q1": 30,
+    "q2": 45,
+    "x": 0.511,
+    "y": 0.54,
+    "phi": 75,
+    "rmin": 0.2,
+    "rmax": 0.8,
+    "Pfuera": [
+     0.9,
+     0.2
+    ],
+    "rPf": 0.922,
+    "alcanzable": false
+   },
+   "Dd": {
+    "P": [
+     0.75,
+     0.15
+    ],
+    "c2": 0.817,
+    "q2a": 35.2,
+    "q2b": -35.2,
+    "q1a": -1.8,
+    "q1b": 24.4,
+    "J": [
+     [
+      -0.15,
+      -0.165
+     ],
+     [
+      0.75,
+      0.25
+     ]
+    ],
+    "detJ": 0.087,
+    "F": [
+     10,
+     0
+    ],
+    "tau": [
+     -1.5,
+     -1.655
+    ]
+   }
+  },
+  {
+   "version": "B",
+   "test": [
+    {
+     "enun": "Un valor de MDQ próximo a 1 indica que…",
+     "ops": [
+      "El diseño interconectado se acerca al óptimo que cada subsistema lograría aislado",
+      "El diseño eléctrico domina sobre el mecánico",
+      "Los pesos αe y αm están mal elegidos",
+      "El sistema es inestable y debe rediseñarse"
+     ],
+     "corr": "A"
+    },
+    {
+     "enun": "El telar de Jacquard (1801) es un hito de la robótica porque…",
+     "ops": [
+      "Fue el primer autómata con realimentación de fuerza",
+      "Introdujo el motor eléctrico en la industria",
+      "Era una máquina reprogramable: el programa estaba en tarjetas perforadas",
+      "Fue el primer dispositivo teleoperado a distancia"
+     ],
+     "corr": "C"
+    },
+    {
+     "enun": "La configuración SCARA se caracteriza por ser…",
+     "ops": [
+      "Rígida en vertical y ágil en el plano horizontal: ideal para ensamblado electrónico",
+      "La configuración con mayor espacio de trabajo esférico",
+      "Un manipulador puramente cartesiano",
+      "Un robot de cadenas cinemáticas cerradas de baja inercia"
+     ],
+     "corr": "A"
+    },
+    {
+     "enun": "La diferencia clave entre un AGV y un AMR es que el AMR…",
+     "ops": [
+      "Navega con un mapa que construye y mantiene, y rodea obstáculos planificando",
+      "No lleva sensores a bordo",
+      "Solo funciona en exteriores",
+      "Sigue una banda magnética con mayor precisión"
+     ],
+     "corr": "A"
+    },
+    {
+     "enun": "Para Fraden, un sensor es un dispositivo que…",
+     "ops": [
+      "Amplifica señales débiles para el conversor A/D",
+      "Almacena la medida en memoria digital",
+      "Convierte cualquier energía en movimiento",
+      "Recibe un estímulo y responde con una señal eléctrica"
+     ],
+     "corr": "D"
+    },
+    {
+     "enun": "Un encoder incremental de 500 líneas con decodificación x4 tiene una resolución angular de…",
+     "ops": [
+      "1,44 grados",
+      "0,045 grados",
+      "0,18 grados",
+      "0,72 grados"
+     ],
+     "corr": "C"
+    },
+    {
+     "enun": "La fuerza contraelectromotriz (back-EMF) de un motor DC…",
+     "ops": [
+      "Aumenta el par disponible a alta velocidad",
+      "Solo aparece con el rotor bloqueado",
+      "Crece con la velocidad y fija la velocidad máxima alcanzable a una tensión dada",
+      "Es independiente de la velocidad de giro"
+     ],
+     "corr": "C"
+    },
+    {
+     "enun": "La ventaja decisiva de los cuaterniones unitarios frente a los ángulos de Euler es que…",
+     "ops": [
+      "Evitan tener que normalizar",
+      "Usan solo tres números en lugar de cuatro",
+      "No tienen singularidad de representación y componen e interpolan de forma barata",
+      "Son más intuitivos para comunicar orientaciones a humanos"
+     ],
+     "corr": "C"
+    },
+    {
+     "enun": "En las soluciones analíticas de IK se usa siempre atan2 en lugar de la arcotangente del cociente porque…",
+     "ops": [
+      "atan2 es más rápida de calcular",
+      "La arcotangente no está definida en radianes",
+      "atan2 conserva el cuadrante del ángulo",
+      "atan2 devuelve siempre ángulos positivos"
+     ],
+     "corr": "C"
+    },
+    {
+     "enun": "El término «mechatronics» fue acuñado en 1969 por…",
+     "ops": [
+      "Un ingeniero de Yaskawa Electric, en Japón",
+      "El MIT, en su laboratorio de servomecanismos",
+      "Joseph Engelberger, fundador de Unimation",
+      "Karel Čapek, en la obra R.U.R."
+     ],
+     "corr": "A"
+    }
+   ],
+   "B": {
+    "f": 640,
+    "fs_min": 1280,
+    "fs_prac": 1638,
+    "fs_err": 700,
+    "alias": 60,
+    "Ie": 0.78,
+    "Im": 0.84,
+    "Iue": 0.92,
+    "Ium": 0.94,
+    "mdq": 0.76
+   },
+   "C": {
+    "a1": 0.6,
+    "a2": 0.4,
+    "q1": 20,
+    "q2": 60,
+    "x": 0.633,
+    "y": 0.599,
+    "phi": 80,
+    "rmin": 0.2,
+    "rmax": 1.0,
+    "Pfuera": [
+     0.1,
+     0.05
+    ],
+    "rPf": 0.112,
+    "alcanzable": false
+   },
+   "Dd": {
+    "P": [
+     0.8,
+     0.3
+    ],
+    "c2": 0.438,
+    "q2a": 64.1,
+    "q2b": -64.1,
+    "q1a": -4.3,
+    "q1b": 45.5,
+    "J": [
+     [
+      -0.3,
+      -0.345
+     ],
+     [
+      0.8,
+      0.202
+     ]
+    ],
+    "detJ": 0.216,
+    "F": [
+     0,
+     12
+    ],
+    "tau": [
+     9.6,
+     2.421
+    ]
+   }
+  },
+  {
+   "version": "C",
+   "test": [
+    {
+     "enun": "En el bucle de modelado y diseño, la relación v·i = ω·τ expresa que…",
+     "ops": [
+      "La potencia enlaza los dominios eléctrico y mecánico en el transformador ideal",
+      "El rendimiento del motor es del 100 % en régimen permanente",
+      "La corriente y la velocidad son siempre inversamente proporcionales",
+      "La tensión es proporcional al par en cualquier motor"
+     ],
+     "corr": "A"
+    },
+    {
+     "enun": "La cirugía robótica actual (tipo Da Vinci) es un ejemplo de…",
+     "ops": [
+      "Robot de fabricación adaptado al quirófano",
+      "Teleoperación: el cirujano controla y el robot ejecuta",
+      "Control compartido entre cirujano e inteligencia artificial",
+      "Autonomía supervisada con objetivos de alto nivel"
+     ],
+     "corr": "B"
+    },
+    {
+     "enun": "El robot delta alcanza altísimas velocidades porque…",
+     "ops": [
+      "Sus cadenas cinemáticas cerradas dejan los motores en la base y mueven muy poca inercia",
+      "Su espacio de trabajo es mayor que el de un 6R",
+      "Usa motores hidráulicos de gran potencia",
+      "No necesita reductoras"
+     ],
+     "corr": "A"
+    },
+    {
+     "enun": "En la ISO 10218:2025, la responsabilidad legal de la evaluación de riesgos de la célula recae en…",
+     "ops": [
+      "El fabricante del robot (Parte 1)",
+      "El organismo notificado que certifica el robot",
+      "El operario que trabaja en la célula",
+      "El integrador (Parte 2), que diseña y valida la aplicación completa"
+     ],
+     "corr": "D"
+    },
+    {
+     "enun": "Muestreas a 500 Hz una vibración de 400 Hz. ¿Qué observas?",
+     "ops": [
+      "Ruido blanco sin estructura",
+      "Un alias de baja frecuencia (100 Hz) imposible de deshacer con filtrado digital posterior",
+      "La señal correcta, porque 500 es mayor que 400",
+      "La señal atenuada a la mitad de amplitud"
+     ],
+     "corr": "B"
+    },
+    {
+     "enun": "«Los acelerómetros miden la gravedad y el movimiento del cuerpo a la vez» (Corke). Una consecuencia práctica es que…",
+     "ops": [
+      "No sirven para estimar orientación",
+      "Solo funcionan en caída libre",
+      "En reposo miden g, lo que permite estimar la inclinación",
+      "En reposo su salida es exactamente cero"
+     ],
+     "corr": "C"
+    },
+    {
+     "enun": "Con una reductora de relación G, la inercia de la carga vista desde el motor…",
+     "ops": [
+      "Se divide por G²",
+      "Se divide por G",
+      "No cambia",
+      "Se multiplica por G"
+     ],
+     "corr": "A"
+    },
+    {
+     "enun": "La convención de Denavit-Hartenberg describe cada eslabón con…",
+     "ops": [
+      "2 parámetros",
+      "4 parámetros",
+      "3 parámetros",
+      "6 parámetros"
+     ],
+     "corr": "B"
+    },
+    {
+     "enun": "La columna i del jacobiano geométrico J(q) representa…",
+     "ops": [
+      "La velocidad del efector cuando solo la articulación i se mueve a velocidad unidad",
+      "La fuerza que ejerce la articulación i en reposo",
+      "La posición del eslabón i en el marco del mundo",
+      "El error de la articulación i respecto a su consigna"
+     ],
+     "corr": "A"
+    },
+    {
+     "enun": "En el diseño secuencial (no acoplado), ¿cuál de estos problemas aparece al interconectar componentes diseñados por separado?",
+     "ops": [
+      "El coste total siempre disminuye",
+      "Sus condiciones de operación cambian y dejan de cumplirse las prestaciones de catálogo",
+      "Los componentes quedan automáticamente sobredimensionados por igual",
+      "Las variables internas pasan a ser externas y más fáciles de medir"
+     ],
+     "corr": "B"
+    }
+   ],
+   "B": {
+    "f": 950,
+    "fs_min": 1900,
+    "fs_prac": 2432,
+    "fs_err": 1000,
+    "alias": 50,
+    "Ie": 0.8,
+    "Im": 0.7,
+    "Iue": 0.9,
+    "Ium": 0.88,
+    "mdq": 0.713
+   },
+   "C": {
+    "a1": 0.4,
+    "a2": 0.3,
+    "q1": 40,
+    "q2": 30,
+    "x": 0.409,
+    "y": 0.539,
+    "phi": 70,
+    "rmin": 0.1,
+    "rmax": 0.7,
+    "Pfuera": [
+     0.8,
+     0.1
+    ],
+    "rPf": 0.806,
+    "alcanzable": false
+   },
+   "Dd": {
+    "P": [
+     0.55,
+     0.25
+    ],
+    "c2": 0.479,
+    "q2a": 61.4,
+    "q2b": -61.4,
+    "q1a": -1.4,
+    "q1b": 50.3,
+    "J": [
+     [
+      -0.25,
+      -0.26
+     ],
+     [
+      0.55,
+      0.15
+     ]
+    ],
+    "detJ": 0.105,
+    "F": [
+     8,
+     6
+    ],
+    "tau": [
+     1.3,
+     -1.177
+    ]
+   }
+  },
+  {
+   "version": "D",
+   "test": [
+    {
+     "enun": "La definición de robot que usa el curso (Corke) es una máquina orientada a objetivos que puede…",
+     "ops": [
+      "Programarse, calibrarse y repetir",
+      "Percibir, planificar y actuar",
+      "Sentir, comunicar y aprender",
+      "Medir, controlar y registrar"
+     ],
+     "corr": "B"
+    },
+    {
+     "enun": "Un modelo VLA (visión-lenguaje-acción) se caracteriza por…",
+     "ops": [
+      "Traducir planos CAD en trayectorias articulares",
+      "Generar lenguaje natural que describe lo que ve el robot",
+      "Sustituir a los lazos de control de bajo nivel del robot",
+      "Producir acciones motoras a partir de imágenes de cámara e instrucciones en lenguaje natural"
+     ],
+     "corr": "D"
+    },
+    {
+     "enun": "La cifra estrella de los catálogos de robots industriales es la repetibilidad. La exactitud…",
+     "ops": [
+      "Es en general peor, y es la que importa al programar fuera de línea",
+      "Es mejor que la repetibilidad gracias a la calibración",
+      "Es siempre igual a la repetibilidad",
+      "No está definida para robots de 6 ejes"
+     ],
+     "corr": "A"
+    },
+    {
+     "enun": "El método colaborativo de «limitación de potencia y fuerza» se caracteriza por…",
+     "ops": [
+      "Modular la velocidad según la distancia a la persona",
+      "Permitir mover el robot con la mano para programarlo",
+      "Detener el robot cuando una persona entra en la célula",
+      "Admitir el contacto persona-robot manteniendo fuerza y presión bajo umbrales biomecánicos"
+     ],
+     "corr": "D"
+    },
+    {
+     "enun": "Repetibilidad y exactitud: ¿cuál es la afirmación correcta?",
+     "ops": [
+      "La repetibilidad solo se define para sensores digitales",
+      "La exactitud siempre es mejor que la repetibilidad",
+      "Un sesgo estable (buena repetibilidad, mala exactitud) puede calibrarse; una dispersión aleatoria, no",
+      "Son sinónimos en las hojas de datos"
+     ],
+     "corr": "C"
+    },
+    {
+     "enun": "El bias de un giróscopo es el gran enemigo de la navegación inercial porque…",
+     "ops": [
+      "Hace que el sensor se sature enseguida",
+      "Aparece solo a altas velocidades de giro",
+      "Impide medir la temperatura interna",
+      "Al integrar dos veces, el error de posición crece cuadráticamente con el tiempo"
+     ],
+     "corr": "D"
+    },
+    {
+     "enun": "En la notación T_AB del curso, la regla de composición T_AC = T_AB · T_BC funciona porque…",
+     "ops": [
+      "El subíndice interior repetido «se cancela» al encadenar poses relativas",
+      "Los marcos son siempre coincidentes en el origen",
+      "La inversa de T es igual a su traspuesta",
+      "Las matrices de pose conmutan entre sí"
+     ],
+     "corr": "A"
+    },
+    {
+     "enun": "La cinemática directa (FK) de un robot serie…",
+     "ops": [
+      "Siempre existe y es única; el problema con solución múltiple es el inverso",
+      "Requiere métodos numéricos iterativos",
+      "Solo existe si el robot tiene muñeca esférica",
+      "Puede tener hasta ocho soluciones"
+     ],
+     "corr": "A"
+    },
+    {
+     "enun": "En una singularidad cinemática…",
+     "ops": [
+      "El robot pierde potencia en todos los motores",
+      "La cinemática directa deja de ser única",
+      "El efector pierde la capacidad de moverse instantáneamente en una o más direcciones",
+      "El jacobiano se hace simétrico"
+     ],
+     "corr": "C"
+    },
+    {
+     "enun": "El Cociente de Diseño Mecatrónico (MDQ) se define como…",
+     "ops": [
+      "El producto de fiabilidad por eficiencia del sistema",
+      "La diferencia entre coste previsto y coste real del prototipo",
+      "La suma de los índices de diseño eléctrico y mecánico",
+      "Un cociente que compara el índice de diseño del conjunto interconectado con el de los subsistemas aislados"
+     ],
+     "corr": "D"
+    }
+   ],
+   "B": {
+    "f": 730,
+    "fs_min": 1460,
+    "fs_prac": 1869,
+    "fs_err": 800,
+    "alias": 70,
+    "Ie": 0.86,
+    "Im": 0.74,
+    "Iue": 0.96,
+    "Ium": 0.86,
+    "mdq": 0.775
+   },
+   "C": {
+    "a1": 0.5,
+    "a2": 0.4,
+    "q1": 25,
+    "q2": 50,
+    "x": 0.557,
+    "y": 0.598,
+    "phi": 75,
+    "rmin": 0.1,
+    "rmax": 0.9,
+    "Pfuera": [
+     1.0,
+     0.0
+    ],
+    "rPf": 1.0,
+    "alcanzable": false
+   },
+   "Dd": {
+    "P": [
+     0.7,
+     0.35
+    ],
+    "c2": 0.506,
+    "q2a": 59.6,
+    "q2b": -59.6,
+    "q1a": 0.4,
+    "q1b": 52.7,
+    "J": [
+     [
+      -0.35,
+      -0.346
+     ],
+     [
+      0.7,
+      0.2
+     ]
+    ],
+    "detJ": 0.172,
+    "F": [
+     12,
+     0
+    ],
+    "tau": [
+     -4.2,
+     -4.157
+    ]
+   }
+  },
+  {
+   "version": "E",
+   "test": [
+    {
+     "enun": "Un sensor propioceptivo mide…",
+     "ops": [
+      "El mundo exterior respecto al robot, como la distancia a un obstáculo",
+      "Solo magnitudes eléctricas internas del controlador",
+      "La posición absoluta del robot mediante balizas externas",
+      "El estado del propio robot, como los ángulos articulares o las revoluciones de rueda"
+     ],
+     "corr": "D"
+    },
+    {
+     "enun": "En la taxonomía funcional de Corke, los humanoides son un caso interesante porque…",
+     "ops": [
+      "Son siempre robots de fabricación",
+      "Son a la vez robots móviles y de servicio: las categorías no son excluyentes",
+      "No encajan en ninguna categoría y forman la quinta",
+      "Solo existen como plataformas de investigación"
+     ],
+     "corr": "B"
+    },
+    {
+     "enun": "¿Cuántos grados de libertad necesita un manipulador para alcanzar una pose arbitraria (posición y orientación) en el espacio?",
+     "ops": [
+      "8",
+      "4",
+      "6",
+      "3"
+     ],
+     "corr": "C"
+    },
+    {
+     "enun": "La ISO/TS 15066 sigue siendo la referencia para…",
+     "ops": [
+      "El marcado CE de máquinas completas",
+      "La clasificación de robots por carga útil",
+      "Los requisitos de software de los controladores",
+      "Los límites biomecánicos de fuerza y presión por región corporal"
+     ],
+     "corr": "D"
+    },
+    {
+     "enun": "La histéresis de un sensor es…",
+     "ops": [
+      "El menor incremento de estímulo detectable",
+      "El tiempo que tarda en estabilizarse la lectura",
+      "La deriva térmica del cero",
+      "La diferencia de salida según el estímulo llegue subiendo o bajando"
+     ],
+     "corr": "D"
+    },
+    {
+     "enun": "El factor de galga expresa…",
+     "ops": [
+      "La fuerza máxima que soporta la galga",
+      "El cambio relativo de resistencia por unidad de deformación (dR/R = Se·ε)",
+      "La tensión de alimentación óptima del puente",
+      "La sensibilidad térmica del adhesivo"
+     ],
+     "corr": "B"
+    },
+    {
+     "enun": "Una matriz de rotación R pertenece a SO(3) si cumple…",
+     "ops": [
+      "R traspuesta por R igual a identidad, y determinante +1",
+      "R simétrica y definida positiva",
+      "Todos sus elementos entre -1 y 1",
+      "Determinante distinto de cero y traza positiva"
+     ],
+     "corr": "A"
+    },
+    {
+     "enun": "Un 6R industrial con muñeca esférica y offset de hombro tiene, en general, ¿cuántas soluciones de IK para una pose alcanzable?",
+     "ops": [
+      "4",
+      "8",
+      "2",
+      "Infinitas"
+     ],
+     "corr": "B"
+    },
+    {
+     "enun": "La relación estática entre la fuerza F en el efector y los pares articulares es τ = J traspuesta por F. Una propiedad notable es que…",
+     "ops": [
+      "Solo aplica a robots planos de dos eslabones",
+      "La traspuesta del jacobiano nunca puede ser singular: la estática funciona incluso en singularidades",
+      "Solo es válida lejos de singularidades",
+      "Requiere invertir el jacobiano en cada instante"
+     ],
+     "corr": "B"
+    },
+    {
+     "enun": "Un valor de MDQ próximo a 1 indica que…",
+     "ops": [
+      "Los pesos αe y αm están mal elegidos",
+      "El diseño interconectado se acerca al óptimo que cada subsistema lograría aislado",
+      "El sistema es inestable y debe rediseñarse",
+      "El diseño eléctrico domina sobre el mecánico"
+     ],
+     "corr": "B"
+    }
+   ],
+   "B": {
+    "f": 880,
+    "fs_min": 1760,
+    "fs_prac": 2253,
+    "fs_err": 950,
+    "alias": 70,
+    "Ie": 0.75,
+    "Im": 0.81,
+    "Iue": 0.88,
+    "Ium": 0.93,
+    "mdq": 0.743
+   },
+   "C": {
+    "a1": 0.7,
+    "a2": 0.4,
+    "q1": 15,
+    "q2": 70,
+    "x": 0.711,
+    "y": 0.58,
+    "phi": 85,
+    "rmin": 0.3,
+    "rmax": 1.1,
+    "Pfuera": [
+     0.2,
+     0.1
+    ],
+    "rPf": 0.224,
+    "alcanzable": false
+   },
+   "Dd": {
+    "P": [
+     0.85,
+     0.4
+    ],
+    "c2": 0.415,
+    "q2a": 65.5,
+    "q2b": -65.5,
+    "q1a": 2.4,
+    "q1b": 48.0,
+    "J": [
+     [
+      -0.4,
+      -0.371
+     ],
+     [
+      0.85,
+      0.151
+     ]
+    ],
+    "detJ": 0.255,
+    "F": [
+     0,
+     10
+    ],
+    "tau": [
+     8.5,
+     1.506
+    ]
+   }
+  },
+  {
+   "version": "F",
+   "test": [
+    {
+     "enun": "El primer robot industrial (Unimate) entró en producción en 1961 en…",
+     "ops": [
+      "La cadena de montaje de Toyota en Nagoya",
+      "Una planta de General Motors en Nueva Jersey",
+      "Una fábrica textil de Lyon",
+      "Los laboratorios Bell"
+     ],
+     "corr": "B"
+    },
+    {
+     "enun": "La diferencia esencial entre un robot industrial clásico y un cobot es que el cobot…",
+     "ops": [
+      "Solo puede mover cargas inferiores a 1 kg",
+      "No necesita evaluación de riesgos",
+      "Es siempre más rápido y preciso",
+      "Sustituye el vallado por sensórica y control que garantizan la seguridad ante el contacto"
+     ],
+     "corr": "D"
+    },
+    {
+     "enun": "Una plataforma con dirección Ackermann (tipo coche) es «no holonómica» porque…",
+     "ops": [
+      "Necesita un mapa para poder moverse",
+      "No puede girar sobre sí misma más de 360 grados",
+      "No puede desplazarse lateralmente: sus velocidades posibles están restringidas",
+      "Su odometría no acumula error"
+     ],
+     "corr": "C"
+    },
+    {
+     "enun": "En la reducción de riesgos, la jerarquía correcta es…",
+     "ops": [
+      "Formar al operario y señalizar: el diseño no se toca",
+      "Proteger siempre con vallado antes de cualquier otra medida",
+      "Eliminar por diseño, después proteger, e informar solo en último lugar",
+      "Informar primero, proteger después, rediseñar si hay presupuesto"
+     ],
+     "corr": "C"
+    },
+    {
+     "enun": "Los dos canales A y B en cuadratura (90°) de un encoder incremental permiten…",
+     "ops": [
+      "Compensar la temperatura del disco",
+      "Conocer el sentido de giro y multiplicar por 4 la resolución de cuenta",
+      "Medir la posición absoluta al arrancar",
+      "Duplicar la velocidad máxima medible"
+     ],
+     "corr": "B"
+    },
+    {
+     "enun": "Montar 4 galgas activas en puente de Wheatstone completo sirve para…",
+     "ops": [
+      "Compensar la temperatura y cuadruplicar la sensibilidad",
+      "Reducir el consumo a la cuarta parte",
+      "Medir cuatro fuerzas independientes",
+      "Eliminar la necesidad de amplificador"
+     ],
+     "corr": "A"
+    },
+    {
+     "enun": "El bloqueo de cardán (gimbal lock) ocurre cuando…",
+     "ops": [
+      "El determinante de la matriz de rotación se hace cero",
+      "Dos ejes de la secuencia de tres ángulos se alinean y se pierde un grado de libertad de representación",
+      "El robot alcanza el límite físico de una articulación",
+      "Se usan cuaterniones no unitarios"
+     ],
+     "corr": "B"
+    },
+    {
+     "enun": "La condición que permite resolver la IK de un 6R en forma cerrada es…",
+     "ops": [
+      "Una muñeca esférica: tres ejes que se cortan en un punto, que desacopla posición y orientación",
+      "Que la base esté fija al suelo",
+      "Que el robot no tenga reductoras",
+      "Que todos los eslabones tengan la misma longitud"
+     ],
+     "corr": "A"
+    },
+    {
+     "enun": "Según De Silva, la mecatrónica es la aplicación sinérgica de mecánica, electrónica, control e informática. ¿Qué significa aquí «sinérgica»?",
+     "ops": [
+      "Que cada subsistema lo diseña un especialista de ese dominio",
+      "Que el producto final contiene componentes de todos los dominios",
+      "Que los subsistemas se conciben y optimizan conjuntamente desde el inicio del diseño",
+      "Que la electrónica sustituye progresivamente a la mecánica"
+     ],
+     "corr": "C"
+    },
+    {
+     "enun": "En el bucle de modelado y diseño, la relación v·i = ω·τ expresa que…",
+     "ops": [
+      "La corriente y la velocidad son siempre inversamente proporcionales",
+      "El rendimiento del motor es del 100 % en régimen permanente",
+      "La tensión es proporcional al par en cualquier motor",
+      "La potencia enlaza los dominios eléctrico y mecánico en el transformador ideal"
+     ],
+     "corr": "D"
+    }
+   ],
+   "B": {
+    "f": 560,
+    "fs_min": 1120,
+    "fs_prac": 1434,
+    "fs_err": 600,
+    "alias": 40,
+    "Ie": 0.83,
+    "Im": 0.79,
+    "Iue": 0.94,
+    "Ium": 0.91,
+    "mdq": 0.767
+   },
+   "C": {
+    "a1": 0.6,
+    "a2": 0.3,
+    "q1": 35,
+    "q2": 40,
+    "x": 0.569,
+    "y": 0.634,
+    "phi": 75,
+    "rmin": 0.3,
+    "rmax": 0.9,
+    "Pfuera": [
+     1.0,
+     0.3
+    ],
+    "rPf": 1.044,
+    "alcanzable": false
+   },
+   "Dd": {
+    "P": [
+     0.75,
+     0.3
+    ],
+    "c2": 0.562,
+    "q2a": 55.8,
+    "q2b": -55.8,
+    "q1a": 3.9,
+    "q1b": 39.7,
+    "J": [
+     [
+      -0.3,
+      -0.259
+     ],
+     [
+      0.75,
+      0.151
+     ]
+    ],
+    "detJ": 0.149,
+    "F": [
+     9,
+     5
+    ],
+    "tau": [
+     1.05,
+     -1.574
+    ]
+   }
+  }
+ ],
+ "P2": [
+  {
+   "version": "A",
+   "test": [
+    {
+     "enun": "La sobreoscilación Mp de un segundo orden subamortiguado depende…",
+     "ops": [
+      "Solo de la frecuencia natural ωn",
+      "Del producto ζ·ωn",
+      "De la amplitud del escalón de entrada",
+      "Solo del amortiguamiento ζ"
+     ],
+     "corr": "D"
+    },
+    {
+     "enun": "En la ecuación del manipulador M(q)·q̈ + C(q,q̇)·q̇ + g(q) = τ, el término que suele dominar es…",
+     "ops": [
+      "La gravedad g(q), que actúa incluso con el robot parado",
+      "La fricción viscosa",
+      "Los términos de Coriolis",
+      "La matriz de inercia M(q)"
+     ],
+     "corr": "A"
+    },
+    {
+     "enun": "«Los bordes de la imagen no son necesariamente los bordes de los objetos» (Corke). Un ejemplo típico es…",
+     "ops": [
+      "El ruido térmico del sensor",
+      "Un objeto sin textura sobre fondo uniforme",
+      "Una imagen sobreexpuesta",
+      "Una sombra proyectada que produce un gradiente fuerte sin frontera física"
+     ],
+     "corr": "D"
+    },
+    {
+     "enun": "El SLAM es un problema «circular» porque…",
+     "ops": [
+      "La covarianza es una matriz circular",
+      "Para construir el mapa hay que saber dónde está el robot, y para saberlo hace falta el mapa",
+      "Los sensores giran 360 grados",
+      "El robot debe recorrer trayectorias cerradas"
+     ],
+     "corr": "B"
+    },
+    {
+     "enun": "Inflar los obstáculos del mapa con el radio del robot sirve para…",
+     "ops": [
+      "Tratar al robot como un punto en el espacio de configuraciones",
+      "Reducir el número de celdas del costmap",
+      "Aumentar la resolución del mapa",
+      "Evitar la localización global"
+     ],
+     "corr": "A"
+    },
+    {
+     "enun": "En un sistema de primer orden, en t = τ (una constante de tiempo) la respuesta al escalón ha alcanzado aproximadamente…",
+     "ops": [
+      "El 37 % del valor final",
+      "El 50 % del valor final",
+      "El 63 % del valor final",
+      "El 95 % del valor final"
+     ],
+     "corr": "C"
+    },
+    {
+     "enun": "La condición de controlabilidad de Kalman exige que…",
+     "ops": [
+      "Todos los polos sean reales",
+      "B tenga tantas columnas como estados",
+      "A sea invertible",
+      "La matriz [B, AB, A²B, …] tenga rango igual al orden del sistema"
+     ],
+     "corr": "D"
+    },
+    {
+     "enun": "La convolución es la operación base del procesado clásico y además…",
+     "ops": [
+      "Solo sirve para suavizar imágenes",
+      "Es la misma operación que ejecuta cada capa convolucional de una CNN",
+      "Fue sustituida por el umbralizado",
+      "Es exclusiva de las imágenes en color"
+     ],
+     "corr": "B"
+    },
+    {
+     "enun": "La localización global (pose inicial desconocida) se resuelve mejor con filtro de partículas que con EKF porque…",
+     "ops": [
+      "El EKF no admite mapas de balizas",
+      "Las partículas representan creencias multimodales y una gaussiana no",
+      "Las partículas son más precisas en el seguimiento fino",
+      "El filtro de partículas no necesita modelo de movimiento"
+     ],
+     "corr": "B"
+    },
+    {
+     "enun": "La convención REP 105 encadena los marcos como…",
+     "ops": [
+      "base_link → map → odom, sin deriva",
+      "map → odom → base_link, con odom→base continua pero derivante y map→odom corrigiendo a saltos",
+      "odom → map → base_link, con map fijo al robot",
+      "map → base_link directamente, sin marco intermedio"
+     ],
+     "corr": "B"
+    }
+   ],
+   "B": {
+    "M": 0.5,
+    "b": 0.1,
+    "zeta": 0.7,
+    "wn": 4.0,
+    "Kp": 8.0,
+    "Kd": 2.7,
+    "Mp": 4.6,
+    "m": 1.0,
+    "r": 0.1,
+    "ess_rad": 0.123,
+    "ess_deg": 7.03
+   },
+   "C": {
+    "x0": 2.0,
+    "P0": 1.0,
+    "Q": 0.25,
+    "R": 0.5,
+    "z": 3.0,
+    "Pm": 1.25,
+    "K": 0.714,
+    "xh": 2.714,
+    "Pp": 0.357
+   },
+   "Dd": {
+    "S": [
+     0,
+     0
+    ],
+    "G": [
+     4,
+     4
+    ],
+    "obs": [
+     [
+      1,
+      1
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      3,
+      1
+     ],
+     [
+      3,
+      2
+     ]
+    ],
+    "hS": 8,
+    "vecinos": [
+     {
+      "celda": [
+       1,
+       0
+      ],
+      "gcost": 1,
+      "h": 7,
+      "f": 8
+     },
+     {
+      "celda": [
+       0,
+       1
+      ],
+      "gcost": 1,
+      "h": 7,
+      "f": 8
+     }
+    ],
+    "expandir": [
+     [
+      1,
+      0
+     ],
+     [
+      0,
+      1
+     ]
+    ],
+    "lopt": 8
+   }
+  },
+  {
+   "version": "B",
+   "test": [
+    {
+     "enun": "Un sistema lineal es estable si y solo si…",
+     "ops": [
+      "Su respuesta en frecuencia es plana",
+      "Su ganancia estática es menor que 1",
+      "No tiene ceros en el semiplano derecho",
+      "Todas las raíces del polinomio característico tienen parte real negativa"
+     ],
+     "corr": "D"
+    },
+    {
+     "enun": "Los términos de Coriolis y centrífugos de la dinámica del manipulador…",
+     "ops": [
+      "Son independientes de la configuración",
+      "Actúan también con el robot parado",
+      "Solo aparecen en movimiento y crecen con el cuadrado de la velocidad articular",
+      "Se anulan con una reductora suficientemente grande"
+     ],
+     "corr": "C"
+    },
+    {
+     "enun": "¿Cuándo conviene elegir procesado clásico frente a aprendizaje profundo?",
+     "ops": [
+      "Con escena controlada, exigencia de determinismo y medición metrológica",
+      "Siempre que haya GPU disponible",
+      "Cuando hay millones de imágenes etiquetadas",
+      "Cuando los objetos son deformables y la iluminación variable"
+     ],
+     "corr": "A"
+    },
+    {
+     "enun": "En ROS 2, un nodo es…",
+     "ops": [
+      "Un proceso independiente que hace una cosa y se comunica por mensajes",
+      "Un punto del árbol de transformadas",
+      "Un fichero de configuración del robot",
+      "Un hilo del programa principal"
+     ],
+     "corr": "A"
+    },
+    {
+     "enun": "A* garantiza el camino óptimo solo si la heurística es admisible, es decir…",
+     "ops": [
+      "Es cero en todas las celdas",
+      "Es exactamente igual al coste real",
+      "Nunca sobreestima el coste restante hasta la meta",
+      "Crece con la distancia recorrida"
+     ],
+     "corr": "C"
+    },
+    {
+     "enun": "La sobreoscilación Mp de un segundo orden subamortiguado depende…",
+     "ops": [
+      "Solo de la frecuencia natural ωn",
+      "De la amplitud del escalón de entrada",
+      "Del producto ζ·ωn",
+      "Solo del amortiguamiento ζ"
+     ],
+     "corr": "D"
+    },
+    {
+     "enun": "En la ecuación del manipulador M(q)·q̈ + C(q,q̇)·q̇ + g(q) = τ, el término que suele dominar es…",
+     "ops": [
+      "La fricción viscosa",
+      "La gravedad g(q), que actúa incluso con el robot parado",
+      "Los términos de Coriolis",
+      "La matriz de inercia M(q)"
+     ],
+     "corr": "B"
+    },
+    {
+     "enun": "«Los bordes de la imagen no son necesariamente los bordes de los objetos» (Corke). Un ejemplo típico es…",
+     "ops": [
+      "Una imagen sobreexpuesta",
+      "El ruido térmico del sensor",
+      "Un objeto sin textura sobre fondo uniforme",
+      "Una sombra proyectada que produce un gradiente fuerte sin frontera física"
+     ],
+     "corr": "D"
+    },
+    {
+     "enun": "El SLAM es un problema «circular» porque…",
+     "ops": [
+      "Para construir el mapa hay que saber dónde está el robot, y para saberlo hace falta el mapa",
+      "La covarianza es una matriz circular",
+      "Los sensores giran 360 grados",
+      "El robot debe recorrer trayectorias cerradas"
+     ],
+     "corr": "A"
+    },
+    {
+     "enun": "Inflar los obstáculos del mapa con el radio del robot sirve para…",
+     "ops": [
+      "Tratar al robot como un punto en el espacio de configuraciones",
+      "Evitar la localización global",
+      "Reducir el número de celdas del costmap",
+      "Aumentar la resolución del mapa"
+     ],
+     "corr": "A"
+    }
+   ],
+   "B": {
+    "M": 0.4,
+    "b": 0.2,
+    "zeta": 0.8,
+    "wn": 5.0,
+    "Kp": 10.0,
+    "Kd": 3.0,
+    "Mp": 1.52,
+    "m": 0.8,
+    "r": 0.12,
+    "ess_rad": 0.094,
+    "ess_deg": 5.4
+   },
+   "C": {
+    "x0": 5.0,
+    "P0": 0.8,
+    "Q": 0.2,
+    "R": 1.0,
+    "z": 4.2,
+    "Pm": 1.0,
+    "K": 0.5,
+    "xh": 4.6,
+    "Pp": 0.5
+   },
+   "Dd": {
+    "S": [
+     0,
+     0
+    ],
+    "G": [
+     4,
+     4
+    ],
+    "obs": [
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      2
+     ],
+     [
+      3,
+      2
+     ]
+    ],
+    "hS": 8,
+    "vecinos": [
+     {
+      "celda": [
+       1,
+       0
+      ],
+      "gcost": 1,
+      "h": 7,
+      "f": 8
+     },
+     {
+      "celda": [
+       0,
+       1
+      ],
+      "gcost": 1,
+      "h": 7,
+      "f": 8
+     }
+    ],
+    "expandir": [
+     [
+      1,
+      0
+     ],
+     [
+      0,
+      1
+     ]
+    ],
+    "lopt": 8
+   }
+  },
+  {
+   "version": "C",
+   "test": [
+    {
+     "enun": "En la ley PID aplicada a una articulación, Kp y Kd actúan como…",
+     "ops": [
+      "Un muelle y un amortiguador virtuales",
+      "Un filtro paso-bajo y otro paso-alto",
+      "Dos ganancias redundantes con el mismo efecto",
+      "Compensadores de gravedad y de fricción"
+     ],
+     "corr": "A"
+    },
+    {
+     "enun": "El control por par calculado logra, con modelo perfecto, que la dinámica del error sea…",
+     "ops": [
+      "No lineal pero estable",
+      "De primer orden en todos los ejes",
+      "Lineal, desacoplada e independiente de la configuración",
+      "Idéntica a la del PID articular independiente"
+     ],
+     "corr": "C"
+    },
+    {
+     "enun": "La creencia (belief) de un robot es…",
+     "ops": [
+      "El mapa que ha construido hasta el momento",
+      "Su mejor estimación puntual de posición",
+      "Una distribución de probabilidad sobre su estado, condicionada a medidas y controles pasados",
+      "La covarianza del ruido del sensor"
+     ],
+     "corr": "C"
+    },
+    {
+     "enun": "ROS 2 no tiene nodo maestro central (a diferencia de ROS 1) porque…",
+     "ops": [
+      "El maestro se sustituyó por un servidor web",
+      "Se apoya en DDS, un estándar industrial con descubrimiento automático",
+      "Cada nodo lleva su propio maestro embebido",
+      "Ya no hace falta descubrir nodos"
+     ],
+     "corr": "B"
+    },
+    {
+     "enun": "RRT domina la planificación en alta dimensión porque…",
+     "ops": [
+      "Garantiza siempre el camino más corto",
+      "Funciona solo en dos dimensiones",
+      "El árbol crece hacia muestras aleatorias sin discretizar todo el espacio",
+      "No necesita detectar colisiones"
+     ],
+     "corr": "C"
+    },
+    {
+     "enun": "Un sistema lineal es estable si y solo si…",
+     "ops": [
+      "Su ganancia estática es menor que 1",
+      "Todas las raíces del polinomio característico tienen parte real negativa",
+      "No tiene ceros en el semiplano derecho",
+      "Su respuesta en frecuencia es plana"
+     ],
+     "corr": "B"
+    },
+    {
+     "enun": "Los términos de Coriolis y centrífugos de la dinámica del manipulador…",
+     "ops": [
+      "Solo aparecen en movimiento y crecen con el cuadrado de la velocidad articular",
+      "Son independientes de la configuración",
+      "Actúan también con el robot parado",
+      "Se anulan con una reductora suficientemente grande"
+     ],
+     "corr": "A"
+    },
+    {
+     "enun": "¿Cuándo conviene elegir procesado clásico frente a aprendizaje profundo?",
+     "ops": [
+      "Con escena controlada, exigencia de determinismo y medición metrológica",
+      "Cuando los objetos son deformables y la iluminación variable",
+      "Cuando hay millones de imágenes etiquetadas",
+      "Siempre que haya GPU disponible"
+     ],
+     "corr": "A"
+    },
+    {
+     "enun": "En ROS 2, un nodo es…",
+     "ops": [
+      "Un fichero de configuración del robot",
+      "Un punto del árbol de transformadas",
+      "Un hilo del programa principal",
+      "Un proceso independiente que hace una cosa y se comunica por mensajes"
+     ],
+     "corr": "D"
+    },
+    {
+     "enun": "A* garantiza el camino óptimo solo si la heurística es admisible, es decir…",
+     "ops": [
+      "Nunca sobreestima el coste restante hasta la meta",
+      "Crece con la distancia recorrida",
+      "Es exactamente igual al coste real",
+      "Es cero en todas las celdas"
+     ],
+     "corr": "A"
+    }
+   ],
+   "B": {
+    "M": 0.6,
+    "b": 0.1,
+    "zeta": 0.7,
+    "wn": 3.0,
+    "Kp": 5.4,
+    "Kd": 2.42,
+    "Mp": 4.6,
+    "m": 1.2,
+    "r": 0.1,
+    "ess_rad": 0.218,
+    "ess_deg": 12.49
+   },
+   "C": {
+    "x0": 1.0,
+    "P0": 1.5,
+    "Q": 0.3,
+    "R": 0.6,
+    "z": 1.8,
+    "Pm": 1.8,
+    "K": 0.75,
+    "xh": 1.6,
+    "Pp": 0.45
+   },
+   "Dd": {
+    "S": [
+     4,
+     0
+    ],
+    "G": [
+     0,
+     4
+    ],
+    "obs": [
+     [
+      2,
+      1
+     ],
+     [
+      2,
+      2
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      1,
+      1
+     ]
+    ],
+    "hS": 8,
+    "vecinos": [
+     {
+      "celda": [
+       3,
+       0
+      ],
+      "gcost": 1,
+      "h": 7,
+      "f": 8
+     },
+     {
+      "celda": [
+       4,
+       1
+      ],
+      "gcost": 1,
+      "h": 7,
+      "f": 8
+     }
+    ],
+    "expandir": [
+     [
+      3,
+      0
+     ],
+     [
+      4,
+      1
+     ]
+    ],
+    "lopt": 8
+   }
+  },
+  {
+   "version": "D",
+   "test": [
+    {
+     "enun": "Un controlador PD sobre un eslabón con gravedad deja error estacionario porque…",
+     "ops": [
+      "La gravedad hace inestable el lazo",
+      "El término D amplifica el ruido del encoder",
+      "El modelo del motor es de primer orden",
+      "Sostener el eslabón exige un par no nulo, y el término P solo da par si hay error"
+     ],
+     "corr": "D"
+    },
+    {
+     "enun": "En el modelo estenopeico, la proyección u = f·X/Z implica que…",
+     "ops": [
+      "Los objetos lejanos se ven más grandes",
+      "La focal no influye en la imagen",
+      "Un punto de la imagen corresponde a un rayo completo del espacio: la profundidad se pierde",
+      "La imagen conserva las distancias métricas de la escena"
+     ],
+     "corr": "C"
+    },
+    {
+     "enun": "En el ciclo del filtro de Bayes, la predicción y la corrección hacen, respectivamente…",
+     "ops": [
+      "Ambas la dejan igual si el robot no se mueve",
+      "Crecer la incertidumbre (modelo de movimiento) y reducirla (verosimilitud de la medida)",
+      "Ambas reducen la incertidumbre",
+      "Reducir la incertidumbre y aumentarla"
+     ],
+     "corr": "B"
+    },
+    {
+     "enun": "Para un LiDAR publicando a 40 Hz, el perfil de QoS razonable es…",
+     "ops": [
+      "Transient local con historial profundo",
+      "Best effort: si se pierde un barrido, llega otro en 25 ms",
+      "Cualquiera: el QoS no afecta a sensores",
+      "Reliable con reintentos ilimitados"
+     ],
+     "corr": "B"
+    },
+    {
+     "enun": "En Nav2, los costmaps se organizan en capas. Las tres típicas son…",
+     "ops": [
+      "Planificación, control y recuperación",
+      "LiDAR, cámara y ultrasonidos",
+      "Estática (mapa), obstáculos (sensores en vivo) e inflado (margen del robot)",
+      "Global, local y de emergencia"
+     ],
+     "corr": "C"
+    },
+    {
+     "enun": "En la ley PID aplicada a una articulación, Kp y Kd actúan como…",
+     "ops": [
+      "Un muelle y un amortiguador virtuales",
+      "Un filtro paso-bajo y otro paso-alto",
+      "Compensadores de gravedad y de fricción",
+      "Dos ganancias redundantes con el mismo efecto"
+     ],
+     "corr": "A"
+    },
+    {
+     "enun": "El control por par calculado logra, con modelo perfecto, que la dinámica del error sea…",
+     "ops": [
+      "De primer orden en todos los ejes",
+      "Lineal, desacoplada e independiente de la configuración",
+      "No lineal pero estable",
+      "Idéntica a la del PID articular independiente"
+     ],
+     "corr": "B"
+    },
+    {
+     "enun": "La creencia (belief) de un robot es…",
+     "ops": [
+      "Su mejor estimación puntual de posición",
+      "Una distribución de probabilidad sobre su estado, condicionada a medidas y controles pasados",
+      "El mapa que ha construido hasta el momento",
+      "La covarianza del ruido del sensor"
+     ],
+     "corr": "B"
+    },
+    {
+     "enun": "ROS 2 no tiene nodo maestro central (a diferencia de ROS 1) porque…",
+     "ops": [
+      "Ya no hace falta descubrir nodos",
+      "Cada nodo lleva su propio maestro embebido",
+      "Se apoya en DDS, un estándar industrial con descubrimiento automático",
+      "El maestro se sustituyó por un servidor web"
+     ],
+     "corr": "C"
+    },
+    {
+     "enun": "RRT domina la planificación en alta dimensión porque…",
+     "ops": [
+      "No necesita detectar colisiones",
+      "El árbol crece hacia muestras aleatorias sin discretizar todo el espacio",
+      "Garantiza siempre el camino más corto",
+      "Funciona solo en dos dimensiones"
+     ],
+     "corr": "B"
+    }
+   ],
+   "B": {
+    "M": 0.5,
+    "b": 0.15,
+    "zeta": 0.9,
+    "wn": 4.0,
+    "Kp": 8.0,
+    "Kd": 3.45,
+    "Mp": 0.15,
+    "m": 1.0,
+    "r": 0.15,
+    "ess_rad": 0.184,
+    "ess_deg": 10.54
+   },
+   "C": {
+    "x0": 3.0,
+    "P0": 0.5,
+    "Q": 0.25,
+    "R": 0.75,
+    "z": 2.2,
+    "Pm": 0.75,
+    "K": 0.5,
+    "xh": 2.6,
+    "Pp": 0.375
+   },
+   "Dd": {
+    "S": [
+     0,
+     0
+    ],
+    "G": [
+     4,
+     3
+    ],
+    "obs": [
+     [
+      1,
+      1
+     ],
+     [
+      2,
+      1
+     ],
+     [
+      3,
+      1
+     ],
+     [
+      3,
+      3
+     ]
+    ],
+    "hS": 7,
+    "vecinos": [
+     {
+      "celda": [
+       1,
+       0
+      ],
+      "gcost": 1,
+      "h": 6,
+      "f": 7
+     },
+     {
+      "celda": [
+       0,
+       1
+      ],
+      "gcost": 1,
+      "h": 6,
+      "f": 7
+     }
+    ],
+    "expandir": [
+     [
+      1,
+      0
+     ],
+     [
+      0,
+      1
+     ]
+    ],
+    "lopt": 7
+   }
+  },
+  {
+   "version": "E",
+   "test": [
+    {
+     "enun": "El «windup» del integrador aparece cuando…",
+     "ops": [
+      "La ganancia Kd es demasiado alta",
+      "El periodo de muestreo es demasiado corto",
+      "El actuador se satura y la integral del error sigue acumulándose",
+      "La referencia cambia lentamente"
+     ],
+     "corr": "C"
+    },
+    {
+     "enun": "Los parámetros intrínsecos de una cámara (matriz K)…",
+     "ops": [
+      "Describen la cámara y no cambian al moverla; se calibran una vez",
+      "Incluyen la rotación y traslación respecto al mundo",
+      "Solo son necesarios en cámaras estéreo",
+      "Cambian en cada instante con el movimiento"
+     ],
+     "corr": "A"
+    },
+    {
+     "enun": "El filtro de Kalman mantiene la creencia gaussiana para siempre si…",
+     "ops": [
+      "El robot se mueve despacio",
+      "Las medidas llegan a frecuencia constante",
+      "El sistema es lineal, el ruido gaussiano y la creencia inicial gaussiana",
+      "La covarianza inicial es pequeña"
+     ],
+     "corr": "C"
+    },
+    {
+     "enun": "Un publicador y un suscriptor con perfiles de QoS incompatibles…",
+     "ops": [
+      "Funcionan solo en la misma máquina",
+      "No se conectan y no aparece ningún error visible: causa clásica de «no llega nada»",
+      "Se conectan degradando al perfil menor",
+      "Generan una excepción en ambos nodos"
+     ],
+     "corr": "B"
+    },
+    {
+     "enun": "La localización que usa Nav2 (AMCL) es…",
+     "ops": [
+      "GPS diferencial filtrado",
+      "Un EKF sobre balizas artificiales",
+      "El filtro de partículas adaptativo del bloque 6, convertido en un nodo",
+      "Odometría pura de las ruedas"
+     ],
+     "corr": "C"
+    },
+    {
+     "enun": "Un controlador PD sobre un eslabón con gravedad deja error estacionario porque…",
+     "ops": [
+      "El término D amplifica el ruido del encoder",
+      "El modelo del motor es de primer orden",
+      "Sostener el eslabón exige un par no nulo, y el término P solo da par si hay error",
+      "La gravedad hace inestable el lazo"
+     ],
+     "corr": "C"
+    },
+    {
+     "enun": "En el modelo estenopeico, la proyección u = f·X/Z implica que…",
+     "ops": [
+      "Los objetos lejanos se ven más grandes",
+      "Un punto de la imagen corresponde a un rayo completo del espacio: la profundidad se pierde",
+      "La focal no influye en la imagen",
+      "La imagen conserva las distancias métricas de la escena"
+     ],
+     "corr": "B"
+    },
+    {
+     "enun": "En el ciclo del filtro de Bayes, la predicción y la corrección hacen, respectivamente…",
+     "ops": [
+      "Ambas reducen la incertidumbre",
+      "Ambas la dejan igual si el robot no se mueve",
+      "Crecer la incertidumbre (modelo de movimiento) y reducirla (verosimilitud de la medida)",
+      "Reducir la incertidumbre y aumentarla"
+     ],
+     "corr": "C"
+    },
+    {
+     "enun": "Para un LiDAR publicando a 40 Hz, el perfil de QoS razonable es…",
+     "ops": [
+      "Transient local con historial profundo",
+      "Best effort: si se pierde un barrido, llega otro en 25 ms",
+      "Reliable con reintentos ilimitados",
+      "Cualquiera: el QoS no afecta a sensores"
+     ],
+     "corr": "B"
+    },
+    {
+     "enun": "En Nav2, los costmaps se organizan en capas. Las tres típicas son…",
+     "ops": [
+      "Estática (mapa), obstáculos (sensores en vivo) e inflado (margen del robot)",
+      "Global, local y de emergencia",
+      "Planificación, control y recuperación",
+      "LiDAR, cámara y ultrasonidos"
+     ],
+     "corr": "A"
+    }
+   ],
+   "B": {
+    "M": 0.3,
+    "b": 0.1,
+    "zeta": 0.8,
+    "wn": 6.0,
+    "Kp": 10.8,
+    "Kd": 2.78,
+    "Mp": 1.52,
+    "m": 0.6,
+    "r": 0.1,
+    "ess_rad": 0.055,
+    "ess_deg": 3.12
+   },
+   "C": {
+    "x0": 4.0,
+    "P0": 1.2,
+    "Q": 0.4,
+    "R": 0.8,
+    "z": 5.0,
+    "Pm": 1.6,
+    "K": 0.667,
+    "xh": 4.667,
+    "Pp": 0.533
+   },
+   "Dd": {
+    "S": [
+     0,
+     4
+    ],
+    "G": [
+     4,
+     0
+    ],
+    "obs": [
+     [
+      1,
+      3
+     ],
+     [
+      2,
+      3
+     ],
+     [
+      3,
+      3
+     ],
+     [
+      2,
+      1
+     ]
+    ],
+    "hS": 8,
+    "vecinos": [
+     {
+      "celda": [
+       1,
+       4
+      ],
+      "gcost": 1,
+      "h": 7,
+      "f": 8
+     },
+     {
+      "celda": [
+       0,
+       3
+      ],
+      "gcost": 1,
+      "h": 7,
+      "f": 8
+     }
+    ],
+    "expandir": [
+     [
+      1,
+      4
+     ],
+     [
+      0,
+      3
+     ]
+    ],
+    "lopt": 8
+   }
+  },
+  {
+   "version": "F",
+   "test": [
+    {
+     "enun": "En la representación de espacio de estados, el estado x es…",
+     "ops": [
+      "El error entre referencia y salida",
+      "La memoria mínima del sistema: lo que hay que conocer hoy para predecir mañana dadas las entradas",
+      "El vector de salidas medidas por los sensores",
+      "Una variable auxiliar sin significado físico"
+     ],
+     "corr": "B"
+    },
+    {
+     "enun": "En una calibración con tablero de ajedrez, el criterio de calidad habitual es…",
+     "ops": [
+      "Un mínimo de 100 imágenes",
+      "Error de reproyección por debajo de un píxel, con vistas variadas del tablero",
+      "Que el tablero aparezca siempre centrado y frontal",
+      "Que la focal calculada coincida con la nominal"
+     ],
+     "corr": "B"
+    },
+    {
+     "enun": "El riesgo característico del EKF es que…",
+     "ops": [
+      "Necesita conocer la pose inicial exacta",
+      "No admite más de tres estados",
+      "Con no linealidad fuerte o incertidumbre grande puede divergir sin avisar",
+      "Su coste crece exponencialmente con el tiempo"
+     ],
+     "corr": "C"
+    },
+    {
+     "enun": "Una tarea de larga duración que puede querer cancelarse (navegar hasta un punto) se modela en ROS 2 como…",
+     "ops": [
+      "Parámetro dinámico",
+      "Servicio bloqueante",
+      "Acción: objetivo, retroalimentación y cancelación",
+      "Topic de alta frecuencia"
+     ],
+     "corr": "C"
+    },
+    {
+     "enun": "En MoveIt 2, planificar sin planning scene es un error porque…",
+     "ops": [
+      "El robot no puede recibir objetivos",
+      "Se planifica «contra el aire»: sin el modelo del mundo no hay comprobación de colisiones",
+      "La cinemática inversa deja de funcionar",
+      "OMPL no arranca sin escena"
+     ],
+     "corr": "B"
+    },
+    {
+     "enun": "El «windup» del integrador aparece cuando…",
+     "ops": [
+      "El actuador se satura y la integral del error sigue acumulándose",
+      "La referencia cambia lentamente",
+      "La ganancia Kd es demasiado alta",
+      "El periodo de muestreo es demasiado corto"
+     ],
+     "corr": "A"
+    },
+    {
+     "enun": "Los parámetros intrínsecos de una cámara (matriz K)…",
+     "ops": [
+      "Cambian en cada instante con el movimiento",
+      "Solo son necesarios en cámaras estéreo",
+      "Describen la cámara y no cambian al moverla; se calibran una vez",
+      "Incluyen la rotación y traslación respecto al mundo"
+     ],
+     "corr": "C"
+    },
+    {
+     "enun": "El filtro de Kalman mantiene la creencia gaussiana para siempre si…",
+     "ops": [
+      "Las medidas llegan a frecuencia constante",
+      "El robot se mueve despacio",
+      "La covarianza inicial es pequeña",
+      "El sistema es lineal, el ruido gaussiano y la creencia inicial gaussiana"
+     ],
+     "corr": "D"
+    },
+    {
+     "enun": "Un publicador y un suscriptor con perfiles de QoS incompatibles…",
+     "ops": [
+      "Generan una excepción en ambos nodos",
+      "No se conectan y no aparece ningún error visible: causa clásica de «no llega nada»",
+      "Funcionan solo en la misma máquina",
+      "Se conectan degradando al perfil menor"
+     ],
+     "corr": "B"
+    },
+    {
+     "enun": "La localización que usa Nav2 (AMCL) es…",
+     "ops": [
+      "El filtro de partículas adaptativo del bloque 6, convertido en un nodo",
+      "GPS diferencial filtrado",
+      "Odometría pura de las ruedas",
+      "Un EKF sobre balizas artificiales"
+     ],
+     "corr": "A"
+    }
+   ],
+   "B": {
+    "M": 0.8,
+    "b": 0.2,
+    "zeta": 0.7,
+    "wn": 3.5,
+    "Kp": 9.8,
+    "Kd": 3.72,
+    "Mp": 4.6,
+    "m": 1.5,
+    "r": 0.12,
+    "ess_rad": 0.18,
+    "ess_deg": 10.32
+   },
+   "C": {
+    "x0": 0.0,
+    "P0": 1.0,
+    "Q": 0.3,
+    "R": 1.2,
+    "z": 1.5,
+    "Pm": 1.3,
+    "K": 0.52,
+    "xh": 0.78,
+    "Pp": 0.624
+   },
+   "Dd": {
+    "S": [
+     0,
+     0
+    ],
+    "G": [
+     3,
+     4
+    ],
+    "obs": [
+     [
+      1,
+      0
+     ],
+     [
+      1,
+      1
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      3,
+      2
+     ]
+    ],
+    "hS": 7,
+    "vecinos": [
+     {
+      "celda": [
+       0,
+       1
+      ],
+      "gcost": 1,
+      "h": 6,
+      "f": 7
+     }
+    ],
+    "expandir": [
+     [
+      0,
+      1
+     ]
+    ],
+    "lopt": 7
+   }
+  }
+ ],
+ "F": [
+  {
+   "version": "A",
+   "test": [
+    {
+     "enun": "Según De Silva, la mecatrónica es la aplicación sinérgica de mecánica, electrónica, control e informática. ¿Qué significa aquí «sinérgica»?",
+     "ops": [
+      "Que cada subsistema lo diseña un especialista de ese dominio",
+      "Que los subsistemas se conciben y optimizan conjuntamente desde el inicio del diseño",
+      "Que el producto final contiene componentes de todos los dominios",
+      "Que la electrónica sustituye progresivamente a la mecánica"
+     ],
+     "corr": "B"
+    },
+    {
+     "enun": "El primer robot industrial (Unimate) entró en producción en 1961 en…",
+     "ops": [
+      "Una planta de General Motors en Nueva Jersey",
+      "Los laboratorios Bell",
+      "La cadena de montaje de Toyota en Nagoya",
+      "Una fábrica textil de Lyon"
+     ],
+     "corr": "A"
+    },
+    {
+     "enun": "La cifra estrella de los catálogos de robots industriales es la repetibilidad. La exactitud…",
+     "ops": [
+      "No está definida para robots de 6 ejes",
+      "Es mejor que la repetibilidad gracias a la calibración",
+      "Es en general peor, y es la que importa al programar fuera de línea",
+      "Es siempre igual a la repetibilidad"
+     ],
+     "corr": "C"
+    },
+    {
+     "enun": "Para Fraden, un sensor es un dispositivo que…",
+     "ops": [
+      "Recibe un estímulo y responde con una señal eléctrica",
+      "Amplifica señales débiles para el conversor A/D",
+      "Convierte cualquier energía en movimiento",
+      "Almacena la medida en memoria digital"
+     ],
+     "corr": "A"
+    },
+    {
+     "enun": "El factor de galga expresa…",
+     "ops": [
+      "La tensión de alimentación óptima del puente",
+      "El cambio relativo de resistencia por unidad de deformación (dR/R = Se·ε)",
+      "La sensibilidad térmica del adhesivo",
+      "La fuerza máxima que soporta la galga"
+     ],
+     "corr": "B"
+    },
+    {
+     "enun": "La convención de Denavit-Hartenberg describe cada eslabón con…",
+     "ops": [
+      "6 parámetros",
+      "2 parámetros",
+      "3 parámetros",
+      "4 parámetros"
+     ],
+     "corr": "D"
+    },
+    {
+     "enun": "La función de transferencia de un motor DC en velocidad es de primer orden. Al controlar posición…",
+     "ops": [
+      "La constante de tiempo se duplica",
+      "Aparece un cero en el origen que acelera la respuesta",
+      "El sistema pasa a ser de orden cero",
+      "Se añade un integrador: un polo en s = 0, al borde de la estabilidad"
+     ],
+     "corr": "D"
+    },
+    {
+     "enun": "La condición de controlabilidad de Kalman exige que…",
+     "ops": [
+      "Todos los polos sean reales",
+      "A sea invertible",
+      "B tenga tantas columnas como estados",
+      "La matriz [B, AB, A²B, …] tenga rango igual al orden del sistema"
+     ],
+     "corr": "D"
+    },
+    {
+     "enun": "«Los bordes de la imagen no son necesariamente los bordes de los objetos» (Corke). Un ejemplo típico es…",
+     "ops": [
+      "Un objeto sin textura sobre fondo uniforme",
+      "El ruido térmico del sensor",
+      "Una sombra proyectada que produce un gradiente fuerte sin frontera física",
+      "Una imagen sobreexpuesta"
+     ],
+     "corr": "C"
+    },
+    {
+     "enun": "En ROS 2, un nodo es…",
+     "ops": [
+      "Un fichero de configuración del robot",
+      "Un punto del árbol de transformadas",
+      "Un hilo del programa principal",
+      "Un proceso independiente que hace una cosa y se comunica por mensajes"
+     ],
+     "corr": "D"
+    },
+    {
+     "enun": "RRT domina la planificación en alta dimensión porque…",
+     "ops": [
+      "No necesita detectar colisiones",
+      "El árbol crece hacia muestras aleatorias sin discretizar todo el espacio",
+      "Garantiza siempre el camino más corto",
+      "Funciona solo en dos dimensiones"
+     ],
+     "corr": "B"
+    },
+    {
+     "enun": "En la actualización de Q-learning, el corchete r + γ·max Q(s',a') − Q(s,a) es…",
+     "ops": [
+      "El gradiente de la política",
+      "La varianza del retorno",
+      "El error de diferencia temporal: la sorpresa entre lo esperado y lo observado",
+      "La recompensa media del episodio"
+     ],
+     "corr": "C"
+    }
+   ],
+   "caso": "Célula de plegado: un robot de 6 ejes alimenta una plegadora; un operario retira las piezas plegadas de una mesa contigua varias veces por hora.",
+   "C": {
+    "a1": 0.4,
+    "a2": 0.25,
+    "q1": 50,
+    "q2": 35,
+    "x": 0.279,
+    "y": 0.555,
+    "phi": 85,
+    "J": [
+     [
+      -0.555,
+      -0.249
+     ],
+     [
+      0.279,
+      0.022
+     ]
+    ],
+    "detJ": 0.057,
+    "M": 0.4,
+    "b": 0.1,
+    "zeta": 0.8,
+    "wn": 5.0,
+    "Kp": 10.0,
+    "Kd": 3.1
+   },
+   "Dd": {
+    "hit": 0.7,
+    "fa": 0.3,
+    "post1": 0.7,
+    "post2": 0.845
+   },
+   "E": {
+    "Q": 2.0,
+    "r": 1.0,
+    "g": 0.9,
+    "a": 0.5,
+    "maxQ": 3.0,
+    "td": 1.7,
+    "Qn": 2.85
+   }
+  },
+  {
+   "version": "B",
+   "test": [
+    {
+     "enun": "El término «mechatronics» fue acuñado en 1969 por…",
+     "ops": [
+      "Un ingeniero de Yaskawa Electric, en Japón",
+      "Joseph Engelberger, fundador de Unimation",
+      "El MIT, en su laboratorio de servomecanismos",
+      "Karel Čapek, en la obra R.U.R."
+     ],
+     "corr": "A"
+    },
+    {
+     "enun": "El telar de Jacquard (1801) es un hito de la robótica porque…",
+     "ops": [
+      "Fue el primer autómata con realimentación de fuerza",
+      "Era una máquina reprogramable: el programa estaba en tarjetas perforadas",
+      "Introdujo el motor eléctrico en la industria",
+      "Fue el primer dispositivo teleoperado a distancia"
+     ],
+     "corr": "B"
+    },
+    {
+     "enun": "¿Cuántos grados de libertad necesita un manipulador para alcanzar una pose arbitraria (posición y orientación) en el espacio?",
+     "ops": [
+      "3",
+      "8",
+      "6",
+      "4"
+     ],
+     "corr": "C"
+    },
+    {
+     "enun": "Muestreas a 500 Hz una vibración de 400 Hz. ¿Qué observas?",
+     "ops": [
+      "Ruido blanco sin estructura",
+      "La señal atenuada a la mitad de amplitud",
+      "Un alias de baja frecuencia (100 Hz) imposible de deshacer con filtrado digital posterior",
+      "La señal correcta, porque 500 es mayor que 400"
+     ],
+     "corr": "C"
+    },
+    {
+     "enun": "Montar 4 galgas activas en puente de Wheatstone completo sirve para…",
+     "ops": [
+      "Reducir el consumo a la cuarta parte",
+      "Eliminar la necesidad de amplificador",
+      "Compensar la temperatura y cuadruplicar la sensibilidad",
+      "Medir cuatro fuerzas independientes"
+     ],
+     "corr": "C"
+    },
+    {
+     "enun": "La cinemática directa (FK) de un robot serie…",
+     "ops": [
+      "Siempre existe y es única; el problema con solución múltiple es el inverso",
+      "Puede tener hasta ocho soluciones",
+      "Requiere métodos numéricos iterativos",
+      "Solo existe si el robot tiene muñeca esférica"
+     ],
+     "corr": "A"
+    },
+    {
+     "enun": "En un sistema de primer orden, en t = τ (una constante de tiempo) la respuesta al escalón ha alcanzado aproximadamente…",
+     "ops": [
+      "El 50 % del valor final",
+      "El 37 % del valor final",
+      "El 63 % del valor final",
+      "El 95 % del valor final"
+     ],
+     "corr": "C"
+    },
+    {
+     "enun": "En la ecuación del manipulador M(q)·q̈ + C(q,q̇)·q̇ + g(q) = τ, el término que suele dominar es…",
+     "ops": [
+      "La matriz de inercia M(q)",
+      "Los términos de Coriolis",
+      "La fricción viscosa",
+      "La gravedad g(q), que actúa incluso con el robot parado"
+     ],
+     "corr": "D"
+    },
+    {
+     "enun": "¿Cuándo conviene elegir procesado clásico frente a aprendizaje profundo?",
+     "ops": [
+      "Cuando los objetos son deformables y la iluminación variable",
+      "Con escena controlada, exigencia de determinismo y medición metrológica",
+      "Siempre que haya GPU disponible",
+      "Cuando hay millones de imágenes etiquetadas"
+     ],
+     "corr": "B"
+    },
+    {
+     "enun": "ROS 2 no tiene nodo maestro central (a diferencia de ROS 1) porque…",
+     "ops": [
+      "Cada nodo lleva su propio maestro embebido",
+      "Ya no hace falta descubrir nodos",
+      "Se apoya en DDS, un estándar industrial con descubrimiento automático",
+      "El maestro se sustituyó por un servidor web"
+     ],
+     "corr": "C"
+    },
+    {
+     "enun": "En Nav2, los costmaps se organizan en capas. Las tres típicas son…",
+     "ops": [
+      "Global, local y de emergencia",
+      "Planificación, control y recuperación",
+      "Estática (mapa), obstáculos (sensores en vivo) e inflado (margen del robot)",
+      "LiDAR, cámara y ultrasonidos"
+     ],
+     "corr": "C"
+    },
+    {
+     "enun": "Q-learning se llama «libre de modelo» porque…",
+     "ops": [
+      "Funciona sin explorar",
+      "No necesita función de recompensa",
+      "Aprende solo de transiciones observadas (s, a, r, s'), sin conocer las probabilidades de transición",
+      "No usa ninguna estructura de datos"
+     ],
+     "corr": "C"
+    }
+   ],
+   "caso": "Estación de paletizado con un cobot junto a un pasillo peatonal señalizado por el que circulan carretillas y personas.",
+   "C": {
+    "a1": 0.5,
+    "a2": 0.35,
+    "q1": 30,
+    "q2": 55,
+    "x": 0.464,
+    "y": 0.599,
+    "phi": 85,
+    "J": [
+     [
+      -0.599,
+      -0.349
+     ],
+     [
+      0.464,
+      0.031
+     ]
+    ],
+    "detJ": 0.143,
+    "M": 0.5,
+    "b": 0.2,
+    "zeta": 0.7,
+    "wn": 4.0,
+    "Kp": 8.0,
+    "Kd": 2.6
+   },
+   "Dd": {
+    "hit": 0.75,
+    "fa": 0.25,
+    "post1": 0.75,
+    "post2": 0.9
+   },
+   "E": {
+    "Q": 1.5,
+    "r": 0.0,
+    "g": 0.9,
+    "a": 0.4,
+    "maxQ": 2.5,
+    "td": 0.75,
+    "Qn": 1.8
+   }
+  },
+  {
+   "version": "C",
+   "test": [
+    {
+     "enun": "En el diseño secuencial (no acoplado), ¿cuál de estos problemas aparece al interconectar componentes diseñados por separado?",
+     "ops": [
+      "Los componentes quedan automáticamente sobredimensionados por igual",
+      "Sus condiciones de operación cambian y dejan de cumplirse las prestaciones de catálogo",
+      "El coste total siempre disminuye",
+      "Las variables internas pasan a ser externas y más fáciles de medir"
+     ],
+     "corr": "B"
+    },
+    {
+     "enun": "La cirugía robótica actual (tipo Da Vinci) es un ejemplo de…",
+     "ops": [
+      "Robot de fabricación adaptado al quirófano",
+      "Control compartido entre cirujano e inteligencia artificial",
+      "Autonomía supervisada con objetivos de alto nivel",
+      "Teleoperación: el cirujano controla y el robot ejecuta"
+     ],
+     "corr": "D"
+    },
+    {
+     "enun": "Una plataforma con dirección Ackermann (tipo coche) es «no holonómica» porque…",
+     "ops": [
+      "No puede desplazarse lateralmente: sus velocidades posibles están restringidas",
+      "Necesita un mapa para poder moverse",
+      "Su odometría no acumula error",
+      "No puede girar sobre sí misma más de 360 grados"
+     ],
+     "corr": "A"
+    },
+    {
+     "enun": "Repetibilidad y exactitud: ¿cuál es la afirmación correcta?",
+     "ops": [
+      "Son sinónimos en las hojas de datos",
+      "Un sesgo estable (buena repetibilidad, mala exactitud) puede calibrarse; una dispersión aleatoria, no",
+      "La repetibilidad solo se define para sensores digitales",
+      "La exactitud siempre es mejor que la repetibilidad"
+     ],
+     "corr": "B"
+    },
+    {
+     "enun": "La fuerza contraelectromotriz (back-EMF) de un motor DC…",
+     "ops": [
+      "Solo aparece con el rotor bloqueado",
+      "Aumenta el par disponible a alta velocidad",
+      "Es independiente de la velocidad de giro",
+      "Crece con la velocidad y fija la velocidad máxima alcanzable a una tensión dada"
+     ],
+     "corr": "D"
+    },
+    {
+     "enun": "Un 6R industrial con muñeca esférica y offset de hombro tiene, en general, ¿cuántas soluciones de IK para una pose alcanzable?",
+     "ops": [
+      "Infinitas",
+      "8",
+      "4",
+      "2"
+     ],
+     "corr": "B"
+    },
+    {
+     "enun": "La sobreoscilación Mp de un segundo orden subamortiguado depende…",
+     "ops": [
+      "De la amplitud del escalón de entrada",
+      "Del producto ζ·ωn",
+      "Solo de la frecuencia natural ωn",
+      "Solo del amortiguamiento ζ"
+     ],
+     "corr": "D"
+    },
+    {
+     "enun": "Los términos de Coriolis y centrífugos de la dinámica del manipulador…",
+     "ops": [
+      "Solo aparecen en movimiento y crecen con el cuadrado de la velocidad articular",
+      "Son independientes de la configuración",
+      "Actúan también con el robot parado",
+      "Se anulan con una reductora suficientemente grande"
+     ],
+     "corr": "A"
+    },
+    {
+     "enun": "La creencia (belief) de un robot es…",
+     "ops": [
+      "Una distribución de probabilidad sobre su estado, condicionada a medidas y controles pasados",
+      "Su mejor estimación puntual de posición",
+      "El mapa que ha construido hasta el momento",
+      "La covarianza del ruido del sensor"
+     ],
+     "corr": "A"
+    },
+    {
+     "enun": "Para un LiDAR publicando a 40 Hz, el perfil de QoS razonable es…",
+     "ops": [
+      "Cualquiera: el QoS no afecta a sensores",
+      "Transient local con historial profundo",
+      "Best effort: si se pierde un barrido, llega otro en 25 ms",
+      "Reliable con reintentos ilimitados"
+     ],
+     "corr": "C"
+    },
+    {
+     "enun": "La localización que usa Nav2 (AMCL) es…",
+     "ops": [
+      "Odometría pura de las ruedas",
+      "Un EKF sobre balizas artificiales",
+      "El filtro de partículas adaptativo del bloque 6, convertido en un nodo",
+      "GPS diferencial filtrado"
+     ],
+     "corr": "C"
+    },
+    {
+     "enun": "El Q-learning tabular no escala a un brazo de 6 ejes porque…",
+     "ops": [
+      "El descuento no está definido en continuo",
+      "La tabla converge demasiado rápido",
+      "El estado es continuo y de alta dimensión: no cabe en una tabla y discretizar explota combinatoriamente",
+      "Los motores no admiten acciones discretas"
+     ],
+     "corr": "C"
+    }
+   ],
+   "caso": "Célula de pulido: un cobot con herramienta rotativa pule piezas metálicas; el operario recarga la bandeja de piezas cada pocos minutos.",
+   "C": {
+    "a1": 0.6,
+    "a2": 0.35,
+    "q1": 20,
+    "q2": 45,
+    "x": 0.712,
+    "y": 0.522,
+    "phi": 65,
+    "J": [
+     [
+      -0.522,
+      -0.317
+     ],
+     [
+      0.712,
+      0.148
+     ]
+    ],
+    "detJ": 0.148,
+    "M": 0.6,
+    "b": 0.1,
+    "zeta": 0.9,
+    "wn": 3.0,
+    "Kp": 5.4,
+    "Kd": 3.14
+   },
+   "Dd": {
+    "hit": 0.65,
+    "fa": 0.3,
+    "post1": 0.684,
+    "post2": 0.824
+   },
+   "E": {
+    "Q": 0.0,
+    "r": 5.0,
+    "g": 0.8,
+    "a": 0.5,
+    "maxQ": 1.0,
+    "td": 5.8,
+    "Qn": 2.9
+   }
+  },
+  {
+   "version": "D",
+   "test": [
+    {
+     "enun": "El Cociente de Diseño Mecatrónico (MDQ) se define como…",
+     "ops": [
+      "La suma de los índices de diseño eléctrico y mecánico",
+      "El producto de fiabilidad por eficiencia del sistema",
+      "La diferencia entre coste previsto y coste real del prototipo",
+      "Un cociente que compara el índice de diseño del conjunto interconectado con el de los subsistemas aislados"
+     ],
+     "corr": "D"
+    },
+    {
+     "enun": "Un modelo VLA (visión-lenguaje-acción) se caracteriza por…",
+     "ops": [
+      "Generar lenguaje natural que describe lo que ve el robot",
+      "Traducir planos CAD en trayectorias articulares",
+      "Sustituir a los lazos de control de bajo nivel del robot",
+      "Producir acciones motoras a partir de imágenes de cámara e instrucciones en lenguaje natural"
+     ],
+     "corr": "D"
+    },
+    {
+     "enun": "La diferencia clave entre un AGV y un AMR es que el AMR…",
+     "ops": [
+      "No lleva sensores a bordo",
+      "Sigue una banda magnética con mayor precisión",
+      "Navega con un mapa que construye y mantiene, y rodea obstáculos planificando",
+      "Solo funciona en exteriores"
+     ],
+     "corr": "C"
+    },
+    {
+     "enun": "La histéresis de un sensor es…",
+     "ops": [
+      "El tiempo que tarda en estabilizarse la lectura",
+      "La diferencia de salida según el estímulo llegue subiendo o bajando",
+      "La deriva térmica del cero",
+      "El menor incremento de estímulo detectable"
+     ],
+     "corr": "B"
+    },
+    {
+     "enun": "Con una reductora de relación G, la inercia de la carga vista desde el motor…",
+     "ops": [
+      "Se multiplica por G",
+      "Se divide por G²",
+      "Se divide por G",
+      "No cambia"
+     ],
+     "corr": "B"
+    },
+    {
+     "enun": "La condición que permite resolver la IK de un 6R en forma cerrada es…",
+     "ops": [
+      "Que la base esté fija al suelo",
+      "Que todos los eslabones tengan la misma longitud",
+      "Que el robot no tenga reductoras",
+      "Una muñeca esférica: tres ejes que se cortan en un punto, que desacopla posición y orientación"
+     ],
+     "corr": "D"
+    },
+    {
+     "enun": "Un sistema lineal es estable si y solo si…",
+     "ops": [
+      "Todas las raíces del polinomio característico tienen parte real negativa",
+      "No tiene ceros en el semiplano derecho",
+      "Su respuesta en frecuencia es plana",
+      "Su ganancia estática es menor que 1"
+     ],
+     "corr": "A"
+    },
+    {
+     "enun": "El control por par calculado logra, con modelo perfecto, que la dinámica del error sea…",
+     "ops": [
+      "Idéntica a la del PID articular independiente",
+      "No lineal pero estable",
+      "De primer orden en todos los ejes",
+      "Lineal, desacoplada e independiente de la configuración"
+     ],
+     "corr": "D"
+    },
+    {
+     "enun": "En el ciclo del filtro de Bayes, la predicción y la corrección hacen, respectivamente…",
+     "ops": [
+      "Reducir la incertidumbre y aumentarla",
+      "Crecer la incertidumbre (modelo de movimiento) y reducirla (verosimilitud de la medida)",
+      "Ambas la dejan igual si el robot no se mueve",
+      "Ambas reducen la incertidumbre"
+     ],
+     "corr": "B"
+    },
+    {
+     "enun": "Un publicador y un suscriptor con perfiles de QoS incompatibles…",
+     "ops": [
+      "Generan una excepción en ambos nodos",
+      "Funcionan solo en la misma máquina",
+      "No se conectan y no aparece ningún error visible: causa clásica de «no llega nada»",
+      "Se conectan degradando al perfil menor"
+     ],
+     "corr": "C"
+    },
+    {
+     "enun": "En MoveIt 2, planificar sin planning scene es un error porque…",
+     "ops": [
+      "La cinemática inversa deja de funcionar",
+      "OMPL no arranca sin escena",
+      "Se planifica «contra el aire»: sin el modelo del mundo no hay comprobación de colisiones",
+      "El robot no puede recibir objetivos"
+     ],
+     "corr": "C"
+    },
+    {
+     "enun": "PPO se impuso como algoritmo de referencia en robótica porque…",
+     "ops": [
+      "Garantiza el óptimo global",
+      "Funciona sin red neuronal",
+      "Limita cuánto puede cambiar la política en cada paso y tolera hiperparámetros razonables",
+      "No necesita simulación"
+     ],
+     "corr": "C"
+    }
+   ],
+   "caso": "Puesto de inspección compartido: robot y operario trabajan sobre la misma mesa; el robot presenta la pieza y la persona la inspecciona y marca defectos.",
+   "C": {
+    "a1": 0.45,
+    "a2": 0.3,
+    "q1": 40,
+    "q2": 50,
+    "x": 0.345,
+    "y": 0.589,
+    "phi": 90,
+    "J": [
+     [
+      -0.589,
+      -0.3
+     ],
+     [
+      0.345,
+      0.0
+     ]
+    ],
+    "detJ": 0.103,
+    "M": 0.3,
+    "b": 0.1,
+    "zeta": 0.7,
+    "wn": 6.0,
+    "Kp": 10.8,
+    "Kd": 2.42
+   },
+   "Dd": {
+    "hit": 0.8,
+    "fa": 0.3,
+    "post1": 0.727,
+    "post2": 0.877
+   },
+   "E": {
+    "Q": 3.0,
+    "r": -1.0,
+    "g": 0.9,
+    "a": 0.3,
+    "maxQ": 3.0,
+    "td": -1.3,
+    "Qn": 2.61
+   }
+  },
+  {
+   "version": "E",
+   "test": [
+    {
+     "enun": "Un valor de MDQ próximo a 1 indica que…",
+     "ops": [
+      "Los pesos αe y αm están mal elegidos",
+      "El diseño eléctrico domina sobre el mecánico",
+      "El diseño interconectado se acerca al óptimo que cada subsistema lograría aislado",
+      "El sistema es inestable y debe rediseñarse"
+     ],
+     "corr": "C"
+    },
+    {
+     "enun": "En la taxonomía funcional de Corke, los humanoides son un caso interesante porque…",
+     "ops": [
+      "No encajan en ninguna categoría y forman la quinta",
+      "Son siempre robots de fabricación",
+      "Son a la vez robots móviles y de servicio: las categorías no son excluyentes",
+      "Solo existen como plataformas de investigación"
+     ],
+     "corr": "C"
+    },
+    {
+     "enun": "En la ISO 10218:2025, la responsabilidad legal de la evaluación de riesgos de la célula recae en…",
+     "ops": [
+      "El fabricante del robot (Parte 1)",
+      "El organismo notificado que certifica el robot",
+      "El integrador (Parte 2), que diseña y valida la aplicación completa",
+      "El operario que trabaja en la célula"
+     ],
+     "corr": "C"
+    },
+    {
+     "enun": "Los dos canales A y B en cuadratura (90°) de un encoder incremental permiten…",
+     "ops": [
+      "Compensar la temperatura del disco",
+      "Medir la posición absoluta al arrancar",
+      "Duplicar la velocidad máxima medible",
+      "Conocer el sentido de giro y multiplicar por 4 la resolución de cuenta"
+     ],
+     "corr": "D"
+    },
+    {
+     "enun": "En la notación T_AB del curso, la regla de composición T_AC = T_AB · T_BC funciona porque…",
+     "ops": [
+      "Las matrices de pose conmutan entre sí",
+      "El subíndice interior repetido «se cancela» al encadenar poses relativas",
+      "Los marcos son siempre coincidentes en el origen",
+      "La inversa de T es igual a su traspuesta"
+     ],
+     "corr": "B"
+    },
+    {
+     "enun": "En las soluciones analíticas de IK se usa siempre atan2 en lugar de la arcotangente del cociente porque…",
+     "ops": [
+      "atan2 devuelve siempre ángulos positivos",
+      "atan2 conserva el cuadrante del ángulo",
+      "atan2 es más rápida de calcular",
+      "La arcotangente no está definida en radianes"
+     ],
+     "corr": "B"
+    },
+    {
+     "enun": "En la ley PID aplicada a una articulación, Kp y Kd actúan como…",
+     "ops": [
+      "Un muelle y un amortiguador virtuales",
+      "Dos ganancias redundantes con el mismo efecto",
+      "Compensadores de gravedad y de fricción",
+      "Un filtro paso-bajo y otro paso-alto"
+     ],
+     "corr": "A"
+    },
+    {
+     "enun": "En el modelo estenopeico, la proyección u = f·X/Z implica que…",
+     "ops": [
+      "La imagen conserva las distancias métricas de la escena",
+      "Un punto de la imagen corresponde a un rayo completo del espacio: la profundidad se pierde",
+      "La focal no influye en la imagen",
+      "Los objetos lejanos se ven más grandes"
+     ],
+     "corr": "B"
+    },
+    {
+     "enun": "El filtro de Kalman mantiene la creencia gaussiana para siempre si…",
+     "ops": [
+      "El sistema es lineal, el ruido gaussiano y la creencia inicial gaussiana",
+      "El robot se mueve despacio",
+      "Las medidas llegan a frecuencia constante",
+      "La covarianza inicial es pequeña"
+     ],
+     "corr": "A"
+    },
+    {
+     "enun": "Una tarea de larga duración que puede querer cancelarse (navegar hasta un punto) se modela en ROS 2 como…",
+     "ops": [
+      "Topic de alta frecuencia",
+      "Parámetro dinámico",
+      "Acción: objetivo, retroalimentación y cancelación",
+      "Servicio bloqueante"
+     ],
+     "corr": "C"
+    },
+    {
+     "enun": "Los cinco elementos de un MDP son…",
+     "ops": [
+      "Estado, acción, transición, recompensa y descuento",
+      "Sensor, actuador, controlador, planta y referencia",
+      "Entrada, salida, estado, ruido y ganancia",
+      "Política, valor, modelo, crítico y actor"
+     ],
+     "corr": "A"
+    },
+    {
+     "enun": "El RL profundo se entrena en simulación y no directamente en el robot real porque…",
+     "ops": [
+      "Necesita millones de interacciones: en el robot serían años y varios robots rotos",
+      "Los simuladores son más precisos que la realidad",
+      "El hardware real no puede ejecutar redes",
+      "La normativa lo prohíbe"
+     ],
+     "corr": "A"
+    }
+   ],
+   "caso": "Célula de soldadura por puntos con recargas manuales de componentes dos veces por turno; el resto del tiempo la célula trabaja sola.",
+   "C": {
+    "a1": 0.55,
+    "a2": 0.3,
+    "q1": 25,
+    "q2": 65,
+    "x": 0.498,
+    "y": 0.532,
+    "phi": 90,
+    "J": [
+     [
+      -0.532,
+      -0.3
+     ],
+     [
+      0.498,
+      0.0
+     ]
+    ],
+    "detJ": 0.15,
+    "M": 0.7,
+    "b": 0.2,
+    "zeta": 0.8,
+    "wn": 3.5,
+    "Kp": 8.575,
+    "Kd": 3.72
+   },
+   "Dd": {
+    "hit": 0.7,
+    "fa": 0.2,
+    "post1": 0.778,
+    "post2": 0.925
+   },
+   "E": {
+    "Q": 2.5,
+    "r": 2.0,
+    "g": 0.95,
+    "a": 0.5,
+    "maxQ": 2.0,
+    "td": 1.4,
+    "Qn": 3.2
+   }
+  },
+  {
+   "version": "F",
+   "test": [
+    {
+     "enun": "En el bucle de modelado y diseño, la relación v·i = ω·τ expresa que…",
+     "ops": [
+      "La potencia enlaza los dominios eléctrico y mecánico en el transformador ideal",
+      "El rendimiento del motor es del 100 % en régimen permanente",
+      "La corriente y la velocidad son siempre inversamente proporcionales",
+      "La tensión es proporcional al par en cualquier motor"
+     ],
+     "corr": "A"
+    },
+    {
+     "enun": "La diferencia esencial entre un robot industrial clásico y un cobot es que el cobot…",
+     "ops": [
+      "Es siempre más rápido y preciso",
+      "Sustituye el vallado por sensórica y control que garantizan la seguridad ante el contacto",
+      "Solo puede mover cargas inferiores a 1 kg",
+      "No necesita evaluación de riesgos"
+     ],
+     "corr": "B"
+    },
+    {
+     "enun": "El método colaborativo de «limitación de potencia y fuerza» se caracteriza por…",
+     "ops": [
+      "Modular la velocidad según la distancia a la persona",
+      "Permitir mover el robot con la mano para programarlo",
+      "Admitir el contacto persona-robot manteniendo fuerza y presión bajo umbrales biomecánicos",
+      "Detener el robot cuando una persona entra en la célula"
+     ],
+     "corr": "C"
+    },
+    {
+     "enun": "Un encoder incremental de 500 líneas con decodificación x4 tiene una resolución angular de…",
+     "ops": [
+      "0,72 grados",
+      "0,18 grados",
+      "0,045 grados",
+      "1,44 grados"
+     ],
+     "corr": "B"
+    },
+    {
+     "enun": "Una matriz de rotación R pertenece a SO(3) si cumple…",
+     "ops": [
+      "Todos sus elementos entre -1 y 1",
+      "R simétrica y definida positiva",
+      "R traspuesta por R igual a identidad, y determinante +1",
+      "Determinante distinto de cero y traza positiva"
+     ],
+     "corr": "C"
+    },
+    {
+     "enun": "La columna i del jacobiano geométrico J(q) representa…",
+     "ops": [
+      "La posición del eslabón i en el marco del mundo",
+      "La fuerza que ejerce la articulación i en reposo",
+      "La velocidad del efector cuando solo la articulación i se mueve a velocidad unidad",
+      "El error de la articulación i respecto a su consigna"
+     ],
+     "corr": "C"
+    },
+    {
+     "enun": "Un controlador PD sobre un eslabón con gravedad deja error estacionario porque…",
+     "ops": [
+      "La gravedad hace inestable el lazo",
+      "Sostener el eslabón exige un par no nulo, y el término P solo da par si hay error",
+      "El modelo del motor es de primer orden",
+      "El término D amplifica el ruido del encoder"
+     ],
+     "corr": "B"
+    },
+    {
+     "enun": "Los parámetros intrínsecos de una cámara (matriz K)…",
+     "ops": [
+      "Solo son necesarios en cámaras estéreo",
+      "Incluyen la rotación y traslación respecto al mundo",
+      "Describen la cámara y no cambian al moverla; se calibran una vez",
+      "Cambian en cada instante con el movimiento"
+     ],
+     "corr": "C"
+    },
+    {
+     "enun": "El riesgo característico del EKF es que…",
+     "ops": [
+      "Con no linealidad fuerte o incertidumbre grande puede divergir sin avisar",
+      "Necesita conocer la pose inicial exacta",
+      "Su coste crece exponencialmente con el tiempo",
+      "No admite más de tres estados"
+     ],
+     "corr": "A"
+    },
+    {
+     "enun": "La convención REP 105 encadena los marcos como…",
+     "ops": [
+      "map → odom → base_link, con odom→base continua pero derivante y map→odom corrigiendo a saltos",
+      "base_link → map → odom, sin deriva",
+      "map → base_link directamente, sin marco intermedio",
+      "odom → map → base_link, con map fijo al robot"
+     ],
+     "corr": "A"
+    },
+    {
+     "enun": "La mayoría de los fracasos prácticos del RL en robótica provienen de…",
+     "ops": [
+      "Sensores demasiado precisos",
+      "Recompensas mal especificadas que el agente explota de formas imprevistas",
+      "Usar un factor de descuento igual a 1",
+      "Falta de potencia de cálculo"
+     ],
+     "corr": "B"
+    },
+    {
+     "enun": "La aleatorización de dominio (domain randomization) consiste en…",
+     "ops": [
+      "Cambiar el robot en cada episodio real",
+      "Añadir ruido solo a las recompensas",
+      "Entrenar bajo parámetros físicos variables para forzar políticas robustas que crucen la brecha sim-to-real",
+      "Elegir aleatoriamente el algoritmo de RL"
+     ],
+     "corr": "C"
+    }
+   ],
+   "caso": "Zona de kitting: un AMR cruza el área para recoger cajas que un brazo deposita en su plataforma; hay personal de almacén trabajando cerca.",
+   "C": {
+    "a1": 0.5,
+    "a2": 0.3,
+    "q1": 45,
+    "q2": 30,
+    "x": 0.431,
+    "y": 0.643,
+    "phi": 75,
+    "J": [
+     [
+      -0.643,
+      -0.29
+     ],
+     [
+      0.431,
+      0.078
+     ]
+    ],
+    "detJ": 0.075,
+    "M": 0.45,
+    "b": 0.15,
+    "zeta": 0.75,
+    "wn": 4.5,
+    "Kp": 9.113,
+    "Kd": 2.888
+   },
+   "Dd": {
+    "hit": 0.72,
+    "fa": 0.28,
+    "post1": 0.72,
+    "post2": 0.869
+   },
+   "E": {
+    "Q": 1.0,
+    "r": 1.0,
+    "g": 0.9,
+    "a": 0.6,
+    "maxQ": 4.0,
+    "td": 3.6,
+    "Qn": 3.16
+   }
+  }
+ ]
+}

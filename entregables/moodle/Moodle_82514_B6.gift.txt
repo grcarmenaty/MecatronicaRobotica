@@ -1,0 +1,97 @@
+$CATEGORY: $course$/82514/Bloque 6
+
+::B6-01::En el modelo estenopeico, la proyección u \= f·X/Z implica que… {
+=Un punto de la imagen corresponde a un rayo completo del espacio\: la profundidad se pierde
+~La imagen conserva las distancias métricas de la escena
+~Los objetos lejanos se ven más grandes
+~La focal no influye en la imagen
+####La división por Z es la fuente de la ambigüedad de escala (S26).
+}
+
+::B6-02::Los parámetros intrínsecos de una cámara (matriz K)… {
+=Describen la cámara y no cambian al moverla; se calibran una vez
+~Cambian en cada instante con el movimiento
+~Incluyen la rotación y traslación respecto al mundo
+~Solo son necesarios en cámaras estéreo
+####Los extrínsecos (R, t) son el estado que estima la localización (S26).
+}
+
+::B6-03::En una calibración con tablero de ajedrez, el criterio de calidad habitual es… {
+=Error de reproyección por debajo de un píxel, con vistas variadas del tablero
+~Que el tablero aparezca siempre centrado y frontal
+~Un mínimo de 100 imágenes
+~Que la focal calculada coincida con la nominal
+####Vistas solo frontales degradan la estimación de la distorsión (S26, cuaderno S25).
+}
+
+::B6-04::La convolución es la operación base del procesado clásico y además… {
+=Es la misma operación que ejecuta cada capa convolucional de una CNN
+~Solo sirve para suavizar imágenes
+~Es exclusiva de las imágenes en color
+~Fue sustituida por el umbralizado
+####Suavizado, realce y derivadas, y el puente conceptual con el aprendizaje profundo (S27).
+}
+
+::B6-05::«Los bordes de la imagen no son necesariamente los bordes de los objetos» (Corke). Un ejemplo típico es… {
+=Una sombra proyectada que produce un gradiente fuerte sin frontera física
+~Un objeto sin textura sobre fondo uniforme
+~Una imagen sobreexpuesta
+~El ruido térmico del sensor
+####El gradiente marca discontinuidades de intensidad, no de materia (S27).
+}
+
+::B6-06::¿Cuándo conviene elegir procesado clásico frente a aprendizaje profundo? {
+=Con escena controlada, exigencia de determinismo y medición metrológica
+~Siempre que haya GPU disponible
+~Cuando los objetos son deformables y la iluminación variable
+~Cuando hay millones de imágenes etiquetadas
+####Clásico\: transparente, métrico, sin datos de entrenamiento; aprendido\: absorbe variabilidad (S27).
+}
+
+::B6-07::La creencia (belief) de un robot es… {
+=Una distribución de probabilidad sobre su estado, condicionada a medidas y controles pasados
+~Su mejor estimación puntual de posición
+~El mapa que ha construido hasta el momento
+~La covarianza del ruido del sensor
+####El robot no conoce su estado\: mantiene y refina una distribución (S28).
+}
+
+::B6-08::En el ciclo del filtro de Bayes, la predicción y la corrección hacen, respectivamente… {
+=Crecer la incertidumbre (modelo de movimiento) y reducirla (verosimilitud de la medida)
+~Reducir la incertidumbre y aumentarla
+~Ambas reducen la incertidumbre
+~Ambas la dejan igual si el robot no se mueve
+####El latido predicción-corrección es el esqueleto de Kalman, EKF y partículas (S28).
+}
+
+::B6-09::El filtro de Kalman mantiene la creencia gaussiana para siempre si… {
+=El sistema es lineal, el ruido gaussiano y la creencia inicial gaussiana
+~El robot se mueve despacio
+~La covarianza inicial es pequeña
+~Las medidas llegan a frecuencia constante
+####Basta propagar media y covarianza; casi ningún robot real es lineal → EKF (S28).
+}
+
+::B6-10::El riesgo característico del EKF es que… {
+=Con no linealidad fuerte o incertidumbre grande puede divergir sin avisar
+~Su coste crece exponencialmente con el tiempo
+~No admite más de tres estados
+~Necesita conocer la pose inicial exacta
+####La linealización es una aproximación; la gaussiana deja de describir la creencia (S28).
+}
+
+::B6-11::La localización global (pose inicial desconocida) se resuelve mejor con filtro de partículas que con EKF porque… {
+=Las partículas representan creencias multimodales y una gaussiana no
+~Las partículas son más precisas en el seguimiento fino
+~El EKF no admite mapas de balizas
+~El filtro de partículas no necesita modelo de movimiento
+####«Estoy en uno de estos cuatro pasillos idénticos» no cabe en una gaussiana (S29/S30).
+}
+
+::B6-12::El SLAM es un problema «circular» porque… {
+=Para construir el mapa hay que saber dónde está el robot, y para saberlo hace falta el mapa
+~El robot debe recorrer trayectorias cerradas
+~Los sensores giran 360 grados
+~La covarianza es una matriz circular
+####Se resuelven ambos a la vez; el cierre de bucle corrige de golpe la deriva acumulada (S31).
+}

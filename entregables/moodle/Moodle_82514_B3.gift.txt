@@ -1,0 +1,97 @@
+$CATEGORY: $course$/82514/Bloque 3
+
+::B3-01::Para Fraden, un sensor es un dispositivo que… {
+=Recibe un estímulo y responde con una señal eléctrica
+~Convierte cualquier energía en movimiento
+~Amplifica señales débiles para el conversor A/D
+~Almacena la medida en memoria digital
+####Sensor\: estímulo → señal eléctrica; transductor\: energía → energía; actuador\: lo opuesto (S8).
+}
+
+::B3-02::Muestreas a 500 Hz una vibración de 400 Hz. ¿Qué observas? {
+=Un alias de baja frecuencia (100 Hz) imposible de deshacer con filtrado digital posterior
+~La señal correcta, porque 500 es mayor que 400
+~Ruido blanco sin estructura
+~La señal atenuada a la mitad de amplitud
+####Nyquist exige fs ≥ 2·f. El alias aparece en |fs − f| \= 100 Hz y ya no se corrige (S8).
+}
+
+::B3-03::Repetibilidad y exactitud\: ¿cuál es la afirmación correcta? {
+=Un sesgo estable (buena repetibilidad, mala exactitud) puede calibrarse; una dispersión aleatoria, no
+~Son sinónimos en las hojas de datos
+~La exactitud siempre es mejor que la repetibilidad
+~La repetibilidad solo se define para sensores digitales
+####Por eso la repetibilidad es la especificación clave\: el sesgo se corrige por calibración (S8).
+}
+
+::B3-04::La histéresis de un sensor es… {
+=La diferencia de salida según el estímulo llegue subiendo o bajando
+~El tiempo que tarda en estabilizarse la lectura
+~La deriva térmica del cero
+~El menor incremento de estímulo detectable
+####La salida depende del camino (ida o vuelta), una de las 8 características estáticas (S8).
+}
+
+::B3-05::Los dos canales A y B en cuadratura (90°) de un encoder incremental permiten… {
+=Conocer el sentido de giro y multiplicar por 4 la resolución de cuenta
+~Medir la posición absoluta al arrancar
+~Compensar la temperatura del disco
+~Duplicar la velocidad máxima medible
+####El desfase da el sentido; la decodificación x4 cuenta los cuatro flancos (S9).
+}
+
+::B3-06::Un encoder incremental de 500 líneas con decodificación x4 tiene una resolución angular de… {
+=0,18 grados
+~0,72 grados
+~1,44 grados
+~0,045 grados
+####360/(4·500) \= 0,18° (S9).
+}
+
+::B3-07::«Los acelerómetros miden la gravedad y el movimiento del cuerpo a la vez» (Corke). Una consecuencia práctica es que… {
+=En reposo miden g, lo que permite estimar la inclinación
+~En reposo su salida es exactamente cero
+~Solo funcionan en caída libre
+~No sirven para estimar orientación
+####La referencia de gravedad es la base de la estimación de inclinación (S9).
+}
+
+::B3-08::El bias de un giróscopo es el gran enemigo de la navegación inercial porque… {
+=Al integrar dos veces, el error de posición crece cuadráticamente con el tiempo
+~Hace que el sensor se sature enseguida
+~Aparece solo a altas velocidades de giro
+~Impide medir la temperatura interna
+####x_medido \= s·x + b + ruido; b deriva y la doble integración lo amplifica (S9).
+}
+
+::B3-09::El factor de galga expresa… {
+=El cambio relativo de resistencia por unidad de deformación (dR/R \= Se·ε)
+~La fuerza máxima que soporta la galga
+~La sensibilidad térmica del adhesivo
+~La tensión de alimentación óptima del puente
+####Se ≈ 2 en metales; hasta ±150 en silicio con fuerte sensibilidad térmica (S10).
+}
+
+::B3-10::Montar 4 galgas activas en puente de Wheatstone completo sirve para… {
+=Compensar la temperatura y cuadruplicar la sensibilidad
+~Reducir el consumo a la cuarta parte
+~Medir cuatro fuerzas independientes
+~Eliminar la necesidad de amplificador
+####La configuración completa compensa efectos térmicos comunes y suma las cuatro contribuciones (S10).
+}
+
+::B3-11::La fuerza contraelectromotriz (back-EMF) de un motor DC… {
+=Crece con la velocidad y fija la velocidad máxima alcanzable a una tensión dada
+~Solo aparece con el rotor bloqueado
+~Es independiente de la velocidad de giro
+~Aumenta el par disponible a alta velocidad
+####Vb \= Km·ω se opone a la corriente; cuando iguala la tensión, el par cae a cero (S11).
+}
+
+::B3-12::Con una reductora de relación G, la inercia de la carga vista desde el motor… {
+=Se divide por G²
+~Se multiplica por G
+~No cambia
+~Se divide por G
+####Par ×G, velocidad ÷G, inercia reflejada ÷G², el cuadrado es la clave del dimensionado (S12).
+}

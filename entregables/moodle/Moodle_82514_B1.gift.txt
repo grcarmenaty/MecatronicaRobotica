@@ -1,0 +1,97 @@
+$CATEGORY: $course$/82514/Bloque 1
+
+::B1-01::Según De Silva, la mecatrónica es la aplicación sinérgica de mecánica, electrónica, control e informática. ¿Qué significa aquí «sinérgica»? {
+=Que los subsistemas se conciben y optimizan conjuntamente desde el inicio del diseño
+~Que el producto final contiene componentes de todos los dominios
+~Que la electrónica sustituye progresivamente a la mecánica
+~Que cada subsistema lo diseña un especialista de ese dominio
+####Sinergia \= concebir los subsistemas juntos, no yuxtaponerlos. Un producto electromecánico no es automáticamente mecatrónico (S1).
+}
+
+::B1-02::El término «mechatronics» fue acuñado en 1969 por… {
+=Un ingeniero de Yaskawa Electric, en Japón
+~Joseph Engelberger, fundador de Unimation
+~El MIT, en su laboratorio de servomecanismos
+~Karel Čapek, en la obra R.U.R.
+####Lo acuñó Yaskawa (Japón); marca registrada en 1972 y liberada en 1982 (S1).
+}
+
+::B1-03::En el diseño secuencial (no acoplado), ¿cuál de estos problemas aparece al interconectar componentes diseñados por separado? {
+=Sus condiciones de operación cambian y dejan de cumplirse las prestaciones de catálogo
+~El coste total siempre disminuye
+~Los componentes quedan automáticamente sobredimensionados por igual
+~Las variables internas pasan a ser externas y más fáciles de medir
+####La carga y las interacciones dinámicas alteran las condiciones originales; además aparecen variables ocultas (S2).
+}
+
+::B1-04::El Cociente de Diseño Mecatrónico (MDQ) se define como… {
+=Un cociente que compara el índice de diseño del conjunto interconectado con el de los subsistemas aislados
+~La suma de los índices de diseño eléctrico y mecánico
+~El producto de fiabilidad por eficiencia del sistema
+~La diferencia entre coste previsto y coste real del prototipo
+####MDQ \= (αe·Ie² + αm·Im²)/(αe·Iue² + αm·Ium²)\: cociente, no suma (ec. 1.4, De Silva p. 7; S2).
+}
+
+::B1-05::Un valor de MDQ próximo a 1 indica que… {
+=El diseño interconectado se acerca al óptimo que cada subsistema lograría aislado
+~El sistema es inestable y debe rediseñarse
+~Los pesos αe y αm están mal elegidos
+~El diseño eléctrico domina sobre el mecánico
+####El MDQ mide cuánto se acerca el conjunto al ideal de cada dominio (S2).
+}
+
+::B1-06::En el bucle de modelado y diseño, la relación v·i \= ω·τ expresa que… {
+=La potencia enlaza los dominios eléctrico y mecánico en el transformador ideal
+~La tensión es proporcional al par en cualquier motor
+~La corriente y la velocidad son siempre inversamente proporcionales
+~El rendimiento del motor es del 100 % en régimen permanente
+####La potencia eléctrica de entrada iguala la mecánica de salida\: la energía es el hilo unificador (S2).
+}
+
+::B1-07::La definición de robot que usa el curso (Corke) es una máquina orientada a objetivos que puede… {
+=Percibir, planificar y actuar
+~Programarse, calibrarse y repetir
+~Sentir, comunicar y aprender
+~Medir, controlar y registrar
+####La tríada percibir-planificar-actuar organiza toda la asignatura (S3).
+}
+
+::B1-08::Un sensor propioceptivo mide… {
+=El estado del propio robot, como los ángulos articulares o las revoluciones de rueda
+~El mundo exterior respecto al robot, como la distancia a un obstáculo
+~Solo magnitudes eléctricas internas del controlador
+~La posición absoluta del robot mediante balizas externas
+####Propioceptivo \= estado propio (base de la odometría); exteroceptivo \= el mundo (S3).
+}
+
+::B1-09::El primer robot industrial (Unimate) entró en producción en 1961 en… {
+=Una planta de General Motors en Nueva Jersey
+~La cadena de montaje de Toyota en Nagoya
+~Los laboratorios Bell
+~Una fábrica textil de Lyon
+####Patente de Devol + Engelberger\: Unimation; GM, Nueva Jersey, 1961 (S3).
+}
+
+::B1-10::El telar de Jacquard (1801) es un hito de la robótica porque… {
+=Era una máquina reprogramable\: el programa estaba en tarjetas perforadas
+~Fue el primer autómata con realimentación de fuerza
+~Introdujo el motor eléctrico en la industria
+~Fue el primer dispositivo teleoperado a distancia
+####Reprogramable antes de la electrónica; influyó en Babbage y Ada Lovelace (S3).
+}
+
+::B1-11::La cirugía robótica actual (tipo Da Vinci) es un ejemplo de… {
+=Teleoperación\: el cirujano controla y el robot ejecuta
+~Autonomía supervisada con objetivos de alto nivel
+~Control compartido entre cirujano e inteligencia artificial
+~Robot de fabricación adaptado al quirófano
+####Es teleoperada, no autónoma\: heredera de los brazos maestro-esclavo de Goertz (S3).
+}
+
+::B1-12::Un modelo VLA (visión-lenguaje-acción) se caracteriza por… {
+=Producir acciones motoras a partir de imágenes de cámara e instrucciones en lenguaje natural
+~Traducir planos CAD en trayectorias articulares
+~Sustituir a los lazos de control de bajo nivel del robot
+~Generar lenguaje natural que describe lo que ve el robot
+####VLA\: de cámara + instrucción a acciones; las consignas las ejecutan los lazos clásicos (S4/B8).
+}

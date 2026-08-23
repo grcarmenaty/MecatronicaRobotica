@@ -1,0 +1,97 @@
+$CATEGORY: $course$/82514/Bloque 2
+
+::B2-01::En la taxonomía funcional de Corke, los humanoides son un caso interesante porque… {
+=Son a la vez robots móviles y de servicio\: las categorías no son excluyentes
+~No encajan en ninguna categoría y forman la quinta
+~Son siempre robots de fabricación
+~Solo existen como plataformas de investigación
+####Las categorías (fabricación, servicio, campo, humanoides) se solapan (S5).
+}
+
+::B2-02::La diferencia esencial entre un robot industrial clásico y un cobot es que el cobot… {
+=Sustituye el vallado por sensórica y control que garantizan la seguridad ante el contacto
+~Es siempre más rápido y preciso
+~No necesita evaluación de riesgos
+~Solo puede mover cargas inferiores a 1 kg
+####Seguridad por diseño y control en lugar de exclusión física (S5/S7).
+}
+
+::B2-03::La configuración SCARA se caracteriza por ser… {
+=Rígida en vertical y ágil en el plano horizontal\: ideal para ensamblado electrónico
+~Un robot de cadenas cinemáticas cerradas de baja inercia
+~La configuración con mayor espacio de trabajo esférico
+~Un manipulador puramente cartesiano
+####SCARA (RRP)\: rigidez en Z y agilidad plana (S5).
+}
+
+::B2-04::El robot delta alcanza altísimas velocidades porque… {
+=Sus cadenas cinemáticas cerradas dejan los motores en la base y mueven muy poca inercia
+~Usa motores hidráulicos de gran potencia
+~Su espacio de trabajo es mayor que el de un 6R
+~No necesita reductoras
+####Cadenas cerradas, actuadores en la base, poca masa móvil\: envasado y pick and place (S5).
+}
+
+::B2-05::La cifra estrella de los catálogos de robots industriales es la repetibilidad. La exactitud… {
+=Es en general peor, y es la que importa al programar fuera de línea
+~Es siempre igual a la repetibilidad
+~Es mejor que la repetibilidad gracias a la calibración
+~No está definida para robots de 6 ejes
+####Repetibilidad ±0,01–0,05 mm; la exactitud es peor y manda en programación fuera de línea (S5).
+}
+
+::B2-06::¿Cuántos grados de libertad necesita un manipulador para alcanzar una pose arbitraria (posición y orientación) en el espacio? {
+=6
+~3
+~4
+~8
+####3 de posición + 3 de orientación \= 6 (S5/B4).
+}
+
+::B2-07::Una plataforma con dirección Ackermann (tipo coche) es «no holonómica» porque… {
+=No puede desplazarse lateralmente\: sus velocidades posibles están restringidas
+~No puede girar sobre sí misma más de 360 grados
+~Su odometría no acumula error
+~Necesita un mapa para poder moverse
+####La restricción de velocidad condiciona la planificación (aparcar en paralelo) (S6/B7).
+}
+
+::B2-08::La diferencia clave entre un AGV y un AMR es que el AMR… {
+=Navega con un mapa que construye y mantiene, y rodea obstáculos planificando
+~Sigue una banda magnética con mayor precisión
+~No lleva sensores a bordo
+~Solo funciona en exteriores
+####AGV\: infraestructura física y ruta fija; AMR\: SLAM + planificación, mismo hardware, distinto software (S6).
+}
+
+::B2-09::En la ISO 10218\:2025, la responsabilidad legal de la evaluación de riesgos de la célula recae en… {
+=El integrador (Parte 2), que diseña y valida la aplicación completa
+~El fabricante del robot (Parte 1)
+~El operario que trabaja en la célula
+~El organismo notificado que certifica el robot
+####Parte 1 \= robot como componente; Parte 2 \= célula integrada y evaluación de riesgos (S7).
+}
+
+::B2-10::El método colaborativo de «limitación de potencia y fuerza» se caracteriza por… {
+=Admitir el contacto persona-robot manteniendo fuerza y presión bajo umbrales biomecánicos
+~Detener el robot cuando una persona entra en la célula
+~Modular la velocidad según la distancia a la persona
+~Permitir mover el robot con la mano para programarlo
+####Es el método de los cobots con par medido; los umbrales vienen de la ISO/TS 15066 (S7).
+}
+
+::B2-11::La ISO/TS 15066 sigue siendo la referencia para… {
+=Los límites biomecánicos de fuerza y presión por región corporal
+~El marcado CE de máquinas completas
+~La clasificación de robots por carga útil
+~Los requisitos de software de los controladores
+####La revisión 2025 de la ISO 10218 integró sus requisitos; los límites biomecánicos siguen ahí (S7).
+}
+
+::B2-12::En la reducción de riesgos, la jerarquía correcta es… {
+=Eliminar por diseño, después proteger, e informar solo en último lugar
+~Informar primero, proteger después, rediseñar si hay presupuesto
+~Proteger siempre con vallado antes de cualquier otra medida
+~Formar al operario y señalizar\: el diseño no se toca
+####Jerarquía estricta de la ISO 12100\: diseño, protección, información (S7).
+}

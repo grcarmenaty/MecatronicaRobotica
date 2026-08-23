@@ -1,0 +1,97 @@
+$CATEGORY: $course$/82514/Bloque 4
+
+::B4-01::En la notación T_AB del curso, la regla de composición T_AC \= T_AB · T_BC funciona porque… {
+=El subíndice interior repetido «se cancela» al encadenar poses relativas
+~Las matrices de pose conmutan entre sí
+~La inversa de T es igual a su traspuesta
+~Los marcos son siempre coincidentes en el origen
+####Regla mecánica de lectura de subíndices que evita los errores de orden (S13).
+}
+
+::B4-02::Una matriz de rotación R pertenece a SO(3) si cumple… {
+=R traspuesta por R igual a identidad, y determinante +1
+~Determinante distinto de cero y traza positiva
+~Todos sus elementos entre -1 y 1
+~R simétrica y definida positiva
+####Ortonormalidad + det \= +1 (excluye marcos levógiros); además R inversa \= R traspuesta (S13).
+}
+
+::B4-03::El bloqueo de cardán (gimbal lock) ocurre cuando… {
+=Dos ejes de la secuencia de tres ángulos se alinean y se pierde un grado de libertad de representación
+~El robot alcanza el límite físico de una articulación
+~El determinante de la matriz de rotación se hace cero
+~Se usan cuaterniones no unitarios
+####Afecta a TODAS las representaciones de tres ángulos; anécdota del Apolo 13 (S13).
+}
+
+::B4-04::La ventaja decisiva de los cuaterniones unitarios frente a los ángulos de Euler es que… {
+=No tienen singularidad de representación y componen e interpolan de forma barata
+~Usan solo tres números en lugar de cuatro
+~Son más intuitivos para comunicar orientaciones a humanos
+~Evitan tener que normalizar
+####Regla del curso\: matrices para operar, ángulos para comunicar, cuaterniones para interpolar (S13).
+}
+
+::B4-05::La convención de Denavit-Hartenberg describe cada eslabón con… {
+=4 parámetros
+~6 parámetros
+~3 parámetros
+~2 parámetros
+####θ, d, a, α por eslabón\: tabla compacta, el estándar de intercambio desde los años 60 (S14).
+}
+
+::B4-06::La cinemática directa (FK) de un robot serie… {
+=Siempre existe y es única; el problema con solución múltiple es el inverso
+~Puede tener hasta ocho soluciones
+~Solo existe si el robot tiene muñeca esférica
+~Requiere métodos numéricos iterativos
+####FK\: de articulares a pose, única. La multiplicidad es de la IK (S14/S16).
+}
+
+::B4-07::Un 6R industrial con muñeca esférica y offset de hombro tiene, en general, ¿cuántas soluciones de IK para una pose alcanzable? {
+=8
+~2
+~4
+~Infinitas
+####lefty/righty × codo arriba/abajo × muñeca volteada o no \= 8 (S16).
+}
+
+::B4-08::La condición que permite resolver la IK de un 6R en forma cerrada es… {
+=Una muñeca esférica\: tres ejes que se cortan en un punto, que desacopla posición y orientación
+~Que todos los eslabones tengan la misma longitud
+~Que el robot no tenga reductoras
+~Que la base esté fija al suelo
+####El desacoplo posición/orientación estructura la solución analítica (S16).
+}
+
+::B4-09::En las soluciones analíticas de IK se usa siempre atan2 en lugar de la arcotangente del cociente porque… {
+=atan2 conserva el cuadrante del ángulo
+~atan2 es más rápida de calcular
+~La arcotangente no está definida en radianes
+~atan2 devuelve siempre ángulos positivos
+####Regla de oficio del curso\: atan2(y, x), nunca atan(y/x) (S16).
+}
+
+::B4-10::La columna i del jacobiano geométrico J(q) representa… {
+=La velocidad del efector cuando solo la articulación i se mueve a velocidad unidad
+~La fuerza que ejerce la articulación i en reposo
+~La posición del eslabón i en el marco del mundo
+~El error de la articulación i respecto a su consigna
+####La lectura por columnas es la que fija la intuición física del jacobiano (S17).
+}
+
+::B4-11::En una singularidad cinemática… {
+=El efector pierde la capacidad de moverse instantáneamente en una o más direcciones
+~El robot pierde potencia en todos los motores
+~La cinemática directa deja de ser única
+~El jacobiano se hace simétrico
+####J pierde rango; cerca de ella, velocidades cartesianas modestas exigen velocidades articulares enormes (S18).
+}
+
+::B4-12::La relación estática entre la fuerza F en el efector y los pares articulares es τ \= J traspuesta por F. Una propiedad notable es que… {
+=La traspuesta del jacobiano nunca puede ser singular\: la estática funciona incluso en singularidades
+~Solo es válida lejos de singularidades
+~Requiere invertir el jacobiano en cada instante
+~Solo aplica a robots planos de dos eslabones
+####Corke\: «la traspuesta del jacobiano nunca puede ser singular» (S19).
+}
