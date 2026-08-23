@@ -1,0 +1,323 @@
+from nbgen import md, code, cabecera, instalacion, escribir
+
+PKG = [('numpy','numpy'), ('matplotlib','matplotlib'), ('spatialmath-python','spatialmath'),
+       ('roboticstoolbox-python','roboticstoolbox')]
+C = []
+
+C.append(cabecera(
+    "S17", "El jacobiano: cinemática diferencial del 2R al 6R", "4",
+    "miércoles 21 de octubre de 2026", "1 h",
+    "Deduce a mano el jacobiano geométrico del 2R plano, lo valida por diferencias finitas, lo compara columna a columna con el jacob0 de la Robotics Toolbox y lo usa en las dos direcciones: velocidades articulares a velocidad del efector, y velocidad del efector a velocidades articulares (control de movimiento de velocidad resuelta).",
+    "Lynch y Park (2017), cap. 5 — definición de J(q) y su lectura como sensibilidad lineal (p. 171), interpretación columna a columna en el 2R (pp. 171-173), alineación de columnas y pérdida de direcciones (p. 173) y singularidad cinemática frente a representacional (p. 192); Corke (2023), cap. 8 — jacob0 y la velocidad espacial en el marco del mundo (pp. 310-311), jacobiano en el marco del efector (p. 311), jacobiano analítico y singularidad representacional (p. 312), control de movimiento de velocidad resuelta (p. 313), deriva de integración y lazo cerrado (pp. 313-314) y jacobianos no cuadrados o singulares (p. 315).",
+    "los apuntes del bloque 4"))
+
+C.append(instalacion(PKG, """import numpy as np
+import matplotlib.pyplot as plt
+import roboticstoolbox as rtb
+from spatialmath import SE3
+
+np.set_printoptions(precision=4, suppress=True)
+plt.rcParams['figure.figsize'] = (9, 3.4)
+plt.rcParams['axes.grid'] = True
+IQS_AZUL, IQS_VERDE = '#1B2A80', '#1FA355'
+print('roboticstoolbox', rtb.__version__, '- listo.')"""))
+
+C.append(md("""> **Aviso para Colab.** `roboticstoolbox-python` **tarda varios minutos** en instalarse la primera vez. Las secciones 1 y 2 solo necesitan numpy, así que se puede avanzar mientras la celda de instalación termina. Como siempre, **sin `robot.plot()` ni `robot.teach()`**."""))
+
+# ---------------- 1. Derivacion a mano
+C.append(md("""## 1. El jacobiano del 2R, deducido a mano
+
+La cinemática de velocidad pregunta cómo se traducen las velocidades articulares en velocidad del efector. La respuesta es la derivada de la cinemática directa: si `x = f(q)`, la regla de la cadena da
+
+`ẋ = (∂f/∂q)·q̇ = J(q)·q̇`
+
+«donde J(q), perteneciente a R^(m x n), se llama el jacobiano. La matriz jacobiana representa la sensibilidad lineal de la velocidad del efector ẋ a la velocidad articular q̇, y es función de las variables articulares q» (Lynch y Park, 2017, p. 171).
+
+Para el 2R plano de S14, con
+
+```
+x = a1·cos(q1) + a2·cos(q1+q2)
+y = a1·sin(q1) + a2·sin(q1+q2)
+```
+
+derivar es cuestión de media pizarra:
+
+```
+        ⎡ −a1·sin(q1) − a2·sin(q1+q2)   −a2·sin(q1+q2) ⎤
+J(q) =  ⎢                                              ⎥
+        ⎣  a1·cos(q1) + a2·cos(q1+q2)    a2·cos(q1+q2) ⎦
+```
+
+**La lectura que da intuición física es columna a columna:** la columna i de J es la velocidad que adquiere el efector cuando la articulación i gira a velocidad unidad con las demás quietas (Lynch y Park, 2017, pp. 171-173)."""))
+
+C.append(code("""A1, A2 = 1.0, 0.8
+
+def fk_2r(q, a1=A1, a2=A2):
+    q1, q2 = q
+    return np.array([a1*np.cos(q1) + a2*np.cos(q1+q2),
+                     a1*np.sin(q1) + a2*np.sin(q1+q2)])
+
+def jac_2r(q, a1=A1, a2=A2):
+    \"\"\"Jacobiano geometrico (parte traslacional) del 2R plano, deducido a mano.\"\"\"
+    q1, q2 = q
+    s1, c1 = np.sin(q1), np.cos(q1)
+    s12, c12 = np.sin(q1 + q2), np.cos(q1 + q2)
+    return np.array([[-a1*s1 - a2*s12, -a2*s12],
+                     [ a1*c1 + a2*c12,  a2*c12]])
+
+q0 = np.deg2rad([30.0, 50.0])
+J = jac_2r(q0)
+print('q = (30°, 50°)')
+print('J =\\n', J)
+print('\\ncolumna 1 (solo se mueve el hombro):', J[:, 0].round(4),
+      ' modulo', round(float(np.linalg.norm(J[:, 0])), 4))
+print('columna 2 (solo se mueve el codo)  :', J[:, 1].round(4),
+      ' modulo', round(float(np.linalg.norm(J[:, 1])), 4))
+print('\\nEl modulo de la columna 2 es exactamente a2 =', A2,
+      ': el codo mueve la punta sobre un circulo de radio a2.')"""))
+
+C.append(md("""Dibujar las dos columnas sobre el brazo, en dos posturas distintas, es lo que hace visible el concepto. Y de paso adelanta la observación que estructura S18: **cuando las dos columnas se alinean, hay direcciones en las que el efector no puede moverse** (Lynch y Park, 2017, p. 173)."""))
+
+C.append(code("""def puntos_2r(q, a1=A1, a2=A2):
+    q1, q2 = q
+    p0 = np.zeros(2)
+    p1 = p0 + a1*np.array([np.cos(q1), np.sin(q1)])
+    p2 = p1 + a2*np.array([np.cos(q1+q2), np.sin(q1+q2)])
+    return np.vstack([p0, p1, p2])
+
+posturas = [(np.deg2rad([30, 50]), 'postura sana:  q = (30°, 50°)'),
+            (np.deg2rad([30, 6]),  'casi estirada: q = (30°, 6°)')]
+
+fig, axes = plt.subplots(1, 2, figsize=(11, 4.4))
+for ax, (q, titulo) in zip(axes, posturas):
+    P = puntos_2r(q); Jq = jac_2r(q)
+    ax.plot(P[:, 0], P[:, 1], 'o-', lw=3, ms=7, color='black', label='brazo')
+    for k, (col, color) in enumerate(zip(Jq.T, [IQS_AZUL, IQS_VERDE])):
+        ax.arrow(P[-1, 0], P[-1, 1], col[0], col[1], head_width=0.06,
+                 color=color, length_includes_head=True, lw=2)
+        ax.text(P[-1, 0] + 1.08*col[0], P[-1, 1] + 1.08*col[1],
+                f'col {k+1}', color=color, fontsize=9)
+    ang = np.rad2deg(np.arccos(np.clip(
+        Jq[:, 0] @ Jq[:, 1] / (np.linalg.norm(Jq[:, 0])*np.linalg.norm(Jq[:, 1])), -1, 1)))
+    ax.set_title(f'{titulo}\\nángulo entre columnas: {ang:.1f}°   det J = {np.linalg.det(Jq):.4f}',
+                 fontsize=9)
+    ax.set_aspect('equal'); ax.set_xlim(-0.4, 2.1); ax.set_ylim(-0.9, 1.8)
+plt.tight_layout(); plt.show()"""))
+
+# ---------------- 2. Validacion por diferencias finitas
+C.append(md("""## 2. Validación por diferencias finitas
+
+Antes de fiarse de una derivada escrita a mano hay que comprobarla. La forma barata y definitiva es la diferencia finita centrada: perturbar cada articulación un `h` pequeño en los dos sentidos y dividir.
+
+`∂f/∂q_i ≈ (f(q + h·e_i) − f(q − h·e_i)) / (2h)`
+
+Este truco vale para cualquier cinemática, por complicada que sea, y es la comprobación que conviene hacer **siempre** que uno derive un jacobiano nuevo. También merece la pena mirar cómo se comporta el error con `h`: baja como `h²` mientras domina el error de truncamiento y vuelve a subir cuando domina el redondeo."""))
+
+C.append(code("""def jac_diferencias(f, q, h=1e-6):
+    \"\"\"Jacobiano numerico por diferencias finitas centradas.\"\"\"
+    q = np.asarray(q, float)
+    cols = []
+    for i in range(len(q)):
+        e = np.zeros_like(q); e[i] = h
+        cols.append((f(q + e) - f(q - e)) / (2*h))
+    return np.column_stack(cols)
+
+J_num = jac_diferencias(fk_2r, q0)
+print('J analitico =\\n', J)
+print('\\nJ por diferencias finitas =\\n', J_num)
+print('\\nError maximo:', np.abs(J - J_num).max())
+
+print('\\nBarrido del paso h:')
+print(f\"{'h':>10} {'error maximo':>15}\")
+for h in [1e-2, 1e-4, 1e-6, 1e-8, 1e-10, 1e-12]:
+    print(f'{h:>10.0e} {np.abs(J - jac_diferencias(fk_2r, q0, h)).max():>15.3e}')
+print('\\nEl minimo esta cerca de h = 1e-6: por debajo, el redondeo se come la señal.')"""))
+
+C.append(code("""# Y ahora sobre 300 configuraciones aleatorias, para no fiarnos de un solo punto
+rng = np.random.default_rng(17)
+err = [np.abs(jac_2r(q) - jac_diferencias(fk_2r, q)).max()
+       for q in rng.uniform(-np.pi, np.pi, (300, 2))]
+print(f'300 configuraciones aleatorias -> error maximo {max(err):.3e}')
+print('El jacobiano de pizarra es correcto.')"""))
+
+# ---------------- 3. jacob0 de la toolbox
+C.append(md("""## 3. El mismo jacobiano según la toolbox: `jacob0`
+
+«La matriz jacobiana puede calcularse con el método `jacob0` de cualquier objeto robot», y mapea la velocidad articular a la **velocidad espacial** del efector expresada en el marco del mundo (Corke, 2023, pp. 310-311). En 3D esa velocidad es un vector de seis componentes —tres de traslación y tres de rotación— así que `jacob0` devuelve una matriz 6 x n aunque el robot sea plano.
+
+Construimos el 2R como modelo DH de la toolbox y comparamos las dos primeras filas con nuestro jacobiano de pizarra. La sexta fila (ω_z) debe salir `[1, 1]`: las dos articulaciones giran alrededor de z, así que la velocidad angular del efector es la suma de las dos velocidades articulares."""))
+
+C.append(code("""robot2r = rtb.DHRobot([rtb.RevoluteDH(a=A1), rtb.RevoluteDH(a=A2)], name='2R plano')
+print(robot2r)
+
+J6 = robot2r.jacob0(q0)
+print('jacob0 (6 x 2):\\n', J6)
+print('\\nFilas 1-2 (vx, vy) == nuestro J de pizarra?',
+      np.allclose(J6[:2, :], J))
+print('Fila 6 (omega_z) =', J6[5, :], ' -> las dos juntas giran alrededor de z')
+print('Filas 3, 4, 5 (vz, wx, wy) son nulas: el robot es plano.')"""))
+
+C.append(md("""La toolbox ofrece además la misma información expresada en el **marco del efector** (`jacobe`), útil para sensores de fuerza montados en la brida o para mandar velocidades «hacia delante» de la pinza (Corke, 2023, p. 311). Las dos versiones están relacionadas por la rotación del efector: no son jacobianos distintos, es el mismo objeto en otro marco."""))
+
+C.append(code("""Je = robot2r.jacobe(q0)
+R = robot2r.fkine(q0).R
+print('jacobe (marco del efector), filas 1-2:\\n', Je[:2, :])
+print('\\n¿R · jacobe == jacob0 en la parte traslacional?',
+      np.allclose(R[:2, :2] @ Je[:2, :], J6[:2, :]))
+print('\\nEl determinante NO cambia de marco:')
+print('  det de la parte traslacional en el mundo   :', round(float(np.linalg.det(J6[:2, :])), 6))
+print('  det de la parte traslacional en el efector :', round(float(np.linalg.det(Je[:2, :])), 6))
+print('-> la singularidad es un hecho del robot, no de la descripcion')
+print('   (Lynch y Park, 2017, p. 192).')"""))
+
+C.append(md("""**Distinto del geométrico es el jacobiano analítico.** Si la orientación se describe con tres ángulos y se quieren las derivadas de esos ángulos en lugar de la velocidad angular, hay que componer J con la transformación entre ambas tasas, que es singular precisamente donde la parametrización degenera — la «singularidad representacional» (Corke, 2023, p. 312). Es la tercera aparición del mismo fenómeno del bloque, tras el bloqueo de cardán de S13 y la muñeca de S16, y conviene explicitar la distinción: la singularidad representacional es un defecto de la parametrización elegida; la singularidad cinemática de S18 es un hecho mecánico del robot, independiente de la representación (Lynch y Park, 2017, p. 192).
+
+### Ejercicio 1
+
+Deduce a mano el jacobiano del **3R plano** con `a = (1.0, 0.8, 0.4)` para la pose completa `(x, y, θ)` —una matriz 3x3— y valídalo con `jac_diferencias`. Después compáralo con `jacob0` de un `DHRobot` de tres eslabones: ¿qué filas de la matriz 6x3 tienes que mirar?"""))
+
+C.append(code("""# Ejercicio 1
+A3 = np.array([1.0, 0.8, 0.4])
+# def fk_3r(q): ...
+# def jac_3r(q): ..."""))
+
+# ---------------- 4. Las dos direcciones
+C.append(md("""## 4. Las dos direcciones: de articulaciones a efector y al revés
+
+**Hacia delante** (`ẋ = J·q̇`) el jacobiano dice qué velocidad de la punta produce un conjunto de velocidades articulares. La forma más ilustrativa de verlo: mapear el círculo unidad de velocidades articulares `q̇ᵀq̇ = 1` a través de J y mirar la figura que sale. Es una elipse, y su forma es el contenido entero de S18.
+
+**Hacia atrás** (`q̇ = J⁻¹·ν`) el jacobiano dice qué velocidades articulares hay que ordenar para conseguir una velocidad deseada de la punta. Eso es «la esencia del control de movimiento de velocidad resuelta, un algoritmo simple y elegante que genera movimiento del efector a velocidad constante sin requerir cinemática inversa» (Corke, 2023, p. 313)."""))
+
+C.append(code("""theta = np.linspace(0, 2*np.pi, 200)
+circulo = np.vstack([np.cos(theta), np.sin(theta)])       # q_dot de norma 1
+
+fig, axes = plt.subplots(1, 2, figsize=(11, 4.2))
+for ax, (q, titulo) in zip(axes, posturas):
+    V = jac_2r(q) @ circulo                                # velocidades de la punta
+    ax.plot(V[0], V[1], color=IQS_AZUL, lw=2)
+    ax.plot(circulo[0], circulo[1], ':', color='grey', lw=1.2,
+            label='círculo de q̇ (norma 1)')
+    ax.set_aspect('equal'); ax.legend(fontsize=8)
+    ax.set_xlabel('vx (m/s)'); ax.set_ylabel('vy (m/s)')
+    ax.set_title(titulo, fontsize=9)
+plt.tight_layout(); plt.show()
+
+for q, titulo in posturas:
+    s = np.linalg.svd(jac_2r(q), compute_uv=False)
+    print(f'{titulo:>32}  valores singulares = {s.round(4)}  '
+          f'cociente = {s[0]/s[1]:8.2f}')"""))
+
+C.append(md("""Ya se ve el mensaje de S18: en la postura casi estirada la elipse es un puro pincho. Hay una dirección en la que la punta se mueve casi nada por mucho que giren las articulaciones — y, simétricamente, en la otra dirección se mueve mucho.
+
+Ahora la dirección inversa: movemos la punta en línea recta a velocidad constante integrando `q̇ = J⁻¹·ν` en tiempo discreto (Corke, 2023, pp. 313-314). Este esquema, con variantes, es la base del *jogging* cartesiano de cualquier consola de programación industrial."""))
+
+C.append(code("""def velocidad_resuelta(q_ini, v_deseada, dt=0.01, pasos=240, realimentar=False,
+                       p_objetivo_fun=None, kp=5.0):
+    \"\"\"Integra q_dot = J^-1 · v en lazo abierto o con correccion de error de pose.\"\"\"
+    q = np.array(q_ini, float)
+    Q, P, cond = [q.copy()], [fk_2r(q)], []
+    for k in range(pasos):
+        v = np.array(v_deseada, float)
+        if realimentar and p_objetivo_fun is not None:
+            v = v + kp * (p_objetivo_fun((k)*dt) - fk_2r(q))   # lazo cerrado
+        Jq = jac_2r(q)
+        cond.append(np.linalg.cond(Jq))
+        q = q + np.linalg.solve(Jq, v) * dt
+        Q.append(q.copy()); P.append(fk_2r(q))
+    return np.array(Q), np.array(P), np.array(cond)
+
+q_ini = np.deg2rad([40.0, 70.0])
+p_ini = fk_2r(q_ini)
+v_des = np.array([0.25, 0.0])            # 25 cm/s en +x
+
+Q_ab, P_ab, cond_ab = velocidad_resuelta(q_ini, v_des)
+Q_cl, P_cl, _ = velocidad_resuelta(q_ini, v_des, realimentar=True,
+                                   p_objetivo_fun=lambda t: p_ini + v_des*t)
+
+recta = np.array([p_ini + v_des*t for t in np.arange(len(P_ab))*0.01])
+print('Deriva final respecto de la recta ideal:')
+print(f'  lazo abierto : {np.linalg.norm(P_ab[-1] - recta[-1])*1000:7.3f} mm')
+print(f'  lazo cerrado : {np.linalg.norm(P_cl[-1] - recta[-1])*1000:7.3f} mm')"""))
+
+C.append(code("""fig, (a1, a2, a3) = plt.subplots(1, 3, figsize=(12.5, 3.6))
+
+P0 = puntos_2r(q_ini)
+a1.plot(P0[:, 0], P0[:, 1], 'o-', color='black', lw=2, ms=5, label='postura inicial')
+a1.plot(recta[:, 0], recta[:, 1], ':', color='grey', lw=2, label='recta ideal')
+a1.plot(P_ab[:, 0], P_ab[:, 1], color=IQS_AZUL, lw=2, label='lazo abierto')
+a1.plot(P_cl[:, 0], P_cl[:, 1], '--', color=IQS_VERDE, lw=2, label='lazo cerrado')
+a1.set_aspect('equal'); a1.legend(fontsize=7); a1.set_title('Camino de la punta', fontsize=9)
+
+t = np.arange(len(Q_ab))*0.01
+a2.plot(t, np.rad2deg(Q_ab[:, 0]), color=IQS_AZUL, label='q1')
+a2.plot(t, np.rad2deg(Q_ab[:, 1]), color=IQS_VERDE, label='q2')
+a2.set_xlabel('t (s)'); a2.set_ylabel('grados'); a2.legend(fontsize=8)
+a2.set_title('Coordenadas articulares', fontsize=9)
+
+a3.semilogy(t[:-1], cond_ab, color='crimson', lw=2)
+a3.set_xlabel('t (s)'); a3.set_title('número de condición de J', fontsize=9)
+plt.tight_layout(); plt.show()
+
+print('El numero de condicion crece a medida que el brazo se estira:')
+print(f'  al empezar: {cond_ab[0]:.2f}   al terminar: {cond_ab[-1]:.2f}')
+print('Esa subida es el aviso de que nos acercamos a una singularidad (S18).')"""))
+
+C.append(md("""**Los dos avisos que hay que dejar dichos.** Primero, la versión en lazo abierto acumula **deriva de integración**: nada en el algoritmo mira dónde está realmente la punta, así que el error crece sin freno; se corrige realimentando el error de pose (Corke, 2023, pp. 313-314), que es lo que hace la variante en verde. Segundo, el algoritmo exige que J sea cuadrado e invertible: «hasta ahora hemos supuesto que el jacobiano es cuadrado y no singular, pero en la práctica no siempre es el caso» (Corke, 2023, p. 315). Qué pasa cuando no lo es se responde en S18.
+
+### Ejercicio 2
+
+Lanza `velocidad_resuelta` desde `q_ini = np.deg2rad([40, 8])` —el brazo casi estirado— con la misma velocidad deseada y mira qué pasa con las velocidades articulares. ¿Qué valor alcanza el número de condición? ¿Es un fallo del algoritmo o del robot?
+
+### Ejercicio 3
+
+Calcula el jacobiano del PUMA 560 en `qn` con `puma.jacob0(puma.qn)` y responde: (a) ¿cuánto vale su determinante? (b) si quiero mover la punta a 0.1 m/s en +z sin girarla, ¿qué velocidades articulares hacen falta? (c) ¿cuál de las seis articulaciones tiene que ir más rápido, y tiene sentido geométrico?"""))
+
+C.append(code("""# Ejercicio 2
+# Q_s, P_s, cond_s = velocidad_resuelta(np.deg2rad([40, 8]), v_des)
+
+# Ejercicio 3
+puma = rtb.models.DH.Puma560()
+Jp = puma.jacob0(puma.qn)
+print('J del PUMA en qn (6x6):\\n', Jp.round(4))
+# nu = np.array([0, 0, 0.1, 0, 0, 0])
+# ..."""))
+
+# ---------------- Soluciones
+C.append(md("""---
+
+## Soluciones
+
+**Ejercicio 1.** Con `c1 = cos(q1)`, `c12 = cos(q1+q2)`, `c123 = cos(q1+q2+q3)` y análogos para el seno:
+
+```python
+def jac_3r(q, a=A3):
+    ac = np.cumsum(q)
+    s, c = np.sin(ac), np.cos(ac)
+    J = np.zeros((3, 3))
+    for i in range(3):                       # columna i: solo cuentan los eslabones i..2
+        J[0, i] = -sum(a[k]*s[k] for k in range(i, 3))
+        J[1, i] =  sum(a[k]*c[k] for k in range(i, 3))
+        J[2, i] = 1.0
+    return J
+```
+
+El patrón triangular —la columna i solo suma los eslabones que cuelgan de la articulación i— es la traducción algebraica de la lectura física: girar una articulación arrastra solo lo que está por delante de ella. En la matriz 6x3 de `jacob0` hay que mirar las **filas 1, 2 y 6** (vx, vy, ω_z); las otras tres son idénticamente nulas porque el robot es plano.
+
+**Ejercicio 2.** El número de condición arranca ya por encima de 15 y crece hasta varios cientos; las velocidades articulares se disparan, especialmente la del codo, y el brazo hace un movimiento brusco para salir de la zona mala. No es un fallo del algoritmo: `np.linalg.solve` está resolviendo correctamente un sistema mal condicionado. **Es un hecho del robot.** En esa postura hay una dirección cartesiana que el 2R no puede recorrer sin velocidades articulares enormes, porque las dos columnas de J son casi paralelas. Un controlador industrial en esa situación reduce la velocidad de avance o rechaza la trayectoria; ninguna sofisticación numérica arregla una singularidad mecánica.
+
+**Ejercicio 3.** (a) `np.linalg.det(Jp)` vale −0.0786 y el número de condición, 7.88: `qn` no es una postura singular, pero tampoco es isótropa ni mucho menos. (b) `qd = np.linalg.solve(Jp, [0, 0, 0.1, 0, 0, 0])` da aproximadamente `(0, 0.172, −0.008, 0, −0.164, 0)` rad/s. (c) La articulación más rápida es la **2**, el hombro, que es la que realmente levanta el brazo; pero justo detrás va la **5**, una de la muñeca, con una velocidad casi igual y de signo contrario. La lectura geométrica es limpia: el hombro sube la punta y la muñeca tiene que deshacer, grado a grado, la rotación que ese giro del hombro introduce en la herramienta, porque hemos pedido velocidad angular nula. Que dos articulaciones grandes se cancelen para producir un movimiento pequeño es la firma de una postura mal condicionada, y es exactamente lo que el elipsoide de manipulabilidad de S18 va a cuantificar."""))
+
+C.append(md("""---
+
+## Para llevarse de esta sesión
+
+El jacobiano es **la matriz más reutilizada del bloque**. La misma `J(q)` conecta la cinemática directa diferencial de hoy, la IK numérica de S16 (que la usa para linealizar en cada iteración), las singularidades y la manipulabilidad de S18 (que estudian cuándo pierde rango y cómo deforma) y la estática de S19 (que la traspone). Merece la pena decirlo explícitamente en clase: no son cuatro temas, es un objeto visto de cuatro maneras.
+
+De la deducción hay que llevarse la lectura columna a columna: **la columna i es la velocidad que la articulación i, ella sola, imprime al efector**. Con esa lectura, todo lo demás se razona sin fórmulas: si dos columnas se alinean, el robot ha perdido una dirección; si una columna es corta, esa articulación tiene poca autoridad sobre la punta.
+
+Y la disciplina de trabajo: **valida siempre un jacobiano nuevo con diferencias finitas**. Cuesta cuatro líneas, no requiere entender la cinemática y detecta el 100 % de los errores de signo. Es, de largo, la mejor relación esfuerzo-beneficio de todo el bloque.
+
+*Cuaderno del curso 82514 Mecatrónica y Robótica · IQS Universitat Ramon Llull · curso 2026/27*"""))
+
+escribir('82514_S17_Jacobiano.ipynb', C)
+print('escrito S17')
