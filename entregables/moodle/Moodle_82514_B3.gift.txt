@@ -56,7 +56,7 @@ $CATEGORY: $course$/82514/Bloque 3
 ####La referencia de gravedad es la base de la estimación de inclinación (S9).
 }
 
-::B3-08::El bias de un giróscopo es el gran enemigo de la navegación inercial porque… {
+::B3-08::El bias de un acelerómetro es el gran enemigo de la navegación inercial porque… {
 =Al integrar dos veces, el error de posición crece cuadráticamente con el tiempo
 ~Hace que el sensor se sature enseguida
 ~Aparece solo a altas velocidades de giro

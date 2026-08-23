@@ -8,7 +8,7 @@ C.append(cabecera(
     "S19", "Estática, dualidad fuerza-velocidad y generación de trayectorias", "4",
     "viernes 23 de octubre de 2026", "2 h",
     "Cierra el bloque con las dos aplicaciones que reutilizan todo lo anterior: la estática tau = J^T·F, con el elipsoide de fuerzas como dual exacto del de manipulabilidad, y la generación de trayectorias punto a punto con polinomio quíntico y perfil trapezoidal, en espacio articular y en espacio cartesiano, monitorizando la manipulabilidad a lo largo del camino.",
-    "Lynch y Park (2017), cap. 5 — deducción de tau = J^T·f_tip por conservación de potencia, ecuación 5.3 (pp. 174-175), elipsoide de fuerza y semiejes recíprocos (pp. 176-177), la maleta pesada y el elipsoide de fuerza infinito en la singularidad (p. 177) y llaves de fuerza (p. 190); cap. 9 — camino frente a ley temporal (p. 325), s(t) de [0, T] a [0, 1] (p. 326), polinomio cúbico (p. 329), quíntico más suave (p. 330), perfil trapezoidal (pp. 330-331), tiempo mínimo (pp. 331-332), degeneración en triángulo bang-bang (p. 331) y jerk infinito (p. 333); Corke (2023) — quíntico con seis condiciones de contorno (pp. 98-99), trapezoidal (p. 100), interpolación de pose (p. 105), jtraj (p. 286), ctraj (p. 287), caída de manipulabilidad en la trayectoria cartesiana (p. 289), Q = J^T·w y el par de hombro (p. 324) y la traspuesta nunca es singular (p. 325).",
+    "Lynch y Park (2017), cap. 5 — deducción de tau = J^T·f_tip por conservación de potencia, ecuación 5.3 (pp. 174-175), elipsoide de fuerza y semiejes recíprocos (pp. 176-177), la maleta pesada y el elipsoide de fuerza infinito en la singularidad (p. 177) y torsores (wrench) (p. 190); cap. 9 — camino frente a ley temporal (p. 325), s(t) de [0, T] a [0, 1] (p. 326), polinomio cúbico (p. 329), quíntico más suave (p. 330), perfil trapezoidal (pp. 330-331), tiempo mínimo (pp. 331-332), degeneración en triángulo bang-bang (p. 331) y jerk infinito (p. 333); Corke (2023) — quíntico con seis condiciones de contorno (pp. 98-99), trapezoidal (p. 100), interpolación de pose (p. 105), jtraj (p. 286), ctraj (p. 287), caída de manipulabilidad en la trayectoria cartesiana (p. 289), Q = J^T·w y el par de hombro (p. 324) y la traspuesta nunca es singular (p. 325).",
     "los apuntes del bloque 4"))
 
 C.append(instalacion(PKG, """import numpy as np
@@ -36,7 +36,7 @@ Sustituyendo `v_tip = J(q)·q̇` y exigiendo que la igualdad valga para **toda**
 
 `tau = Jᵀ(q)·f_tip`   (ecuación 5.3; Lynch y Park, 2017, pp. 174-175)
 
-La versión general con llaves de fuerza (*wrenches*) de seis componentes es idéntica (Lynch y Park, 2017, p. 190): en notación de Corke, una llave `w = (fx, fy, fz, mx, my, mz)` aplicada en el efector y expresada en el marco del mundo se transforma al espacio articular como `Q = Jᵀ(q)·w` (Corke, 2023, p. 324).
+La versión general con torsores (*wrenches*) de seis componentes es idéntica (Lynch y Park, 2017, p. 190): en notación de Corke, un torsor (wrench) `w = (fx, fy, fz, mx, my, mz)` aplicado en el efector y expresado en el marco del mundo se transforma al espacio articular como `Q = Jᵀ(q)·w` (Corke, 2023, p. 324).
 
 Empezamos por el 2R, donde el resultado se puede comprobar con el momento de una fuerza."""))
 
@@ -113,7 +113,7 @@ print(f'Par de hombro maximo: {abs(taus[j_max,0]):.2f} N·m con q2 = {np.rad2deg
 print(f'Par de hombro minimo: {abs(taus[j_min,0]):.2f} N·m con q2 = {np.rad2deg(q2s[j_min]):.0f}°')
 print(f'Factor entre el caso peor y el mejor: {abs(taus[j_max,0]/taus[j_min,0]):.1f}x')"""))
 
-C.append(md("""**Y la observación más sutil de la sesión.** «El mapeo entre una llave aplicada al efector y la fuerza articular generalizada involucra la traspuesta del jacobiano, y **esta nunca puede ser singular**» (Corke, 2023, p. 325). A diferencia del mapeo de velocidades, la estática **no explota** en las singularidades: `Jᵀ` siempre existe y siempre da un par finito. Lo que explota es su *inversa* —el problema de «qué fuerza puedo ejercer con estos pares»—, que es exactamente lo que formaliza la dualidad de la sección siguiente."""))
+C.append(md("""**Y la observación más sutil de la sesión.** «El mapeo entre un torsor aplicado al efector y la fuerza articular generalizada involucra la traspuesta del jacobiano, y **esta nunca puede ser singular**» (Corke, 2023, p. 325). A diferencia del mapeo de velocidades, la estática **no explota** en las singularidades: `Jᵀ` siempre existe y siempre da un par finito. Lo que explota es su *inversa* —el problema de «qué fuerza puedo ejercer con estos pares»—, que es exactamente lo que formaliza la dualidad de la sección siguiente."""))
 
 C.append(code("""q_sing = np.deg2rad([20.0, 0.0])        # brazo estirado: J es singular
 J_s = jac_2r(q_sing)

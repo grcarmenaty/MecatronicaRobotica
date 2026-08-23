@@ -41,7 +41,7 @@ Sobre ella, el PID:
 - La derivada se calcula **sobre la salida**, no sobre el error, porque la referencia cambia a saltos y su derivada dispararía el mando (De Silva et al., 2016, p. 95). Por eso en el código aparece `− Kd·θ̇`.
 - El actuador no es ideal: le ponemos una constante de tiempo `τ_a = 20 ms`, que representa el lazo de corriente del amplificador — el polo eléctrico que en S20 despreciamos. Sin ella la planta sería un segundo orden puro y **ningún** valor de `Kp` la desestabilizaría, cosa que no ocurre en ningún laboratorio del mundo. Esta adición es didáctica y no procede de los libros del bloque (sin cita de libro), pero es la que hace que la sesión se parezca al banco de pruebas.
 
-**Objetivo del taller:** llevar el eslabón de `θ = −π/2` a `θ = 0` con sobreimpulso inferior al 5 % y tiempo de establecimiento por debajo de 1.5 s, primero sin saturación y después con ella."""))
+**Objetivo del taller:** llevar el eslabón de `θ = −π/2` a `θ = 0` con sobreoscilación inferior al 5 % y tiempo de establecimiento por debajo de 1.5 s, primero sin saturación y después con ella."""))
 
 C.append(code("""M, m, r, b, g = 0.5, 1.0, 0.1, 0.1, 9.81   # Lynch y Park, 2017, p. 422
 TAU_A = 0.02          # constante de tiempo del actuador (lazo de corriente)
@@ -74,7 +74,7 @@ def simula(Kp, Ki, Kd, th0=TH0, thd=THD, tau_max=None, antiwindup=None,
     return log
 
 def metricas(log, th0=TH0, thd=THD, tol=0.02):
-    \"\"\"Sobreimpulso [%], tiempo de establecimiento al 2 % [s] y error final [rad].\"\"\"
+    \"\"\"Sobreoscilación [%], tiempo de establecimiento al 2 % [s] y error final [rad].\"\"\"
     t, th = log[:, 0], log[:, 1]
     salto = abs(thd - th0)
     Mp = 100*max(0.0, (th.max() - thd)/salto)
@@ -156,7 +156,7 @@ ax.set_xlabel('t [s]'); ax.set_ylabel('theta [rad]')
 ax.set_title(f'PD con Kp = {KP_TALLER:.0f}: el derivativo es lo que hace posible ganancia alta')
 ax.legend(fontsize=8); plt.tight_layout(); plt.show()"""))
 
-C.append(md("""Con `Kd = 0` y `Kp = 16` el lazo es un desastre; con el `Kd` crítico, cero sobreimpulso. Pero el error estacionario sigue ahí: **el derivativo no lo toca**, porque en reposo `θ̇ = 0` y su contribución es nula.
+C.append(md("""Con `Kd = 0` y `Kp = 16` el lazo es un desastre; con el `Kd` crítico, cero sobreoscilación. Pero el error estacionario sigue ahí: **el derivativo no lo toca**, porque en reposo `θ̇ = 0` y su contribución es nula.
 
 Ese error solo lo elimina el **integral**, que «permite par de sostén con error cero, pues basta con que la integral acumulada sea no nula» (Lynch y Park, 2017, p. 424). El precio es que la dinámica del error pasa a tercer orden, `M·e⁽³⁾ + (b+Kd)·ë + Kp·ė + Ki·e = 0`, con una **doble cota** de estabilidad:
 
@@ -178,7 +178,7 @@ for Ki, col in zip([0.0, 0.5, 2.0, 8.0, 30.0], plt.cm.viridis(np.linspace(0, 0.8
     print(f'{Ki:8.1f} {Mp:9.1f} {ts:9.2f} {ess:19.4f}')
 ax.axhline(THD, color='grey', ls=':', lw=1)
 ax.set_xlabel('t [s]'); ax.set_ylabel('theta [rad]'); ax.set_ylim(-1.8, 0.6)
-ax.set_title('El integral mata el error estacionario... y trae sobreimpulso')
+ax.set_title('El integral mata el error estacionario... y trae sobreoscilación')
 ax.legend(fontsize=8); plt.tight_layout(); plt.show()
 
 lg = simula(KP_TALLER, Ki_max, Kd_critico)
@@ -236,7 +236,7 @@ ax.set_xlabel('t [s]'); ax.set_ylabel('theta [rad]')
 ax.set_title('Ziegler-Nichols sobre la articulación con gravedad')
 ax.legend(fontsize=8); plt.tight_layout(); plt.show()"""))
 
-C.append(md("""**Interpretación honrada del resultado, que es lo que hay que discutir en clase.** Ziegler-Nichols da un lazo que funciona —el PID elimina el error estacionario y responde deprisa— pero con un sobreimpulso enorme. No es un fallo del método: Z-N está pensado para plantas de proceso autorreguladas y su criterio de diseño clásico es la razón de decaimiento de un cuarto, que es de por sí bastante oscilatoria; sobre una planta con integrador como la nuestra sale todavía más agresivo. **Es un punto de partida, no un punto de llegada**, y el propio De Silva lo presenta como «un juego inicial de ganancias» (2016, pp. 98-99).
+C.append(md("""**Interpretación honrada del resultado, que es lo que hay que discutir en clase.** Ziegler-Nichols da un lazo que funciona —el PID elimina el error estacionario y responde deprisa— pero con una sobreoscilación enorme. No es un fallo del método: Z-N está pensado para plantas de proceso autorreguladas y su criterio de diseño clásico es la razón de decaimiento de un cuarto, que es de por sí bastante oscilatoria; sobre una planta con integrador como la nuestra sale todavía más agresivo. **Es un punto de partida, no un punto de llegada**, y el propio De Silva lo presenta como «un juego inicial de ganancias» (2016, pp. 98-99).
 
 El refinamiento a mano es el que ya hemos justificado: `Kp` tan alto como el actuador permita, `Kd` para amortiguamiento crítico, `Ki` el mínimo que quite el error estacionario en un tiempo razonable. Comparemos las dos sintonías contra la especificación del taller."""))
 
@@ -346,7 +346,7 @@ a1.legend(fontsize=8, loc='lower right')
 a2.set_xlabel('t [s]'); a2.set_ylabel('integral del error'); a2.set_title('Integral acumulada')
 plt.tight_layout(); plt.show()"""))
 
-C.append(md("""**La conclusión del taller, en una frase:** el anti-windup no acelera el actuador —el tramo saturado dura exactamente lo mismo en las cuatro curvas— pero elimina el sobreimpulso parásito que el integrador ciego añadía. Y fíjate en el detalle que más sorprende a los estudiantes: con integración condicional el lazo saturado se establece **antes** que el lazo sin límite de par. No es magia: la saturación amortigua el transitorio agresivo que la sintonía pedía, y una vez retirado el windup lo que queda es una respuesta más suave.
+C.append(md("""**La conclusión del taller, en una frase:** el anti-windup no acelera el actuador —el tramo saturado dura exactamente lo mismo en las cuatro curvas— pero elimina la sobreoscilación parásita que el integrador ciego añadía. Y fíjate en el detalle que más sorprende a los estudiantes: con integración condicional el lazo saturado se establece **antes** que el lazo sin límite de par. No es magia: la saturación amortigua el transitorio agresivo que la sintonía pedía, y una vez retirado el windup lo que queda es una respuesta más suave.
 
 Es el ejemplo perfecto del principio con el que arrancó el curso en el bloque 1: **el controlador debe modelar también las limitaciones de su propio hardware**. Un PID que ignora su actuador es un PID a medias.
 
@@ -364,9 +364,9 @@ C.append(md("""---
 
 ## Soluciones
 
-**Ejercicio 1.** No hay contradicción: son dos cosas distintas. Con la banda del 5 % el tiempo de establecimiento **empeora** al subir `Ki` (más sobreimpulso, más oscilación: la tabla de De Silva tiene razón); con la banda del 0.5 % **mejora**, porque sin integrador el error estacionario de gravedad es de 0.06 rad y el lazo nunca entra en una banda tan estrecha — el tiempo de establecimiento es infinito por definición. La moraleja de taller es que **el tiempo de establecimiento no significa nada si no se dice la tolerancia**, y que un indicador mal definido puede hacer que un ajuste peor parezca mejor. Es exactamente el tipo de discusión que conviene tener antes de escribir una especificación en un pliego.
+**Ejercicio 1.** No hay contradicción: son dos cosas distintas. Con la banda del 5 % el tiempo de establecimiento **empeora** al subir `Ki` (más sobreoscilación, más oscilación: la tabla de De Silva tiene razón); con la banda del 0.5 % **mejora**, porque sin integrador el error estacionario de gravedad es de 0.06 rad y el lazo nunca entra en una banda tan estrecha — el tiempo de establecimiento es infinito por definición. La moraleja de taller es que **el tiempo de establecimiento no significa nada si no se dice la tolerancia**, y que un indicador mal definido puede hacer que un ajuste peor parezca mejor. Es exactamente el tipo de discusión que conviene tener antes de escribir una especificación en un pliego.
 
-**Ejercicio 2.** Z-N PI da `Kp = 0.45·Ku ≈ 2.26` y `Kd = 0`. Entonces `ζ = (b + 0)/(2·√(Kp·M)) = 0.1/(2·√1.13) = 0.047`: prácticamente **sin amortiguamiento**. En el simulador el eslabón llega a pasar por encima del punto más alto y sigue girando: el sobreimpulso medido supera el 200 %. Ocurre porque lo único que amortigua esta planta es la fricción viscosa del eje, que es minúscula, y el integrador aún empuja mientras el eslabón se acerca. En una planta de proceso con constante de tiempo dominante y amortiguamiento propio, el PI de Z-N funciona razonablemente; en un servo mecánico de baja fricción, el término derivativo no es opcional. De ahí la práctica industrial de robots: PD o PID con `Kd` grande, nunca PI.
+**Ejercicio 2.** Z-N PI da `Kp = 0.45·Ku ≈ 2.26` y `Kd = 0`. Entonces `ζ = (b + 0)/(2·√(Kp·M)) = 0.1/(2·√1.13) = 0.047`: prácticamente **sin amortiguamiento**. En el simulador el eslabón llega a pasar por encima del punto más alto y sigue girando: la sobreoscilación medida supera el 200 %. Ocurre porque lo único que amortigua esta planta es la fricción viscosa del eje, que es minúscula, y el integrador aún empuja mientras el eslabón se acerca. En una planta de proceso con constante de tiempo dominante y amortiguamiento propio, el PI de Z-N funciona razonablemente; en un servo mecánico de baja fricción, el término derivativo no es opcional. De ahí la práctica industrial de robots: PD o PID con `Kd` grande, nunca PI.
 
 **Ejercicio 3.** Con `τ_max = 1.0 N·m` el tramo saturado se alarga, el windup empeora en el caso sin protección y las dos protecciones siguen funcionando, aunque el establecimiento se retrasa: el actuador ya no tiene margen para acelerar. Con `τ_max = 0.9 N·m` el sistema **no puede alcanzar la referencia**, porque sostener el eslabón en `θ = 0` requiere 0.98 N·m y el actuador solo da 0.9: se queda parado en el ángulo donde el par máximo iguala el par de gravedad, `cos θ = 0.9/0.98`, es decir unos 23° por debajo. Ningún anti-windup lo arregla porque no es un problema de control sino de **dimensionado del actuador**: el punto de operación deseado está fuera del espacio alcanzable. Es la comprobación que hay que hacer antes de sintonizar nada — y la que en los proyectos se olvida primero."""))
 

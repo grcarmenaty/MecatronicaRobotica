@@ -346,7 +346,7 @@
    "La referencia de gravedad es la base de la estimación de inclinación (S9)."
   ],
   [
-   "El bias de un giróscopo es el gran enemigo de la navegación inercial porque…",
+   "El bias de un acelerómetro es el gran enemigo de la navegación inercial porque…",
    [
     "Al integrar dos veces, el error de posición crece cuadráticamente con el tiempo",
     "Hace que el sensor se sature enseguida",
@@ -526,13 +526,13 @@
   [
    "La relación estática entre la fuerza F en el efector y los pares articulares es τ = J traspuesta por F. Una propiedad notable es que…",
    [
-    "La traspuesta del jacobiano nunca puede ser singular: la estática funciona incluso en singularidades",
+    "No requiere invertir el jacobiano: la estática sigue definida incluso en singularidades",
     "Solo es válida lejos de singularidades",
     "Requiere invertir el jacobiano en cada instante",
     "Solo aplica a robots planos de dos eslabones"
    ],
    0,
-   "Corke: «la traspuesta del jacobiano nunca puede ser singular» (S19)."
+   "τ = Jᵀ·F no requiere invertir J: la estática no explota en singularidades (Corke, 2023, p. 325; S19)."
   ]
  ],
  "5": [

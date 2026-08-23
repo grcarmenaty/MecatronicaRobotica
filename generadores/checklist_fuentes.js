@@ -91,7 +91,7 @@ children.push(tabla(
  ],
  [1750, 3150, 4460]
 ));
-children.push(p("Se menciona además AlexNet (Krizhevsky et al., 2012, NeurIPS), que no tiene versión en arXiv, y el informe técnico de Gemini Robotics (Google DeepMind, 2025), que se publica en el blog de investigación de DeepMind y no lleva identificador de arXiv."));
+children.push(p("Se menciona además AlexNet (Krizhevsky et al., 2012, NeurIPS), que no tiene versión en arXiv, y el informe técnico de Gemini Robotics (Google DeepMind, 2025), disponible también en arXiv (2503.20020)."));
 
 children.push(new Paragraph({ children: [new PageBreak()] }));
 children.push(h1("5. Falta: un libro de acceso libre"));

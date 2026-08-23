@@ -546,7 +546,7 @@
      "corr": "C"
     },
     {
-     "enun": "El bias de un giróscopo es el gran enemigo de la navegación inercial porque…",
+     "enun": "El bias de un acelerómetro es el gran enemigo de la navegación inercial porque…",
      "ops": [
       "Hace que el sensor se sature enseguida",
       "Aparece solo a altas velocidades de giro",
@@ -743,7 +743,7 @@
      "enun": "La relación estática entre la fuerza F en el efector y los pares articulares es τ = J traspuesta por F. Una propiedad notable es que…",
      "ops": [
       "Solo aplica a robots planos de dos eslabones",
-      "La traspuesta del jacobiano nunca puede ser singular: la estática funciona incluso en singularidades",
+      "No requiere invertir el jacobiano: la estática sigue definida incluso en singularidades",
       "Solo es válida lejos de singularidades",
       "Requiere invertir el jacobiano en cada instante"
      ],

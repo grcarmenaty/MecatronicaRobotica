@@ -208,7 +208,7 @@ children.push(pRuns([
 ]));
 children.push(pRuns([
  { text: "El robot quirúrgico. ", bold: true },
- { text: "Vienen dos errores previsibles: colocarlo en autonomía alta y no saber qué configuración asignarle. El primero se corrige con la fuente, que ya se ha dado dos veces, es teleoperación (Corke, 2023, p. 7), y a la tercera conviene preguntar quién puede explicarlo, en lugar de explicarlo uno mismo. El segundo se aprovecha para el espacio de tareas: la tarea se expresa naturalmente en el interior del paciente, y esa definición «la decide la tarea, independientemente del robot», mientras el espacio de trabajo «la decide principalmente la estructura del robot, independientemente de la tarea» (Lynch y Park, 2017, pp. 32-33). Es el mejor ejemplo de la sesión para esa pareja de conceptos." },
+ { text: "Vienen dos errores previsibles: colocarlo en autonomía alta y no saber qué configuración asignarle. El primero se corrige con la fuente, que ya se ha dado dos veces, es teleoperación (Corke, 2023, p. 7), y a la tercera conviene preguntar quién puede explicarlo, en lugar de explicarlo uno mismo. El segundo se aprovecha para el espacio de tareas: la tarea se expresa naturalmente en el interior del paciente, y esa definición «la decide la tarea, independientemente del robot», mientras la del espacio de trabajo «la decide principalmente la estructura del robot, independientemente de la tarea» (Lynch y Park, 2017, pp. 32-33). Es el mejor ejemplo de la sesión para esa pareja de conceptos." },
 ]));
 children.push(pRuns([
  { text: "El cobot. ", bold: true },

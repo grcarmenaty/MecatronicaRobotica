@@ -89,9 +89,9 @@ $CATEGORY: $course$/82514/Bloque 4
 }
 
 ::B4-12::La relación estática entre la fuerza F en el efector y los pares articulares es τ \= J traspuesta por F. Una propiedad notable es que… {
-=La traspuesta del jacobiano nunca puede ser singular\: la estática funciona incluso en singularidades
+=No requiere invertir el jacobiano\: la estática sigue definida incluso en singularidades
 ~Solo es válida lejos de singularidades
 ~Requiere invertir el jacobiano en cada instante
 ~Solo aplica a robots planos de dos eslabones
-####Corke\: «la traspuesta del jacobiano nunca puede ser singular» (S19).
+####τ \= Jᵀ·F no requiere invertir J\: la estática no explota en singularidades (Corke, 2023, p. 325; S19).
 }

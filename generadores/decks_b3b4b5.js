@@ -535,7 +535,7 @@ slideFotos(p4, "Del PUMA al laboratorio", "S13–S15 · Manipuladores reales", [
  fill: "E3F7EC", bodySize: 12.5,
  });
  s.addNotes("Explorar el bloqueo de cardán con la demo interactiva tripleangledemo del taller. Señalar la ambigüedad de convenciones RPY (ZYX frente a XYZ) como fuente clásica de errores al integrar hardware. Conectar Rodrigues con el producto de exponenciales de S14.");
- footer(s, "Corke, 2023, pp. 48-59 · Lynch y Park, 2017, pp. 77-84");
+ footer(s, "Corke, 2023, pp. 48-59 · Lynch y Park, 2017, ap. B, pp. 575-582");
 }
 
 {
@@ -961,7 +961,7 @@ slideFotos(p5, "El actuador por dentro y las tres letras", "S20–S22 · Motor y
  ], { w: 6.9, size: 12.5, h: 0.9 });
  eqImg(s, "motor3", 1.15, 2.5, 4.7, 1.55);
  bullets(s, [
- { t: "Reducción a primer orden: la constante de tiempo eléctrica « la mecánica (Lynch y Park, p. 310):" },
+ { t: "Reducción a primer orden: la constante de tiempo eléctrica « la mecánica (De Silva et al., p. 91):" },
  ], { y: 4.3, w: 6.9, size: 12.5, h: 0.65 });
  eqImg(s, "reduccion", 1.15, 4.98, 4.9, 0.62);
  bullets(s, [
@@ -978,7 +978,7 @@ slideFotos(p5, "El actuador por dentro y las tres letras", "S20–S22 · Motor y
  fill: "E3F7EC", bodySize: 12.5,
  });
  s.addNotes("Experimento mental de la back-EMF: girar el eje a mano con el motor desconectado y medir Kt·ω en bornes (Lynch y Park p. 308). Dos caminos hacia el modelo: derivación física o identificación de la respuesta medida, el HDD del libro obtiene la misma planta por ambas vías (De Silva pp. 88-89).");
- footer(s, "De Silva et al., 2016, pp. 88-91 · Lynch y Park, 2017, pp. 306-311 · Corke, 2023, pp. 346-348");
+ footer(s, "De Silva et al., 2016, pp. 88-91 · Lynch y Park, 2017, pp. 306-311 · Corke, 2023, pp. 334-341");
 }
 
 {
@@ -1182,7 +1182,7 @@ sectionSlide(p5, "S24", "Dinámica y par calculado", "Euler-Lagrange · M(q)·q�
  });
  card(s, 0.7, 3.9, 11.9, 0.9, {
  title: "",
- body: "Con linealización ideal, la dinámica del error es ë + Kv·ė + Kp·e = 0: lineal, desacoplada e independiente de la configuración (Corke, ec. 9.17). Es «control por dinámica inversa: un sistema no lineal en cascada con su inverso, de ganancia unidad» (Corke, p. 359).",
+ body: "Con linealización ideal, la dinámica del error es ë + Kv·ė + Kp·e = 0: lineal, desacoplada e independiente de la configuración (Corke, ec. 9.17). Es «control por dinámica inversa: un sistema no lineal en cascada con su inverso, de ganancia unidad» (Corke, pp. 359-360).",
  fill: "E3F7EC", bodySize: 11.5,
  });
  card(s, 0.7, 5.0, 5.9, 1.7, {

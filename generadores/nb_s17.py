@@ -76,7 +76,7 @@ print('columna 2 (solo se mueve el codo)  :', J[:, 1].round(4),
 print('\\nEl modulo de la columna 2 es exactamente a2 =', A2,
       ': el codo mueve la punta sobre un circulo de radio a2.')"""))
 
-C.append(md("""Dibujar las dos columnas sobre el brazo, en dos posturas distintas, es lo que hace visible el concepto. Y de paso adelanta la observación que estructura S18: **cuando las dos columnas se alinean, hay direcciones en las que el efector no puede moverse** (Lynch y Park, 2017, p. 173)."""))
+C.append(md("""Dibujar las dos columnas sobre el brazo, en dos posturas distintas, es lo que hace visible el concepto. Y de paso adelanta la observación que estructura S18: **cuando las dos columnas se alinean, hay direcciones en las que el efector no puede moverse** (Lynch y Park, 2017, p. 172)."""))
 
 C.append(code("""def puntos_2r(q, a1=A1, a2=A2):
     q1, q2 = q

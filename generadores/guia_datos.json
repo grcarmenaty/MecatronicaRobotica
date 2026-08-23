@@ -831,8 +831,8 @@
    "ejercicios": [
     {
      "n": 1,
-     "enunciado": "Dada `G(s) = 25/(s² + 4s + 25)`, calcula **a mano** `ωn`, `ζ`, el sobreimpulso y el tiempo de establecimiento aproximado. Después verifica con `ct.step_info` y discute las discrepancias.",
-     "solucion": "Comparando `s² + 4s + 25` con `s² + 2ζωn·s + ωn²`: `ωn = √25 = 5 rad/s` y `2ζωn = 4`, luego `ζ = 0.4`. Sobreimpulso `e^(−π·0.4/√(1−0.16))·100 = 25.4 %`, y `ts ≈ 4.6/(ζ·ωn) = 4.6/2 = 2.3 s`. `ct.step_info` devuelve `Overshoot ≈ 25.3 %`, la fórmula del sobreimpulso es exacta, y `SettlingTime ≈ 1.71 s`, sensiblemente menor que la regla. La razón: la regla `4.6/(ζωn)` está construida sobre la **envolvente** exponencial `e^(−ζωn·t)`, y da el instante en que la envolvente entra en la banda del 2 %; la señal real puede entrar antes, porque el coseno que la modula pasa por cero. La regla es conservadora, que es como debe ser una regla de diseño."
+     "enunciado": "Dada `G(s) = 25/(s² + 4s + 25)`, calcula **a mano** `ωn`, `ζ`, la sobreoscilación y el tiempo de establecimiento aproximado. Después verifica con `ct.step_info` y discute las discrepancias.",
+     "solucion": "Comparando `s² + 4s + 25` con `s² + 2ζωn·s + ωn²`: `ωn = √25 = 5 rad/s` y `2ζωn = 4`, luego `ζ = 0.4`. Sobreoscilación `e^(−π·0.4/√(1−0.16))·100 = 25.4 %`, y `ts ≈ 4.6/(ζ·ωn) = 4.6/2 = 2.3 s`. `ct.step_info` devuelve `Overshoot ≈ 25.3 %`, la fórmula de la sobreoscilación es exacta, y `SettlingTime ≈ 1.71 s`, sensiblemente menor que la regla. La razón: la regla `4.6/(ζωn)` está construida sobre la **envolvente** exponencial `e^(−ζωn·t)`, y da el instante en que la envolvente entra en la banda del 2 %; la señal real puede entrar antes, porque el coseno que la modula pasa por cero. La regla es conservadora, que es como debe ser una regla de diseño."
     },
     {
      "n": 2,
@@ -841,8 +841,8 @@
     },
     {
      "n": 3,
-     "enunciado": "Encuentra, con `scipy.optimize.brentq` sobre `ct.margin`, el valor de `Kp` que deja el lazo con **exactamente 45° de margen de fase** para `G_th3`. Después cierra el lazo con ese `Kp` y comprueba con `ct.step_info` el sobreimpulso real. ¿Se cumple la regla `ζ ≈ PM/100`?",
-     "solucion": "El valor es `Kp ≈ 0.51`. Con él, `ct.step_info` sobre el lazo cerrado da un sobreimpulso en torno al 21-23 %, frente al 20.5 % que predice la regla con `ζ = 0.45`. La coincidencia es buena porque, con esa ganancia, los dos polos lentos del lazo cerrado dominan y el polo rápido en `−794` no participa del transitorio. Si repites el ejercicio con `PM = 20°`, la predicción se degrada: cuanto más se acerca el lazo a la inestabilidad, menos válida es la aproximación de segundo orden dominante."
+     "enunciado": "Encuentra, con `scipy.optimize.brentq` sobre `ct.margin`, el valor de `Kp` que deja el lazo con **exactamente 45° de margen de fase** para `G_th3`. Después cierra el lazo con ese `Kp` y comprueba con `ct.step_info` la sobreoscilación real. ¿Se cumple la regla `ζ ≈ PM/100`?",
+     "solucion": "El valor es `Kp ≈ 0.51`. Con él, `ct.step_info` sobre el lazo cerrado da una sobreoscilación en torno al 21-23 %, frente al 20.5 % que predice la regla con `ζ = 0.45`. La coincidencia es buena porque, con esa ganancia, los dos polos lentos del lazo cerrado dominan y el polo rápido en `−794` no participa del transitorio. Si repites el ejercicio con `PM = 20°`, la predicción se degrada: cuanto más se acerca el lazo a la inestabilidad, menos válida es la aproximación de segundo orden dominante."
     }
    ]
   },
@@ -857,12 +857,12 @@
     {
      "n": 1,
      "enunciado": "La tabla de De Silva dice que subir `Ki` «acelera la respuesta y degrada la estabilidad» (2016, p. 98, tabla 4.1). En el barrido de arriba, sin embargo, el **tiempo de establecimiento mejora** al pasar de `Ki = 0.5` a `Ki = 2`. ¿Contradice esto la tabla? Repite el barrido midiendo por separado el tiempo hasta entrar en la banda del 5 % y el tiempo hasta el 0.5 %, y explica qué está midiendo cada uno.",
-     "solucion": "No hay contradicción: son dos cosas distintas. Con la banda del 5 % el tiempo de establecimiento **empeora** al subir `Ki` (más sobreimpulso, más oscilación: la tabla de De Silva tiene razón); con la banda del 0.5 % **mejora**, porque sin integrador el error estacionario de gravedad es de 0.06 rad y el lazo nunca entra en una banda tan estrecha, el tiempo de establecimiento es infinito por definición. La moraleja de taller es que **el tiempo de establecimiento no significa nada si no se dice la tolerancia**, y que un indicador mal definido puede hacer que un ajuste peor parezca mejor. Es exactamente el tipo de discusión que conviene tener antes de escribir una especificación en un pliego."
+     "solucion": "No hay contradicción: son dos cosas distintas. Con la banda del 5 % el tiempo de establecimiento **empeora** al subir `Ki` (más sobreoscilación, más oscilación: la tabla de De Silva tiene razón); con la banda del 0.5 % **mejora**, porque sin integrador el error estacionario de gravedad es de 0.06 rad y el lazo nunca entra en una banda tan estrecha, el tiempo de establecimiento es infinito por definición. La moraleja de taller es que **el tiempo de establecimiento no significa nada si no se dice la tolerancia**, y que un indicador mal definido puede hacer que un ajuste peor parezca mejor. Es exactamente el tipo de discusión que conviene tener antes de escribir una especificación en un pliego."
     },
     {
      "n": 2,
      "enunciado": "Aplica Ziegler-Nichols en su variante **PI** y explica por qué, sobre esta planta, el PI es notablemente peor que el PID. Relaciónalo con la fórmula `ζ = (b + Kd)/(2·√(Kp·M))`: ¿qué vale `ζ` cuando `Kd = 0` y `Kp = 0.45·Ku`?",
-     "solucion": "Z-N PI da `Kp = 0.45·Ku ≈ 2.26` y `Kd = 0`. Entonces `ζ = (b + 0)/(2·√(Kp·M)) = 0.1/(2·√1.13) = 0.047`: prácticamente **sin amortiguamiento**. En el simulador el eslabón llega a pasar por encima del punto más alto y sigue girando: el sobreimpulso medido supera el 200 %. Ocurre porque lo único que amortigua esta planta es la fricción viscosa del eje, que es minúscula, y el integrador aún empuja mientras el eslabón se acerca. En una planta de proceso con constante de tiempo dominante y amortiguamiento propio, el PI de Z-N funciona razonablemente; en un servo mecánico de baja fricción, el término derivativo no es opcional. De ahí la práctica industrial de robots: PD o PID con `Kd` grande, nunca PI."
+     "solucion": "Z-N PI da `Kp = 0.45·Ku ≈ 2.26` y `Kd = 0`. Entonces `ζ = (b + 0)/(2·√(Kp·M)) = 0.1/(2·√1.13) = 0.047`: prácticamente **sin amortiguamiento**. En el simulador el eslabón llega a pasar por encima del punto más alto y sigue girando: la sobreoscilación medida supera el 200 %. Ocurre porque lo único que amortigua esta planta es la fricción viscosa del eje, que es minúscula, y el integrador aún empuja mientras el eslabón se acerca. En una planta de proceso con constante de tiempo dominante y amortiguamiento propio, el PI de Z-N funciona razonablemente; en un servo mecánico de baja fricción, el término derivativo no es opcional. De ahí la práctica industrial de robots: PD o PID con `Kd` grande, nunca PI."
     },
     {
      "n": 3,

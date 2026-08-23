@@ -209,13 +209,13 @@ C.append(code("""# Ejercicio 1
 # ---------------- 4. PoE
 C.append(md("""## 4. La tercera vía: el producto de exponenciales
 
-Lynch y Park describen la misma cinemática sin ninguna tabla. La observación de partida: con el robot en su **configuración de casa** (todas las variables articulares a cero), cada articulación aplica al resto de la cadena un movimiento de husillo exponencial alrededor de su propio eje. El resultado es la fórmula del producto de exponenciales:
+Lynch y Park describen la misma cinemática sin ninguna tabla. La observación de partida: con el robot en su **configuración de casa** (todas las variables articulares a cero), cada articulación aplica al resto de la cadena un movimiento helicoidal exponencial alrededor de su propio eje. El resultado es la fórmula del producto de exponenciales:
 
 `T(q) = e^([S1]·q1) · e^([S2]·q2) · ... · e^([Sn]·qn) · M`   (ecuación 4.14; Lynch y Park, 2017, p. 142)
 
-Solo hacen falta tres ingredientes: la pose `M` del efector con el robot en casa, los ejes de husillo `S_i` expresados en el marco fijo en esa configuración, y las variables articulares. La ventaja que Lynch y Park subrayan: «a diferencia de la representación D-H, no es necesario definir marcos de eslabón» (2017, p. 142); los ejes se leen directamente del dibujo del robot en casa.
+Solo hacen falta tres ingredientes: la pose `M` del efector con el robot en casa, los ejes helicoidales `S_i` expresados en el marco fijo en esa configuración, y las variables articulares. La ventaja que Lynch y Park subrayan: «a diferencia de la representación D-H, no es necesario definir marcos de eslabón» (2017, p. 142); los ejes se leen directamente del dibujo del robot en casa.
 
-Para el 2R plano: `M = Tx(a1 + a2)`; ambos ejes son giros alrededor de z, el primero por el origen y el segundo por el punto `(a1, 0)`. Un eje de husillo se escribe `S = (v, w)` con `w` la dirección del eje y `v = −w × p`, donde `p` es un punto del eje. La conexión con S13 es directa: `e^([S]·q)` se calcula con la fórmula de Rodrigues extendida a SE(3) (Lynch y Park, 2017, p. 84)."""))
+Para el 2R plano: `M = Tx(a1 + a2)`; ambos ejes son giros alrededor de z, el primero por el origen y el segundo por el punto `(a1, 0)`. Un eje helicoidal se escribe `S = (v, w)` con `w` la dirección del eje y `v = −w × p`, donde `p` es un punto del eje. La conexión con S13 es directa: `e^([S]·q)` se calcula con la fórmula de Rodrigues extendida a SE(3) (Lynch y Park, 2017, p. 84)."""))
 
 C.append(code("""def poe_2r(q, a1=A1, a2=A2):
     \"\"\"Producto de exponenciales del 2R plano (Lynch y Park, 2017, p. 142).\"\"\"
@@ -236,11 +236,11 @@ err = max(np.abs(poe_2r(qq).A - fk_dh(TABLA_2R, qq).A).max()
           for qq in rng.uniform(-np.pi, np.pi, (100, 2)))
 print(f'\\nError maximo PoE vs DH en 100 configuraciones aleatorias: {err:.3e}')"""))
 
-C.append(md("""**Cuándo usar cada una.** La ETS y la trigonometría se leen directamente de la geometría; DH es el formato compacto para intercambiar modelos y el que documentan los controladores industriales; el PoE es el que se conecta mejor con el análisis de velocidad, porque las columnas del jacobiano de S17 serán precisamente estos mismos ejes de husillo transformados a la configuración actual. Las tres describen el mismo objeto matemático y **deben dar exactamente la misma T(q)** — que es lo que acabamos de verificar tres veces.
+C.append(md("""**Cuándo usar cada una.** La ETS y la trigonometría se leen directamente de la geometría; DH es el formato compacto para intercambiar modelos y el que documentan los controladores industriales; el PoE es el que se conecta mejor con el análisis de velocidad, porque las columnas del jacobiano de S17 serán precisamente estos mismos ejes helicoidales transformados a la configuración actual. Las tres describen el mismo objeto matemático y **deben dar exactamente la misma T(q)** — que es lo que acabamos de verificar tres veces.
 
 ### Ejercicio 3
 
-Escribe el PoE del 3R plano (tres ejes z, situados en el origen, en `(a1, 0)` y en `(a1+a2, 0)`, con `M = Tx(a1+a2+a3)`) y compáralo con `fk_nr_mano` en 100 configuraciones aleatorias. Después dibuja los tres ejes de husillo sobre la figura del brazo **en la configuración de casa** y explica por qué no hace falta ningún marco de eslabón."""))
+Escribe el PoE del 3R plano (tres ejes z, situados en el origen, en `(a1, 0)` y en `(a1+a2, 0)`, con `M = Tx(a1+a2+a3)`) y compáralo con `fk_nr_mano` en 100 configuraciones aleatorias. Después dibuja los tres ejes helicoidales sobre la figura del brazo **en la configuración de casa** y explica por qué no hace falta ningún marco de eslabón."""))
 
 C.append(code("""# Ejercicio 3
 # def poe_3r(q, a=A):
@@ -270,7 +270,7 @@ def poe_3r(q, a=A):
     return T * M
 ```
 
-El error frente a `fk_nr_mano` vuelve a ser de redondeo. La razón de que no haga falta ningún marco de eslabón es que **cada eje de husillo se describe en el marco fijo, en la configuración de casa**: no se propaga ninguna descripción a lo largo de la cadena, sino que se compone la acción de cada articulación sobre todo lo que cuelga de ella. Dibujar los tres ejes sobre el brazo estirado lo hace evidente: los ejes son tres puntos alineados sobre el eje x, con la misma dirección z. Ahí es donde el PoE gana en robustez de modelado — y donde se paga en aparato matemático."""))
+El error frente a `fk_nr_mano` vuelve a ser de redondeo. La razón de que no haga falta ningún marco de eslabón es que **cada eje helicoidal se describe en el marco fijo, en la configuración de casa**: no se propaga ninguna descripción a lo largo de la cadena, sino que se compone la acción de cada articulación sobre todo lo que cuelga de ella. Dibujar los tres ejes sobre el brazo estirado lo hace evidente: los ejes son tres puntos alineados sobre el eje x, con la misma dirección z. Ahí es donde el PoE gana en robustez de modelado — y donde se paga en aparato matemático."""))
 
 C.append(md("""---
 
@@ -280,7 +280,7 @@ La cinemática directa **no tiene dificultad conceptual**: es una cadena de pose
 
 Lo que sí hay que llevarse es la lectura crítica de cada convención. DH es un formato de intercambio nacido en 1955 y sigue vivo porque cabe en cuatro columnas de una tabla; su precio son las reglas de asignación de marcos y las variantes incompatibles (estándar frente a modificada) que producen tablas que no se pueden mezclar. El PoE evita esas reglas y conecta de forma natural con la cinemática de velocidad, pero exige el aparato exponencial de S13.
 
-Y una observación de la que tirará todo el bloque: al escribir la FK hemos construido, sin decirlo, el objeto que derivaremos en S17. `x = f(q)` es la función; su jacobiana `J(q) = df/dq` es el jacobiano, y sus columnas serán los ejes de husillo del PoE vistos desde la configuración actual.
+Y una observación de la que tirará todo el bloque: al escribir la FK hemos construido, sin decirlo, el objeto que derivaremos en S17. `x = f(q)` es la función; su jacobiana `J(q) = df/dq` es el jacobiano, y sus columnas serán los ejes helicoidales del PoE vistos desde la configuración actual.
 
 *Cuaderno del curso 82514 Mecatrónica y Robótica · IQS Universitat Ramon Llull · curso 2026/27*"""))
 

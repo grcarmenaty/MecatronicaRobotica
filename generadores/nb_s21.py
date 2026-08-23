@@ -6,8 +6,8 @@ C = []
 C.append(cabecera(
     "S21", "Respuesta temporal y frecuencial con python-control", "5",
     "jueves 29 de octubre de 2026", "1 h",
-    "Estrena python-control sobre el motor de ayer: respuesta al escalón y sus tres indicadores de catálogo (tiempo de subida, sobreimpulso y tiempo de establecimiento), el papel del factor de amortiguamiento, la migración de los polos al cerrar el lazo, y la lectura del diagrama de Bode con sus márgenes de ganancia y de fase.",
-    "Lynch y Park (2017), cap. 11 — constante de tiempo y ts ≈ 4·τ (pp. 409-410), forma estándar de segundo orden (p. 410, ec. 11.8), los tres regímenes de amortiguamiento (p. 411), sobreimpulso exacto y los valores de referencia para ζ = 0.1, 0.5 y 0.8 (pp. 412-413), mapa polos-transitorio (p. 412, fig. 11.5) y criterio de estabilidad (p. 424); De Silva et al. (2016), cap. 4 — reglas tr ≈ 1.8/ωn y ts ≈ 4.6/(ζ·ωn) y el papel del control de movimiento (p. 92, fig. 4.8), lazo cerrado Y/R = GcGa/(1+GcGa) (p. 93, ec. 4.16), identificación en frecuencia del disco duro (pp. 88-89, fig. 4.4); documentación de python-control (sin página).",
+    "Estrena python-control sobre el motor de ayer: respuesta al escalón y sus tres indicadores de catálogo (tiempo de subida, sobreoscilación y tiempo de establecimiento), el papel del factor de amortiguamiento, la migración de los polos al cerrar el lazo, y la lectura del diagrama de Bode con sus márgenes de ganancia y de fase.",
+    "Lynch y Park (2017), cap. 11 — constante de tiempo y ts ≈ 4·τ (pp. 409-410), forma estándar de segundo orden (p. 410, ec. 11.8), los tres regímenes de amortiguamiento (p. 411), sobreoscilación exacta y los valores de referencia para ζ = 0.1, 0.5 y 0.8 (pp. 412-413), mapa polos-transitorio (p. 412, fig. 11.5) y criterio de estabilidad (p. 424); De Silva et al. (2016), cap. 4 — reglas tr ≈ 1.8/ωn y ts ≈ 4.6/(ζ·ωn) y el papel del control de movimiento (p. 92, fig. 4.8), lazo cerrado Y/R = GcGa/(1+GcGa) (p. 93, ec. 4.16), identificación en frecuencia del disco duro (pp. 88-89, fig. 4.4); documentación de python-control (sin página).",
     "los apuntes del bloque 5"))
 
 C.append(instalacion(PKG, """import numpy as np
@@ -64,7 +64,7 @@ print(f'RiseTime      = {info["RiseTime"]:.4f} s   (regla 10-90 %: 2.2·tau = {2
 print(f'SettlingTime  = {info["SettlingTime"]:.4f} s   (regla del 2 %: 3.91·tau = {3.91*tau_m:.4f} s)')
 print(f'Overshoot     = {info["Overshoot"]:.2f} %   (un primer orden nunca sobreoscila)')"""))
 
-C.append(md("""**Comentario de aula.** Que el sobreimpulso salga exactamente cero no es una casualidad numérica: un sistema de primer orden **no puede** sobreoscilar, porque su respuesta es una exponencial monótona. Todo lo que veremos de aquí en adelante —picos, oscilaciones, tiempos de establecimiento largos— necesita al menos dos polos. Por eso el asunto de la sesión es el segundo orden.
+C.append(md("""**Comentario de aula.** Que la sobreoscilación salga exactamente cero no es una casualidad numérica: un sistema de primer orden **no puede** sobreoscilar, porque su respuesta es una exponencial monótona. Todo lo que veremos de aquí en adelante —picos, oscilaciones, tiempos de establecimiento largos— necesita al menos dos polos. Por eso el asunto de la sesión es el segundo orden.
 
 Con la posición como salida aparece el integrador y la respuesta al escalón ya no se estabiliza: el eje sigue girando. Compruébalo con los polos antes de simular nada."""))
 
@@ -88,9 +88,9 @@ que define la frecuencia natural `ωn` y el factor de amortiguamiento `ζ` (Lync
 - **críticamente amortiguado** (`ζ = 1`): raíz doble en `−ωn`, la respuesta más rápida sin oscilación;
 - **subamortiguado** (`ζ < 1`): raíces complejas conjugadas en `−ζωn ± j·ωd`, con `ωd = ωn·√(1−ζ²)`.
 
-En el caso subamortiguado el sobreimpulso tiene fórmula cerrada, `e^(−πζ/√(1−ζ²))·100 %`, con el pico en `tp = π/ωd`; «ζ = 0.1 da una sobreoscilación del 73 %, ζ = 0.5 da el 16 % y ζ = 0.8 da el 1.5 %» (Lynch y Park, 2017, pp. 412-413). Estos tres números merecen memoria. Vamos a comprobarlos."""))
+En el caso subamortiguado la sobreoscilación tiene fórmula cerrada, `e^(−πζ/√(1−ζ²))·100 %`, con el pico en `tp = π/ωd`; «ζ = 0.1 da una sobreoscilación del 73 %, ζ = 0.5 da el 16 % y ζ = 0.8 da el 1.5 %» (Lynch y Park, 2017, pp. 412-413). Estos tres números merecen memoria. Vamos a comprobarlos."""))
 
-C.append(code("""def sobreimpulso_teorico(z):
+C.append(code("""def sobreoscilacion_teorica(z):
     \"\"\"Mp exacto en %, Lynch y Park, 2017, pp. 412-413.\"\"\"
     return 100*np.exp(-np.pi*z/np.sqrt(1 - z**2)) if z < 1 else 0.0
 
@@ -107,7 +107,7 @@ for z in zetas:
     plt.plot(t, y, lw=2, label=f'zeta = {z}')
     inf = ct.step_info(G)
     ts_regla = 4.6/(z*WN)
-    print(f'{z:6.1f} {sobreimpulso_teorico(z):11.1f} % {inf["Overshoot"]:13.1f} % '
+    print(f'{z:6.1f} {sobreoscilacion_teorica(z):11.1f} % {inf["Overshoot"]:13.1f} % '
           f'{inf["RiseTime"]:9.3f} {1.8/WN:9.3f} {inf["SettlingTime"]:9.3f} {ts_regla:12.3f}')
 
 plt.axhline(1, color='grey', ls=':', lw=1)
@@ -119,13 +119,13 @@ C.append(md("""Tres lecturas para la clase, en este orden:
 
 1. **`ζ` decide la forma, `ωn` decide la escala de tiempo.** Todas las curvas del gráfico tienen la misma `ωn`; lo único que cambia es cuánto oscilan. Si multiplicas `ωn` por dos, la misma curva ocurre en la mitad de tiempo.
 2. **Las reglas rápidas de De Silva funcionan, pero son reglas.** `tr ≈ 1.8/ωn` y `ts ≈ 4.6/(ζ·ωn)` (De Silva et al., 2016, p. 92, fig. 4.8) aciertan el orden de magnitud y sirven para el camino inverso —convertir un requisito de tiempo de subida en una `ωn` objetivo—, pero `tr` empeora notablemente cuando `ζ` se aleja de 0.5 y la fórmula de `ts` se degrada para `ζ ≥ 1`. Que los estudiantes vean la discrepancia en la tabla vale más que la advertencia verbal.
-3. **El compromiso está a la vista.** Bajar `ζ` acelera la subida y empeora el establecimiento; subirlo hace lo contrario. El punto de diseño clásico está entre 0.7 y 1: sobreimpulso pequeño con el establecimiento más corto posible.
+3. **El compromiso está a la vista.** Bajar `ζ` acelera la subida y empeora el establecimiento; subirlo hace lo contrario. El punto de diseño clásico está entre 0.7 y 1: sobreoscilación pequeña con el establecimiento más corto posible.
 
 La frase que ordena todo el bloque está en la misma página de De Silva: «el papel del control de movimiento es forzar estas características a cumplir las especificaciones requeridas» (2016, p. 92). En S22 nos tocará forzarlas con un PID.
 
 ### Ejercicio 1
 
-Dada `G(s) = 25/(s² + 4s + 25)`, calcula **a mano** `ωn`, `ζ`, el sobreimpulso y el tiempo de establecimiento aproximado. Después verifica con `ct.step_info` y discute las discrepancias."""))
+Dada `G(s) = 25/(s² + 4s + 25)`, calcula **a mano** `ωn`, `ζ`, la sobreoscilación y el tiempo de establecimiento aproximado. Después verifica con `ct.step_info` y discute las discrepancias."""))
 
 C.append(code("""# Ejercicio 1
 G_ej = ct.tf([25], [1, 4, 25])
@@ -223,9 +223,9 @@ plt.figure(figsize=(9, 5))
 ct.bode_plot(L, np.logspace(-1, 3.5, 800), display_margins=True)
 plt.tight_layout(); plt.show()"""))
 
-C.append(md("""Los valores de referencia que maneja la industria son un margen de ganancia de al menos 6 dB (factor 2) y un margen de fase entre 45° y 60°; el lazo de la celda anterior los cumple con holgura, y por eso su respuesta al escalón —la de `Kp = 0.5` en la sección 3— tenía un sobreimpulso del 23 %, alto pero perfectamente estable.
+C.append(md("""Los valores de referencia que maneja la industria son un margen de ganancia de al menos 6 dB (factor 2) y un margen de fase entre 45° y 60°; el lazo de la celda anterior los cumple con holgura, y por eso su respuesta al escalón —la de `Kp = 0.5` en la sección 3— tenía una sobreoscilación del 23 %, alto pero perfectamente estable.
 
-La regla de bolsillo que sí conviene dar en clase: para un segundo orden dominante, **el margen de fase en grados es aproximadamente cien veces el factor de amortiguamiento**, `ζ ≈ PM/100`. Es decir, 45° de margen de fase equivalen a `ζ ≈ 0.45`, o sea un 20 % de sobreimpulso, y 65° equivalen a `ζ ≈ 0.65`, un 7 %. Comprobémoslo midiendo las dos cosas sobre la misma planta."""))
+La regla de bolsillo que sí conviene dar en clase: para un segundo orden dominante, **el margen de fase en grados es aproximadamente cien veces el factor de amortiguamiento**, `ζ ≈ PM/100`. Es decir, 45° de margen de fase equivalen a `ζ ≈ 0.45`, o sea un 20 % de sobreoscilación, y 65° equivalen a `ζ ≈ 0.65`, un 7 %. Comprobémoslo midiendo las dos cosas sobre la misma planta."""))
 
 C.append(code("""print(f'{"Kp":>7} {"PM [°]":>8} {"zeta = PM/100":>15} {"Mp predicho":>13} {"Mp medido":>11}')
 print('-'*60)
@@ -240,7 +240,7 @@ C.append(md("""La correspondencia no es exacta —la planta no es un segundo ord
 
 ### Ejercicio 3
 
-Encuentra, con `scipy.optimize.brentq` sobre `ct.margin`, el valor de `Kp` que deja el lazo con **exactamente 45° de margen de fase** para `G_th3`. Después cierra el lazo con ese `Kp` y comprueba con `ct.step_info` el sobreimpulso real. ¿Se cumple la regla `ζ ≈ PM/100`?"""))
+Encuentra, con `scipy.optimize.brentq` sobre `ct.margin`, el valor de `Kp` que deja el lazo con **exactamente 45° de margen de fase** para `G_th3`. Después cierra el lazo con ese `Kp` y comprueba con `ct.step_info` la sobreoscilación real. ¿Se cumple la regla `ζ ≈ PM/100`?"""))
 
 C.append(code("""# Ejercicio 3
 # f = lambda Kp: ct.margin(Kp*G_th3)[1] - 45
@@ -251,19 +251,19 @@ C.append(md("""---
 
 ## Soluciones
 
-**Ejercicio 1.** Comparando `s² + 4s + 25` con `s² + 2ζωn·s + ωn²`: `ωn = √25 = 5 rad/s` y `2ζωn = 4`, luego `ζ = 0.4`. Sobreimpulso `e^(−π·0.4/√(1−0.16))·100 = 25.4 %`, y `ts ≈ 4.6/(ζ·ωn) = 4.6/2 = 2.3 s`. `ct.step_info` devuelve `Overshoot ≈ 25.3 %` —la fórmula del sobreimpulso es exacta— y `SettlingTime ≈ 1.71 s`, sensiblemente menor que la regla. La razón: la regla `4.6/(ζωn)` está construida sobre la **envolvente** exponencial `e^(−ζωn·t)`, y da el instante en que la envolvente entra en la banda del 2 %; la señal real puede entrar antes, porque el coseno que la modula pasa por cero. La regla es conservadora, que es como debe ser una regla de diseño.
+**Ejercicio 1.** Comparando `s² + 4s + 25` con `s² + 2ζωn·s + ωn²`: `ωn = √25 = 5 rad/s` y `2ζωn = 4`, luego `ζ = 0.4`. Sobreoscilación `e^(−π·0.4/√(1−0.16))·100 = 25.4 %`, y `ts ≈ 4.6/(ζ·ωn) = 4.6/2 = 2.3 s`. `ct.step_info` devuelve `Overshoot ≈ 25.3 %` —la fórmula de la sobreoscilación es exacta— y `SettlingTime ≈ 1.71 s`, sensiblemente menor que la regla. La razón: la regla `4.6/(ζωn)` está construida sobre la **envolvente** exponencial `e^(−ζωn·t)`, y da el instante en que la envolvente entra en la banda del 2 %; la señal real puede entrar antes, porque el coseno que la modula pasa por cero. La regla es conservadora, que es como debe ser una regla de diseño.
 
 **Ejercicio 2.** Con el modelo reducido, el polinomio del lazo cerrado es `I·s² + K1·s + K2·Kp`. Para un polinomio de segundo grado, Routh-Hurwitz se reduce a que **todos los coeficientes sean positivos**, y lo son para cualquier `Kp > 0`: no hay forma de desestabilizarlo. Al añadir el tercer polo el polinomio pasa a `s³ + a2·s² + a1·s + a0` y la condición deja de ser solo de signo: exige además `a2·a1 > a0`, un producto que la ganancia rompe en cuanto `Kp` sube lo suficiente. Ese `a2·a1 > a0` es literalmente la ganancia última que hemos medido con `ct.margin` (48.3). Dicho de otro modo: **hacen falta tres polos para que un proporcional pueda desestabilizar un lazo**, y todo sistema físico los tiene si se mira con suficiente resolución.
 
-**Ejercicio 3.** El valor es `Kp ≈ 0.51`. Con él, `ct.step_info` sobre el lazo cerrado da un sobreimpulso en torno al 21-23 %, frente al 20.5 % que predice la regla con `ζ = 0.45`. La coincidencia es buena porque, con esa ganancia, los dos polos lentos del lazo cerrado dominan y el polo rápido en `−794` no participa del transitorio. Si repites el ejercicio con `PM = 20°`, la predicción se degrada: cuanto más se acerca el lazo a la inestabilidad, menos válida es la aproximación de segundo orden dominante."""))
+**Ejercicio 3.** El valor es `Kp ≈ 0.51`. Con él, `ct.step_info` sobre el lazo cerrado da una sobreoscilación en torno al 21-23 %, frente al 20.5 % que predice la regla con `ζ = 0.45`. La coincidencia es buena porque, con esa ganancia, los dos polos lentos del lazo cerrado dominan y el polo rápido en `−794` no participa del transitorio. Si repites el ejercicio con `PM = 20°`, la predicción se degrada: cuanto más se acerca el lazo a la inestabilidad, menos válida es la aproximación de segundo orden dominante."""))
 
 C.append(md("""---
 
 ## Para llevarse de esta sesión
 
-Un sistema lineal se lee en sus **polos**: parte real hacia la izquierda es rapidez, parte imaginaria es oscilación, y el semiplano derecho es la ruina. Todo lo demás —sobreimpulso, tiempo de subida, tiempo de establecimiento— son maneras de contar la misma información en el lenguaje del catálogo.
+Un sistema lineal se lee en sus **polos**: parte real hacia la izquierda es rapidez, parte imaginaria es oscilación, y el semiplano derecho es la ruina. Todo lo demás —sobreoscilación, tiempo de subida, tiempo de establecimiento— son maneras de contar la misma información en el lenguaje del catálogo.
 
-El factor de amortiguamiento `ζ` es el parámetro que hay que llevar en la cabeza, con sus tres anclas: `0.1 → 73 %`, `0.5 → 16 %`, `0.8 → 1.5 %` de sobreimpulso (Lynch y Park, 2017, pp. 412-413). Con esos tres números se estima a ojo cualquier respuesta y se detecta un ajuste sospechoso antes de simular.
+El factor de amortiguamiento `ζ` es el parámetro que hay que llevar en la cabeza, con sus tres anclas: `0.1 → 73 %`, `0.5 → 16 %`, `0.8 → 1.5 %` de sobreoscilación (Lynch y Park, 2017, pp. 412-413). Con esos tres números se estima a ojo cualquier respuesta y se detecta un ajuste sospechoso antes de simular.
 
 Cerrar el lazo **mueve los polos**, y ese movimiento es el diseño. En la planta del motor, la ganancia proporcional solo los sube en vertical: más oscilación y el mismo tiempo de establecimiento. El término derivativo de mañana es el que los mueve a la izquierda.
 

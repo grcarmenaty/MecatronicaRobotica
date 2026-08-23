@@ -139,7 +139,7 @@ Rb = rpy2r(0.5, np.pi/2, 0.3, order='zyx')     # mismo (roll - yaw) = 0.2
 Rc = rpy2r(0.5, np.pi/2, -0.1, order='zyx')    # mismo (roll + yaw) = 0.4
 print('(0.3, 90, 0.1) == (0.5, 90, 0.3) ?', np.allclose(Ra, Rb), '  <- solo cuenta roll - yaw')
 print('(0.3, 90, 0.1) == (0.5, 90,-0.1) ?', np.allclose(Ra, Rc))
-print('Dos parejas de angulos distintas dan LA MISMA orientacion: la representacion degenera.')"""))
+print('Dos ternas de angulos distintas dan LA MISMA orientacion: la representacion degenera.')"""))
 
 C.append(md("""El segundo síntoma es el que de verdad duele en un controlador: cerca de la singularidad, orientaciones muy parecidas exigen **tasas de ángulos arbitrariamente grandes**. Lo medimos con el número de condición de la matriz que relaciona las derivadas de los ángulos con la velocidad angular, calculada aquí por diferencias finitas."""))
 
@@ -340,7 +340,7 @@ C.append(md("""---
 
 El bloqueo de cardán no es una curiosidad histórica ni un defecto de una convención concreta: es una consecuencia topológica de intentar cubrir SO(3) con tres números. Lo hemos visto degenerar en dos formas —dos ternas distintas dando la misma orientación, y el número de condición de la transformación de tasas explotando— y volverá a aparecer en S16 (singularidad de muñeca) y en S17 (jacobiano analítico). Cuando vuelva, conviene reconocerlo como el mismo animal.
 
-Y el aparato algebraico de SE(3) —componer y invertir— es literalmente todo lo que hace falta para la cinemática directa: un robot serie no es más que una cadena de poses relativas, cada una función de una variable articular. Eso es exactamente lo que montaremos en S14.
+Y el aparato algebraico de SE(3) —componer e invertir— es literalmente todo lo que hace falta para la cinemática directa: un robot serie no es más que una cadena de poses relativas, cada una función de una variable articular. Eso es exactamente lo que montaremos en S14.
 
 *Cuaderno del curso 82514 Mecatrónica y Robótica · IQS Universitat Ramon Llull · curso 2026/27*"""))
 

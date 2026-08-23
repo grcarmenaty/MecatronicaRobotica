@@ -46,7 +46,7 @@ print(f'Velocidad máxima: {np.abs(omega).max():.1f} rad/s = {np.abs(omega).max(
 print(f'Flancos por segundo a esa velocidad: {4*N_LINEAS*np.abs(omega).max()/(2*np.pi):.0f}')
 print(f'Muestras por estado de cuadratura : {FS/(4*N_LINEAS*np.abs(omega).max()/(2*np.pi)):.1f}')"""))
 
-C.append(md("""El decodificador x4 es más simple de lo que su fama sugiere. El par (A, B) recorre cíclicamente cuatro estados y cambia de uno en uno; basta convertir ese par de código Gray a un entero de 0 a 3 y mirar la diferencia con el estado anterior: un salto de +1 (módulo 4) es un cuento en un sentido, un salto de 3 —que es −1 módulo 4— es un cuento en el otro, y un salto de 2 significa que se han perdido cuentas porque la lectura ha ido demasiado lenta.
+C.append(md("""El decodificador x4 es más simple de lo que su fama sugiere. El par (A, B) recorre cíclicamente cuatro estados y cambia de uno en uno; basta convertir ese par de código Gray a un entero de 0 a 3 y mirar la diferencia con el estado anterior: un salto de +1 (módulo 4) es una cuenta en un sentido, un salto de 3 —que es −1 módulo 4— es una cuenta en el otro, y un salto de 2 significa que se han perdido cuentas porque la lectura ha ido demasiado lenta.
 
 Ese salto de 2 es la trampa de examen: el contador no puede detectar si ha perdido dos cuentas o seis, y por eso el muestreo del encoder tiene su propia condición de Nyquist (De Silva et al., 2016, p. 152)."""))
 

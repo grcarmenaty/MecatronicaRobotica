@@ -22,7 +22,7 @@ print('Listo.')"""))
 # ---------------- 1. Los dos modelos
 C.append(md("""## 1. Los dos modelos: movimiento por odometría y observación de baliza
 
-Localizar un robot móvil es estimar su pose respecto a un mapa dado, y su importancia difícilmente se exagera: Thrun recoge la sentencia de Cox de que la localización «ha sido señalada como el problema más fundamental para dotar a un robot móvil de capacidades autónomas» (Thrun et al., 2005, p. 219). Hoy resolvemos el caso fácil de la taxonomía —seguimiento de posición, con pose inicial conocida (Thrun et al., 2005, p. 194)— porque es el que un EKF puede resolver.
+Localizar un robot móvil es estimar su pose respecto a un mapa dado, y su importancia difícilmente se exagera: Thrun recoge la sentencia de Cox de que la localización «ha sido señalada como el problema más fundamental para dotar a un robot móvil de capacidades autónomas» (Thrun et al., 2005, p. 219). Hoy resolvemos el caso fácil de la taxonomía —seguimiento de posición, con pose inicial conocida (Thrun et al., 2005, pp. 193-194)— porque es el que un EKF puede resolver.
 
 **Movimiento.** Usamos el modelo por odometría, que descompone el desplazamiento entre dos instantes en rotación-traslación-rotación, u = (δrot1, δtrans, δrot2). Frente al modelo por velocidades (Thrun et al., 2005, p. 121), «la experiencia práctica sugiere que la odometría, aunque sigue siendo errónea, suele ser más exacta que la velocidad»; a cambio, solo está disponible *a posteriori*, lo que la hace inservible para planificar y perfecta para filtrar (Thrun et al., 2005, p. 132).
 

@@ -7,7 +7,7 @@ C = []
 C.append(cabecera(
     "S40", "Imitación, diffusion policies y modelos VLA", "8",
     "viernes 11 de diciembre de 2026", "2 h",
-    "Implementa el clonado de comportamiento de principio a fin: un experto sintético demuestra una tarea de alcance con un obstáculo que hay que rodear, un regresor de scikit-learn aprende a copiarlo, y después se provoca el fallo característico —la deriva por acumulación de error al salirse de los estados demostrados—. La segunda mitad ilustra numéricamente por qué predecir la **media** de acciones multimodales estrella el robot contra el obstáculo, que es la motivación exacta de las diffusion policies, y cierra con la parte conceptual de los modelos VLA y los gemelos digitales.",
+    "Implementa la clonación de comportamiento de principio a fin: un experto sintético demuestra una tarea de alcance con un obstáculo que hay que rodear, un regresor de scikit-learn aprende a copiarlo, y después se provoca el fallo característico —la deriva por acumulación de error al salirse de los estados demostrados—. La segunda mitad ilustra numéricamente por qué predecir la **media** de acciones multimodales estrella el robot contra el obstáculo, que es la motivación exacta de las diffusion policies, y cierra con la parte conceptual de los modelos VLA y los gemelos digitales.",
     "Ross, Gordon y Bagnell (2011), AISTATS, para DAgger. Zhao et al. (2023), ALOHA/ACT, arXiv:2304.13705. Chi et al. (2023), *Diffusion Policy*, arXiv:2303.04137. Brohan et al. (2023), RT-2, arXiv:2307.15818. Kim et al. (2024), OpenVLA, arXiv:2406.09246. Black et al. (2024), π0, arXiv:2410.24164. NVIDIA (2025), GR00T N1, arXiv:2503.14734. Gemini Robotics (Google DeepMind, 2025, informe técnico). ISO 23247 para el marco de gemelo digital en fabricación.",
     "los apuntes del bloque 8"))
 
@@ -24,7 +24,7 @@ print('Listo.')"""))
 # ---------------- 1. tarea y experto
 C.append(md("""## 1. La tarea y el experto sintético
 
-El aprendizaje por imitación invierte la lógica del RL: en lugar de especificar **qué es hacerlo bien** —la recompensa— y dejar que el agente lo descubra, se muestra **cómo se hace** y se pide al modelo que lo reproduzca. Su forma más simple, el clonado de comportamiento (*behavior cloning*, BC), es aprendizaje supervisado puro: se registran pares (observación, acción) mientras alguien demuestra la tarea —hoy casi siempre por teleoperación— y se ajusta un modelo que predice la acción del demostrador a partir de la observación.
+El aprendizaje por imitación invierte la lógica del RL: en lugar de especificar **qué es hacerlo bien** —la recompensa— y dejar que el agente lo descubra, se muestra **cómo se hace** y se pide al modelo que lo reproduzca. Su forma más simple, la clonación de comportamiento (*behavior cloning*, BC), es aprendizaje supervisado puro: se registran pares (observación, acción) mientras alguien demuestra la tarea —hoy casi siempre por teleoperación— y se ajusta un modelo que predice la acción del demostrador a partir de la observación.
 
 Esta asimetría explica la división del trabajo actual de la disciplina, y merece plantearse como pregunta en clase antes de escribir una línea: demostrar cómo se dobla una camiseta cuesta minutos; escribir una función de recompensa que defina «camiseta bien doblada» y esperar que el RL no la explote de forma perversa puede costar semanas. Por eso la locomoción —fácil de premiar, casi imposible de teleoperar de forma dinámica— es territorio del RL de S39, y la manipulación —fácil de demostrar, difícil de premiar— es territorio de la imitación.
 
@@ -131,7 +131,7 @@ a2.quiver(X[::paso, 0], X[::paso, 1], Y[::paso, 0], Y[::paso, 1],
 plt.tight_layout(); plt.show()"""))
 
 # ---------------- 2. BC
-C.append(md("""## 2. Clonado de comportamiento con scikit-learn
+C.append(md("""## 2. Clonación de comportamiento con scikit-learn
 
 Ahora el paso que hace del BC «aprendizaje supervisado puro»: un regresor que va de observación a acción. Usamos un perceptrón multicapa pequeño de `sklearn`, dos capas ocultas y nada exótico, porque lo importante no es el modelo sino lo que le pasa después.
 

@@ -257,7 +257,7 @@ sectionSlide(p1, "S2", "El proceso de diseño mecatrónico", "Bucle modelado-dis
  bullets(s, [
  { t: "Índice de diseño I: grado en que un diseño satisface sus especificaciones.", },
  { t: "Aislados, cada subsistema alcanza su óptimo (Iue eléctrico, Ium mecánico); interconectados, ninguno lo alcanza." },
- { t: "Diseño mecatrónico = optimización conjunta: minimizar el coste J o maximizar el MDQ (ecs. 1.2 y 1.4, pp. 6-7; De Silva, 2003):" },
+ { t: "Diseño mecatrónico = optimización conjunta: minimizar el coste J o maximizar el MDQ (ecs. 1.2 y 1.4; De Silva et al., 2016, pp. 6-7):" },
  ], { w: 6.9, h: 2.4 });
  eqImg(s, "mdq_j", 0.95, 4.05, 6.2, 0.52);
  eqImg(s, "mdq", 1.45, 4.85, 5.2, 1.15);

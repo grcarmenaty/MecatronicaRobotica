@@ -9,7 +9,7 @@ const LOGO = fs.readFileSync("media/logo_iqs_color.png");
 const logoPar = (w = 132, h = 101) => new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 100 }, children: [new ImageRun({ type: "png", data: LOGO, transformation: { width: w, height: h } })] });
 const BANCO = JSON.parse(fs.readFileSync("banco.json", "utf-8"));
 
-const fx = n => String(n).replace(".", ",");
+const fx = n => String(Math.round(n * 1000) / 1000).replace(".", ",");
 
 function docBase(children) {
  return new Document({
