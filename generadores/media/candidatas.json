@@ -1,0 +1,890 @@
+{
+ "b1_unimate": [
+  {
+   "title": "File:Unimate pouring coffee for a woman at Biltmore Hotel, 1967.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Unimate_pouring_coffee_for_a_woman_at_Biltmore_Hotel%2C_1967.jpg/1920px-Unimate_pouring_coffee_for_a_woman_at_Biltmore_Hotel%2C_1967.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "w": 4961,
+   "lic": "CC BY 4.0",
+   "autor": "Frank Q. Brown, Los Angeles Times",
+   "fichero": "cand/b1_unimate_0.jpg"
+  },
+  {
+   "title": "File:Industrial robot Birmingham museum store.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/6/68/Industrial_robot_Birmingham_museum_store.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "w": 860,
+   "lic": "CC BY 2.0",
+   "autor": "Phil_Parker",
+   "fichero": "cand/b1_unimate_2.jpg"
+  },
+  {
+   "title": "File:Unimate 500 PUMA Deutsches Museum.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Unimate_500_PUMA_Deutsches_Museum.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "w": 1527,
+   "lic": "CC BY-SA 3.0",
+   "autor": "Theoprakt",
+   "fichero": "cand/b1_unimate_3.jpg"
+  }
+ ],
+ "b1_jacquard": [
+  {
+   "title": "File:A Jacquard loom showing information punchcards, National Museum of Scotland.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/A_Jacquard_loom_showing_information_punchcards%2C_National_Museum_of_Scotland.jpg/1920px-A_Jacquard_loom_showing_information_punchcards%2C_National_Museum_of_Scotland.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "w": 3088,
+   "lic": "CC BY-SA 4.0",
+   "autor": "Stephencdickson",
+   "fichero": "cand/b1_jacquard_0.jpg"
+  },
+  {
+   "title": "File:Jacquard loom in Varanasi.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/a/ad/Jacquard_loom_in_Varanasi.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "w": 686,
+   "lic": "CC BY-SA 2.0",
+   "autor": "Ramón from Llanera, España",
+   "fichero": "cand/b1_jacquard_1.jpg"
+  },
+  {
+   "title": "File:NMS Jacquard loom 2.JPG",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/NMS_Jacquard_loom_2.JPG/1920px-NMS_Jacquard_loom_2.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "w": 2736,
+   "lic": "CC BY-SA 3.0",
+   "autor": "Ad Meskens",
+   "fichero": "cand/b1_jacquard_3.jpg"
+  }
+ ],
+ "b1_rover": [
+  {
+   "title": "File:NASA Perseverance Rover Initial Surface Checkout Briefing (NHQ202102190017).jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/NASA_Perseverance_Rover_Initial_Surface_Checkout_Briefing_%28NHQ202102190017%29.jpg/1920px-NASA_Perseverance_Rover_Initial_Surface_Checkout_Briefing_%28NHQ202102190017%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "w": 4807,
+   "lic": "Public domain",
+   "autor": "NASA Headquarters / NASA/Bill Ingalls",
+   "fichero": "cand/b1_rover_0.jpg"
+  },
+  {
+   "title": "File:NASA Perseverance Rover Initial Surface Checkout Briefing (NHQ202102190005).jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/NASA_Perseverance_Rover_Initial_Surface_Checkout_Briefing_%28NHQ202102190005%29.jpg/1920px-NASA_Perseverance_Rover_Initial_Surface_Checkout_Briefing_%28NHQ202102190005%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "w": 3602,
+   "lic": "Public domain",
+   "autor": "NASA Headquarters / NASA/Bill Ingalls",
+   "fichero": "cand/b1_rover_1.jpg"
+  },
+  {
+   "title": "File:NASA Perseverance Rover Initial Surface Checkout Briefing (NHQ202102190006).jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/NASA_Perseverance_Rover_Initial_Surface_Checkout_Briefing_%28NHQ202102190006%29.jpg/1920px-NASA_Perseverance_Rover_Initial_Surface_Checkout_Briefing_%28NHQ202102190006%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "w": 6048,
+   "lic": "Public domain",
+   "autor": "NASA Headquarters / NASA/Bill Ingalls",
+   "fichero": "cand/b1_rover_2.jpg"
+  },
+  {
+   "title": "File:NASA Perseverance Rover Initial Surface Checkout Briefing (NHQ202102190011).jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/NASA_Perseverance_Rover_Initial_Surface_Checkout_Briefing_%28NHQ202102190011%29.jpg/1920px-NASA_Perseverance_Rover_Initial_Surface_Checkout_Briefing_%28NHQ202102190011%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "w": 7970,
+   "lic": "Public domain",
+   "autor": "NASA Headquarters / NASA/Bill Ingalls",
+   "fichero": "cand/b1_rover_3.jpg"
+  }
+ ],
+ "b1_hdd": [
+  {
+   "title": "File:Actuator arm assembly of a hard disk drive.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Actuator_arm_assembly_of_a_hard_disk_drive.jpg/1920px-Actuator_arm_assembly_of_a_hard_disk_drive.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "w": 3120,
+   "lic": "CC BY 4.0",
+   "autor": "Mk2010",
+   "fichero": "cand/b1_hdd_0.jpg"
+  }
+ ],
+ "b2_agv": [
+  {
+   "title": "File:Automated guided vehicle container mover at Port of Rotterdam.JPG",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Automated_guided_vehicle_container_mover_at_Port_of_Rotterdam.JPG/1920px-Automated_guided_vehicle_container_mover_at_Port_of_Rotterdam.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "w": 3364,
+   "lic": "CC0",
+   "autor": "Alf van Beem",
+   "fichero": "cand/b2_agv_0.jpg"
+  },
+  {
+   "title": "File:HHLA CTA Presseinfo Automated Guided Vehicle, Terminal -2.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/HHLA_CTA_Presseinfo_Automated_Guided_Vehicle%2C_Terminal_-2.jpg/1920px-HHLA_CTA_Presseinfo_Automated_Guided_Vehicle%2C_Terminal_-2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "w": 2272,
+   "lic": "CC BY-SA 4.0",
+   "autor": "Wolfgang Klein",
+   "fichero": "cand/b2_agv_1.jpg"
+  },
+  {
+   "title": "File:Automated Guided Vehicles.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Automated_Guided_Vehicles.jpg/1920px-Automated_Guided_Vehicles.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "w": 3264,
+   "lic": "CC BY-SA 4.0",
+   "autor": "MrGRA",
+   "fichero": "cand/b2_agv_3.jpg"
+  }
+ ],
+ "b2_scara": [
+  {
+   "title": "File:SCARA robot 2R.png",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/0/09/SCARA_robot_2R.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "w": 1080,
+   "lic": "CC BY-SA 4.0",
+   "autor": "Mitsubishi Electric Automation, Inc. 500 Corporate Woods Pkwy - Vernon Hills, IL",
+   "fichero": "cand/b2_scara_0.jpg"
+  },
+  {
+   "title": "File:SCARA robot 5R.png",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/f/ff/SCARA_robot_5R.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "w": 1120,
+   "lic": "CC BY-SA 4.0",
+   "autor": "Mitsubishi Electric Automation, Inc.",
+   "fichero": "cand/b2_scara_3.jpg"
+  }
+ ],
+ "b2_cuadrupedo": [
+  {
+   "title": "File:YanDavos on SPOT.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/YanDavos_on_SPOT.jpg/1920px-YanDavos_on_SPOT.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "w": 5184,
+   "lic": "CC BY-SA 4.0",
+   "autor": "ArticCynda",
+   "fichero": "cand/b2_cuadrupedo_0.jpg"
+  }
+ ],
+ "b3_galga": [
+  {
+   "title": "File:Unmounted strain gauge.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Unmounted_strain_gauge.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "w": 594,
+   "lic": "CC BY-SA 4.0",
+   "autor": "Pleriche",
+   "fichero": "cand/b3_galga_0.jpg"
+  }
+ ],
+ "b3_imu": [
+  {
+   "title": "File:Apollo Lunar Module Inertial Measurement Unit (IMU) — G&N Gyro Ball (48326791917).jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Apollo_Lunar_Module_Inertial_Measurement_Unit_%28IMU%29_%E2%80%94_G%26N_Gyro_Ball_%2848326791917%29.jpg/1920px-Apollo_Lunar_Module_Inertial_Measurement_Unit_%28IMU%29_%E2%80%94_G%26N_Gyro_Ball_%2848326791917%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "w": 4237,
+   "lic": "CC BY 2.0",
+   "autor": "jurvetson",
+   "fichero": "cand/b3_imu_0.jpg"
+  },
+  {
+   "title": "File:SparkFun 9DoF-Sensor-Stick Acc+Gyro+Mag 13944-01.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/c/cb/SparkFun_9DoF-Sensor-Stick_Acc%2BGyro%2BMag_13944-01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "w": 600,
+   "lic": "CC BY 2.0",
+   "autor": "SparkFun",
+   "fichero": "cand/b3_imu_1.jpg"
+  },
+  {
+   "title": "File:SparkFun 9DoF-IMU-Breakout LSM9DS1 13284-03.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/7/7f/SparkFun_9DoF-IMU-Breakout_LSM9DS1_13284-03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "w": 600,
+   "lic": "CC BY 2.0",
+   "autor": "SparkFun",
+   "fichero": "cand/b3_imu_2.jpg"
+  },
+  {
+   "title": "File:DARPA TIMU Michigan Penny.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/DARPA_TIMU_Michigan_Penny.jpg/1920px-DARPA_TIMU_Michigan_Penny.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "w": 2701,
+   "lic": "Public domain",
+   "autor": "University of Michigan",
+   "fichero": "cand/b3_imu_3.jpg"
+  }
+ ],
+ "b6_camara_obscura": [
+  {
+   "title": "File:Jan Verbruggen Foundry Drawing 47 Horizontal Boring Machine.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Jan_Verbruggen_Foundry_Drawing_47_Horizontal_Boring_Machine.jpg/1920px-Jan_Verbruggen_Foundry_Drawing_47_Horizontal_Boring_Machine.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "w": 3729,
+   "lic": "CC BY-SA 3.0",
+   "autor": "",
+   "fichero": "cand/b6_camara_obscura_0.jpg"
+  },
+  {
+   "title": "File:Jan Verbruggen Foudary Drawing 47 Horizontal Boring Machine (cropped).JPG",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Jan_Verbruggen_Foudary_Drawing_47_Horizontal_Boring_Machine_%28cropped%29.JPG/1920px-Jan_Verbruggen_Foudary_Drawing_47_Horizontal_Boring_Machine_%28cropped%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "w": 3251,
+   "lic": "Public domain",
+   "autor": "",
+   "fichero": "cand/b6_camara_obscura_1.jpg"
+  },
+  {
+   "title": "File:Nurks in de Haarlemmerhout, RP-T-1942-27.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Nurks_in_de_Haarlemmerhout%2C_RP-T-1942-27.jpg/1920px-Nurks_in_de_Haarlemmerhout%2C_RP-T-1942-27.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "w": 4758,
+   "lic": "CC0",
+   "autor": "Rijksmuseum",
+   "fichero": "cand/b6_camara_obscura_3.jpg"
+  }
+ ],
+ "b8_mano": [
+  {
+   "title": "File:NIST Dexterous Manipulation Testbed (9502902636).jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/NIST_Dexterous_Manipulation_Testbed_%289502902636%29.jpg/1920px-NIST_Dexterous_Manipulation_Testbed_%289502902636%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "w": 3200,
+   "lic": "Public domain",
+   "autor": "National Institute of Standards and Technology",
+   "fichero": "cand/b8_mano_0.jpg"
+  }
+ ],
+ "b2_delta": [
+  {
+   "title": "File:Robot delta FlexPicker d'ABB.png",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Robot_delta_FlexPicker_d%27ABB.png/1920px-Robot_delta_FlexPicker_d%27ABB.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "w": 1926,
+   "lic": "CC BY-SA 4.0",
+   "autor": "Marc Auledas",
+   "fichero": "cand/b2_delta_0.jpg"
+  },
+  {
+   "title": "File:Delta x robot - vision module - conveyor.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Delta_x_robot_-_vision_module_-_conveyor.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "w": 1000,
+   "lic": "CC BY-SA 4.0",
+   "autor": "Trungdoanhong",
+   "fichero": "cand/b2_delta_1.jpg"
+  },
+  {
+   "title": "File:Sketchy, portrait-drawing delta robot.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Sketchy%2C_portrait-drawing_delta_robot.jpg/1920px-Sketchy%2C_portrait-drawing_delta_robot.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "w": 3000,
+   "lic": "CC BY-SA 3.0",
+   "autor": "Andy Dingley",
+   "fichero": "cand/b2_delta_2.jpg"
+  },
+  {
+   "title": "File:Delta x robot.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Delta_x_robot.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "w": 1000,
+   "lic": "CC BY-SA 4.0",
+   "autor": "Trungdoanhong",
+   "fichero": "cand/b2_delta_3.jpg"
+  }
+ ],
+ "b2_humanoide": [
+  {
+   "title": "File:ASIMO 4.28.11.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/ASIMO_4.28.11.jpg/1920px-ASIMO_4.28.11.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "w": 2000,
+   "lic": "CC BY-SA 3.0",
+   "autor": "Vanillase",
+   "fichero": "cand/b2_humanoide_1.jpg"
+  },
+  {
+   "title": "File:HONDA ASIMO.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/0/05/HONDA_ASIMO.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "w": 960,
+   "lic": "CC BY-SA 3.0",
+   "autor": "Gnsin",
+   "fichero": "cand/b2_humanoide_2.jpg"
+  },
+  {
+   "title": "File:Honda ASIMO (ver. 2011) 2011 Tokyo Motor Show.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Honda_ASIMO_%28ver._2011%29_2011_Tokyo_Motor_Show.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "w": 1633,
+   "lic": "CC BY-SA 3.0",
+   "autor": "Morio",
+   "fichero": "cand/b2_humanoide_3.jpg"
+  }
+ ],
+ "b3_encoder": [
+  {
+   "title": "File:Rotary encoder.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Rotary_encoder.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "w": 791,
+   "lic": "CC BY 4.0",
+   "autor": "Joao Paulo Chagas",
+   "fichero": "cand/b3_encoder_0.jpg"
+  },
+  {
+   "title": "File:VW Encoder incremental Dynapar B58N.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/d/d1/VW_Encoder_incremental_Dynapar_B58N.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "w": 1280,
+   "lic": "CC BY-SA 4.0",
+   "autor": "Lambtron",
+   "fichero": "cand/b3_encoder_1.jpg"
+  },
+  {
+   "title": "File:RotaryIncrementalEncoder.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/RotaryIncrementalEncoder.jpg/1920px-RotaryIncrementalEncoder.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "w": 2016,
+   "lic": "CC BY-SA 4.0",
+   "autor": "Lambtron",
+   "fichero": "cand/b3_encoder_2.jpg"
+  }
+ ],
+ "b3_lidar": [
+  {
+   "title": "File:Velodyne Lidar Headquarters in the Edenvale district of San Jose, California 2009.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/3/36/Velodyne_Lidar_Headquarters_in_the_Edenvale_district_of_San_Jose%2C_California_2009.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "w": 1718,
+   "lic": "CC BY-SA 4.0",
+   "autor": "Cristiano Tomás",
+   "fichero": "cand/b3_lidar_0.jpg"
+  },
+  {
+   "title": "File:Velodyne High-Def LIDAR.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Velodyne_High-Def_LIDAR.jpg/1920px-Velodyne_High-Def_LIDAR.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "w": 4587,
+   "lic": "CC BY 2.0",
+   "autor": "Steve Jurvetson",
+   "fichero": "cand/b3_lidar_1.jpg"
+  },
+  {
+   "title": "File:Velodyne ProductFamily BlueLens 32GreenLens.png",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Velodyne_ProductFamily_BlueLens_32GreenLens.png/1920px-Velodyne_ProductFamily_BlueLens_32GreenLens.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "w": 5184,
+   "lic": "CC BY-SA 4.0",
+   "autor": "APJarvis",
+   "fichero": "cand/b3_lidar_2.jpg"
+  },
+  {
+   "title": "File:Velodyne AlphaPuck W Velarray VelaDome Family BlueLens.png",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Velodyne_AlphaPuck_W_Velarray_VelaDome_Family_BlueLens.png/1920px-Velodyne_AlphaPuck_W_Velarray_VelaDome_Family_BlueLens.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "w": 5184,
+   "lic": "CC BY-SA 4.0",
+   "autor": "APJarvis",
+   "fichero": "cand/b3_lidar_3.jpg"
+  }
+ ],
+ "b4_abb": [
+  {
+   "title": "File:Reinraum BBS Automation Blaichach.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Reinraum_BBS_Automation_Blaichach.jpg/1920px-Reinraum_BBS_Automation_Blaichach.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "w": 8060,
+   "lic": "CC0",
+   "autor": "Clemenspool",
+   "fichero": "cand/b4_abb_2.jpg"
+  }
+ ],
+ "b4_kuka": [
+  {
+   "title": "File:KUKA industrial robotic arm performing \"The Beach\" by Roy Nachum - 06.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/KUKA_industrial_robotic_arm_performing_%22The_Beach%22_by_Roy_Nachum_-_06.jpg/1920px-KUKA_industrial_robotic_arm_performing_%22The_Beach%22_by_Roy_Nachum_-_06.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "w": 3024,
+   "lic": "CC BY-SA 4.0",
+   "autor": "Oleg Yunakov",
+   "fichero": "cand/b4_kuka_0.jpg"
+  },
+  {
+   "title": "File:KUKA industrial robotic arm performing \"The Beach\" by Roy Nachum - 02.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/KUKA_industrial_robotic_arm_performing_%22The_Beach%22_by_Roy_Nachum_-_02.jpg/1920px-KUKA_industrial_robotic_arm_performing_%22The_Beach%22_by_Roy_Nachum_-_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "w": 4032,
+   "lic": "CC BY-SA 4.0",
+   "autor": "Oleg Yunakov",
+   "fichero": "cand/b4_kuka_1.jpg"
+  },
+  {
+   "title": "File:KUKA industrial robotic arm performing \"The Beach\" by Roy Nachum - 12.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/KUKA_industrial_robotic_arm_performing_%22The_Beach%22_by_Roy_Nachum_-_12.jpg/1920px-KUKA_industrial_robotic_arm_performing_%22The_Beach%22_by_Roy_Nachum_-_12.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "w": 4284,
+   "lic": "CC BY-SA 4.0",
+   "autor": "Oleg Yunakov",
+   "fichero": "cand/b4_kuka_2.jpg"
+  },
+  {
+   "title": "File:KUKA industrial robotic arm performing \"The Beach\" by Roy Nachum - 13.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/KUKA_industrial_robotic_arm_performing_%22The_Beach%22_by_Roy_Nachum_-_13.jpg/1920px-KUKA_industrial_robotic_arm_performing_%22The_Beach%22_by_Roy_Nachum_-_13.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "w": 4284,
+   "lic": "CC BY-SA 4.0",
+   "autor": "Oleg Yunakov",
+   "fichero": "cand/b4_kuka_3.jpg"
+  }
+ ],
+ "b5_motor": [
+  {
+   "title": "File:Toleranzhülse im Elektromotor.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/1/16/Toleranzh%C3%BClse_im_Elektromotor.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "w": 1920,
+   "lic": "CC BY-SA 4.0",
+   "autor": "Dr. Erich TRETTER GmbH + Co.\nAm Desenbach 10 + 12\n\n73098 Rechberghausen",
+   "fichero": "cand/b5_motor_0.jpg"
+  },
+  {
+   "title": "File:TMW 50906 Schnittmodell einer Drehstrommaschine (Asynchronmaschine).jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/TMW_50906_Schnittmodell_einer_Drehstrommaschine_%28Asynchronmaschine%29.jpg/1920px-TMW_50906_Schnittmodell_einer_Drehstrommaschine_%28Asynchronmaschine%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "w": 2019,
+   "lic": "Public domain",
+   "autor": "",
+   "fichero": "cand/b5_motor_1.jpg"
+  }
+ ],
+ "b7_turtlebot": [
+  {
+   "title": "File:TurtleBot 2.png",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/TurtleBot_2.png/1920px-TurtleBot_2.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "w": 5760,
+   "lic": "CC BY-SA 4.0",
+   "autor": "Auledas",
+   "fichero": "cand/b7_turtlebot_0.jpg"
+  },
+  {
+   "title": "File:TurtleBot3 Burger.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/TurtleBot3_Burger.jpg/1920px-TurtleBot3_Burger.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "w": 2094,
+   "lic": "CC BY-SA 4.0",
+   "autor": "Kuscu0",
+   "fichero": "cand/b7_turtlebot_1.jpg"
+  },
+  {
+   "title": "File:Turtlebot 3 burger.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/3/32/Turtlebot_3_burger.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "w": 731,
+   "lic": "CC BY-SA 4.0",
+   "autor": "Xeru the first",
+   "fichero": "cand/b7_turtlebot_2.jpg"
+  },
+  {
+   "title": "File:XBox Kinect robot that follows people 2011 SM Maker Faire.JPG",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/XBox_Kinect_robot_that_follows_people_2011_SM_Maker_Faire.JPG/1920px-XBox_Kinect_robot_that_follows_people_2011_SM_Maker_Faire.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "w": 2592,
+   "lic": "CC BY 3.0",
+   "autor": "Raymond \"Peaceray\" Leonard",
+   "fichero": "cand/b7_turtlebot_3.jpg"
+  }
+ ],
+ "b7_almacen": [
+  {
+   "title": "File:Ocado warehouse bots.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Ocado_warehouse_bots.jpg/1920px-Ocado_warehouse_bots.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "w": 2853,
+   "lic": "CC BY-SA 4.0",
+   "autor": "Techwords",
+   "fichero": "cand/b7_almacen_0.jpg"
+  },
+  {
+   "title": "File:Exotec Icon.png",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/5/55/Exotec_Icon.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "w": 1000,
+   "lic": "CC BY-SA 4.0",
+   "autor": "Exotec",
+   "fichero": "cand/b7_almacen_3.jpg"
+  }
+ ],
+ "b4_puma": [
+  {
+   "title": "File:Computer Integrated Manufacturing Systems(CMS)Unimate Pumo 500 & Pumo 560 Robots 1986(2).jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Computer_Integrated_Manufacturing_Systems%28CMS%29Unimate_Pumo_500_%26_Pumo_560_Robots_1986%282%29.jpg/1920px-Computer_Integrated_Manufacturing_Systems%28CMS%29Unimate_Pumo_500_%26_Pumo_560_Robots_1986%282%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "w": 2956,
+   "lic": "No restrictions",
+   "autor": "UL Digital Library",
+   "fichero": "cand/b4_puma_2.jpg"
+  }
+ ],
+ "b1_rover2": [
+  {
+   "title": "File:NASA's Ingenuity helicopter on Mars by Perseverance Mastcam-Z, Sol 768 (53475637956).jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/NASA%27s_Ingenuity_helicopter_on_Mars_by_Perseverance_Mastcam-Z%2C_Sol_768_%2853475637956%29.jpg/1920px-NASA%27s_Ingenuity_helicopter_on_Mars_by_Perseverance_Mastcam-Z%2C_Sol_768_%2853475637956%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "w": 3026,
+   "lic": "CC BY 2.0",
+   "autor": "semeion.photo Credit: NASA/JPL-Caltech/ASU/Simeon Schmauß",
+   "fichero": "cand/b1_rover2_0.jpg"
+  },
+  {
+   "title": "File:Perseverance Landing Skycrane.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Perseverance_Landing_Skycrane.jpg/1920px-Perseverance_Landing_Skycrane.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "w": 2048,
+   "lic": "Public domain",
+   "autor": "NASA",
+   "fichero": "cand/b1_rover2_1.jpg"
+  },
+  {
+   "title": "File:EDL Cameras Mars 2020 - Perseverance rover.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/9/95/EDL_Cameras_Mars_2020_-_Perseverance_rover.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "w": 900,
+   "lic": "Public domain",
+   "autor": "NASA/JPL-Caltech",
+   "fichero": "cand/b1_rover2_2.jpg"
+  },
+  {
+   "title": "File:Diagram of the perseverance rover-instruments.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Diagram_of_the_perseverance_rover-instruments.jpg/1920px-Diagram_of_the_perseverance_rover-instruments.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "w": 3828,
+   "lic": "Public domain",
+   "autor": "NASA",
+   "fichero": "cand/b1_rover2_3.jpg"
+  }
+ ],
+ "b1_watt": [
+  {
+   "title": "File:Watts governor and throttle valve (Steam and the Steam Engine - Land and Marine, 1875).jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/8/84/Watts_governor_and_throttle_valve_%28Steam_and_the_Steam_Engine_-_Land_and_Marine%2C_1875%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "w": 531,
+   "lic": "Public domain",
+   "autor": "Andy Dingley (scanner)",
+   "fichero": "cand/b1_watt_1.jpg"
+  },
+  {
+   "title": "File:Centrifugal flyball governor.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Centrifugal_flyball_governor.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "w": 618,
+   "lic": "CC BY 3.0",
+   "autor": "Andy Dingley",
+   "fichero": "cand/b1_watt_2.jpg"
+  }
+ ],
+ "b2_davinci": [
+  {
+   "title": "File:New Da Vinci Xi.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/New_Da_Vinci_Xi.jpg/1920px-New_Da_Vinci_Xi.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "w": 4032,
+   "lic": "CC BY-SA 4.0",
+   "autor": "Alvarogarciamd",
+   "fichero": "cand/b2_davinci_0.jpg"
+  },
+  {
+   "title": "File:Laproscopic Surgery Robot.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Laproscopic_Surgery_Robot.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "w": 891,
+   "lic": "CC BY-SA 3.0",
+   "autor": "Nimur at English Wikipedia",
+   "fichero": "cand/b2_davinci_1.jpg"
+  },
+  {
+   "title": "File:Chirurgien son robot da-vinci.JPG",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/3/31/Chirurgien_son_robot_da-vinci.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "w": 1024,
+   "lic": "CC BY-SA 4.0",
+   "autor": "Nicoleon",
+   "fichero": "cand/b2_davinci_2.jpg"
+  },
+  {
+   "title": "File:2023-09 - Robot chirurgien Da Vinci Xi - Centre hospitalier de Vesoul - 08.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/2023-09_-_Robot_chirurgien_Da_Vinci_Xi_-_Centre_hospitalier_de_Vesoul_-_08.jpg/1920px-2023-09_-_Robot_chirurgien_Da_Vinci_Xi_-_Centre_hospitalier_de_Vesoul_-_08.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "w": 6000,
+   "lic": "CC BY-SA 4.0",
+   "autor": "A.BourgeoisP",
+   "fichero": "cand/b2_davinci_3.jpg"
+  }
+ ],
+ "b2_dron": [
+  {
+   "title": "File:Quadcopter Drone in flight.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Quadcopter_Drone_in_flight.jpg/1920px-Quadcopter_Drone_in_flight.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "w": 3840,
+   "lic": "CC BY-SA 4.0",
+   "autor": "Project Kei",
+   "fichero": "cand/b2_dron_0.jpg"
+  },
+  {
+   "title": "File:Quadcopter camera drone in flight.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Quadcopter_camera_drone_in_flight.jpg/1920px-Quadcopter_camera_drone_in_flight.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "w": 5472,
+   "lic": "CC0",
+   "autor": "Josh Sorenson",
+   "fichero": "cand/b2_dron_1.jpg"
+  },
+  {
+   "title": "File:Quadcopter Bottom Removed.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Quadcopter_Bottom_Removed.jpg/1920px-Quadcopter_Bottom_Removed.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "w": 3264,
+   "lic": "CC BY-SA 3.0",
+   "autor": "Ryan Decker",
+   "fichero": "cand/b2_dron_2.jpg"
+  }
+ ],
+ "b2_auto": [
+  {
+   "title": "File:Waymo self-driving car front view.gk.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Waymo_self-driving_car_front_view.gk.jpg/1920px-Waymo_self-driving_car_front_view.gk.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "w": 6000,
+   "lic": "CC BY-SA 4.0",
+   "autor": "Grendelkhan",
+   "fichero": "cand/b2_auto_0.jpg"
+  },
+  {
+   "title": "File:Waymo self-driving car side view.gk.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Waymo_self-driving_car_side_view.gk.jpg/1920px-Waymo_self-driving_car_side_view.gk.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "w": 5243,
+   "lic": "CC BY-SA 4.0",
+   "autor": "Grendelkhan",
+   "fichero": "cand/b2_auto_1.jpg"
+  },
+  {
+   "title": "File:Waymo Zeekr Vehicle at Bayshore Depot front view dllu.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Waymo_Zeekr_Vehicle_at_Bayshore_Depot_front_view_dllu.jpg/1920px-Waymo_Zeekr_Vehicle_at_Bayshore_Depot_front_view_dllu.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "w": 11252,
+   "lic": "CC BY-SA 4.0",
+   "autor": "Dllu",
+   "fichero": "cand/b2_auto_2.jpg"
+  },
+  {
+   "title": "File:Waymo Zeekr Vehicle at Bayshore Depot oblique view dllu.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Waymo_Zeekr_Vehicle_at_Bayshore_Depot_oblique_view_dllu.jpg/1920px-Waymo_Zeekr_Vehicle_at_Bayshore_Depot_oblique_view_dllu.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "w": 9942,
+   "lic": "CC BY-SA 4.0",
+   "autor": "Dllu",
+   "fichero": "cand/b2_auto_3.jpg"
+  }
+ ],
+ "b3_ultrasonido": [
+  {
+   "title": "File:HC-SR04 ultrasonic distance sensor module pcb.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/HC-SR04_ultrasonic_distance_sensor_module_pcb.jpg/1920px-HC-SR04_ultrasonic_distance_sensor_module_pcb.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "w": 2339,
+   "lic": "CC BY-SA 4.0",
+   "autor": "Suyash Dwivedi",
+   "fichero": "cand/b3_ultrasonido_0.jpg"
+  }
+ ],
+ "b3_servo": [
+  {
+   "title": "File:DSI Mopho knob controlled by RC servo motor - Analog synth RC Hack.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/DSI_Mopho_knob_controlled_by_RC_servo_motor_-_Analog_synth_RC_Hack.jpg/1920px-DSI_Mopho_knob_controlled_by_RC_servo_motor_-_Analog_synth_RC_Hack.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "w": 3264,
+   "lic": "CC BY 2.0",
+   "autor": "Mike Seyfang",
+   "fichero": "cand/b3_servo_0.jpg"
+  }
+ ],
+ "b3_stepper": [
+  {
+   "title": "File:Arduino UNO compatible board, CNC shield stepper motor controller, and a NEMA 17 stepper motor.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Arduino_UNO_compatible_board%2C_CNC_shield_stepper_motor_controller%2C_and_a_NEMA_17_stepper_motor.jpg/1920px-Arduino_UNO_compatible_board%2C_CNC_shield_stepper_motor_controller%2C_and_a_NEMA_17_stepper_motor.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "w": 2952,
+   "lic": "CC BY-SA 4.0",
+   "autor": "DotEagle",
+   "fichero": "cand/b3_stepper_0.jpg"
+  },
+  {
+   "title": "File:Nema 17 Stepper Motor.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Nema_17_Stepper_Motor.jpg/1920px-Nema_17_Stepper_Motor.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "w": 4032,
+   "lic": "CC BY-SA 2.0",
+   "autor": "oomlout",
+   "fichero": "cand/b3_stepper_1.jpg"
+  },
+  {
+   "title": "File:FarmBot Genesis OpenBuilds v slot wheels connecting plates, NEMA 17 stepper motor and bolts.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/d/d2/FarmBot_Genesis_OpenBuilds_v_slot_wheels_connecting_plates%2C_NEMA_17_stepper_motor_and_bolts.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "w": 887,
+   "lic": "CC BY 4.0",
+   "autor": "FarmBot",
+   "fichero": "cand/b3_stepper_2.jpg"
+  }
+ ],
+ "b3_harmonic": [
+  {
+   "title": "File:Harmonic Drive.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Harmonic_Drive.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "w": 1760,
+   "lic": "CC BY-SA 4.0",
+   "autor": "wdwd",
+   "fichero": "cand/b3_harmonic_2.jpg"
+  },
+  {
+   "title": "File:Детали волновых передач.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/%D0%94%D0%B5%D1%82%D0%B0%D0%BB%D0%B8_%D0%B2%D0%BE%D0%BB%D0%BD%D0%BE%D0%B2%D1%8B%D1%85_%D0%BF%D0%B5%D1%80%D0%B5%D0%B4%D0%B0%D1%87.jpg/1920px-%D0%94%D0%B5%D1%82%D0%B0%D0%BB%D0%B8_%D0%B2%D0%BE%D0%BB%D0%BD%D0%BE%D0%B2%D1%8B%D1%85_%D0%BF%D0%B5%D1%80%D0%B5%D0%B4%D0%B0%D1%87.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "w": 3665,
+   "lic": "CC BY-SA 3.0",
+   "autor": "Twdragon",
+   "fichero": "cand/b3_harmonic_3.jpg"
+  }
+ ],
+ "b4_paletizado": [
+  {
+   "title": "File:Collaborative Palletizer.png",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/a/aa/Collaborative_Palletizer.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "w": 1222,
+   "lic": "CC BY-SA 4.0",
+   "autor": "CollaborativePalletizer",
+   "fichero": "cand/b4_paletizado_1.jpg"
+  },
+  {
+   "title": "File:Manufacturing; Robot (5941039536).jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Manufacturing%3B_Robot_%285941039536%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "w": 640,
+   "lic": "Public domain",
+   "autor": "National Institute of Standards and Technology",
+   "fichero": "cand/b4_paletizado_2.jpg"
+  }
+ ],
+ "b6_nube": [
+  {
+   "title": "File:Ouster OS1-64 lidar point cloud of intersection of Folsom and Dore St, San Francisco.png",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Ouster_OS1-64_lidar_point_cloud_of_intersection_of_Folsom_and_Dore_St%2C_San_Francisco.png/1920px-Ouster_OS1-64_lidar_point_cloud_of_intersection_of_Folsom_and_Dore_St%2C_San_Francisco.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "w": 8192,
+   "lic": "CC BY 4.0",
+   "autor": "Daniel L. Lu",
+   "fichero": "cand/b6_nube_0.jpg"
+  }
+ ],
+ "b7_atlas": [
+  {
+   "title": "File:Atlas frontview 2013.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Atlas_frontview_2013.jpg/1920px-Atlas_frontview_2013.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "w": 3738,
+   "lic": "Public domain",
+   "autor": "DARPA",
+   "fichero": "cand/b7_atlas_0.jpg"
+  }
+ ],
+ "b2_cobot": [],
+ "b6_estereo": [],
+ "b8_ajedrez": [],
+ "b2_cobot2": [],
+ "b2_exo": [],
+ "b3_cmos": [],
+ "b4_abb2": [],
+ "b4_soldadura": [],
+ "b5_bldc": [],
+ "b6_estereo2": [],
+ "b6_aruco": [],
+ "b7_roomba": [],
+ "b8_ajedrez2": [],
+ "b8_rubik": [],
+ "b2_cobot3": [
+  {
+   "title": "File:UR16e robot arm.png",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/UR16e_robot_arm.png/1920px-UR16e_robot_arm.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "w": 8605,
+   "lic": "CC BY-SA 4.0",
+   "autor": "Auledas",
+   "fichero": "cand/b2_cobot3_0.jpg"
+  },
+  {
+   "title": "File:Cobot.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Cobot.jpg/1920px-Cobot.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "w": 1960,
+   "lic": "CC BY-SA 4.0",
+   "autor": "GrowSkills Robotics",
+   "fichero": "cand/b2_cobot3_3.jpg"
+  }
+ ],
+ "b2_exo2": [],
+ "b4_soldadura2": [],
+ "b4_abb3": [
+  {
+   "title": "File:Robot delta FlexPicker d'ABB.png",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Robot_delta_FlexPicker_d%27ABB.png/1920px-Robot_delta_FlexPicker_d%27ABB.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "w": 1926,
+   "lic": "CC BY-SA 4.0",
+   "autor": "Marc Auledas",
+   "fichero": "cand/b4_abb3_1.jpg"
+  },
+  {
+   "title": "File:ASEA and ABB industrial robots.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/ASEA_and_ABB_industrial_robots.jpg/1920px-ASEA_and_ABB_industrial_robots.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "w": 3648,
+   "lic": "CC BY-SA 4.0",
+   "autor": "Dependability",
+   "fichero": "cand/b4_abb3_2.jpg"
+  }
+ ],
+ "b5_bldc2": [
+  {
+   "title": "File:Medion MD8910 - Capstan motor-8589.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Medion_MD8910_-_Capstan_motor-8589.jpg/1920px-Medion_MD8910_-_Capstan_motor-8589.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "w": 4136,
+   "lic": "CC BY-SA 4.0",
+   "autor": "Raimond Spekking",
+   "fichero": "cand/b5_bldc2_0.jpg"
+  },
+  {
+   "title": "File:HP StorageWorks DAT 72 USB - Tape Drive Capstans, brushless DC electric motor-92900.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/HP_StorageWorks_DAT_72_USB_-_Tape_Drive_Capstans%2C_brushless_DC_electric_motor-92900.jpg/1920px-HP_StorageWorks_DAT_72_USB_-_Tape_Drive_Capstans%2C_brushless_DC_electric_motor-92900.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "w": 5016,
+   "lic": "CC BY-SA 4.0",
+   "autor": "Raimond Spekking",
+   "fichero": "cand/b5_bldc2_1.jpg"
+  },
+  {
+   "title": "File:Blaupunkt CR-4500 - drive unit - tape Drive Capstan, brushless DC electric motor-9992.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Blaupunkt_CR-4500_-_drive_unit_-_tape_Drive_Capstan%2C_brushless_DC_electric_motor-9992.jpg/1920px-Blaupunkt_CR-4500_-_drive_unit_-_tape_Drive_Capstan%2C_brushless_DC_electric_motor-9992.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "w": 4583,
+   "lic": "CC BY-SA 4.0",
+   "autor": "Raimond Spekking",
+   "fichero": "cand/b5_bldc2_2.jpg"
+  },
+  {
+   "title": "File:Blaupunkt CR-4500 - drive unit - tape Drive Capstan, brushless DC electric motor-9993.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Blaupunkt_CR-4500_-_drive_unit_-_tape_Drive_Capstan%2C_brushless_DC_electric_motor-9993.jpg/1920px-Blaupunkt_CR-4500_-_drive_unit_-_tape_Drive_Capstan%2C_brushless_DC_electric_motor-9993.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "w": 3278,
+   "lic": "CC BY-SA 4.0",
+   "autor": "Raimond Spekking",
+   "fichero": "cand/b5_bldc2_3.jpg"
+  }
+ ],
+ "b6_estereo3": [
+  {
+   "title": "File:Stereo camera.JPG",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Stereo_camera.JPG/1920px-Stereo_camera.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "w": 4608,
+   "lic": "CC BY-SA 3.0",
+   "autor": "Timothée Cognard",
+   "fichero": "cand/b6_estereo3_0.jpg"
+  },
+  {
+   "title": "File:Belplasca.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Belplasca.jpg/1920px-Belplasca.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "w": 5495,
+   "lic": "CC0",
+   "autor": "Wilfredor",
+   "fichero": "cand/b6_estereo3_1.jpg"
+  },
+  {
+   "title": "File:Coll. Marcè CL - View Master personal stereo camera 1952.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/d/dc/Coll._Marc%C3%A8_CL_-_View_Master_personal_stereo_camera_1952.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "w": 1003,
+   "lic": "CC BY-SA 4.0",
+   "autor": "OppidumNissenae",
+   "fichero": "cand/b6_estereo3_3.jpg"
+  }
+ ],
+ "b6_aruco2": [],
+ "b7_roomba2": [
+  {
+   "title": "File:Roomba original.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/f/f5/Roomba_original.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+   "w": 800,
+   "lic": "CC BY 4.0",
+   "autor": "Larry D. Moore",
+   "fichero": "cand/b7_roomba2_0.jpg"
+  },
+  {
+   "title": "File:Roomba Combo 2 Essential.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Roomba_Combo_2_Essential.jpg/1920px-Roomba_Combo_2_Essential.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "w": 3024,
+   "lic": "CC BY-SA 4.0",
+   "autor": "Piperpet",
+   "fichero": "cand/b7_roomba2_1.jpg"
+  },
+  {
+   "title": "File:IRobot-Roomba-Top-view-01.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/IRobot-Roomba-Top-view-01.jpg/1920px-IRobot-Roomba-Top-view-01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "w": 3840,
+   "lic": "CC BY-SA 4.0",
+   "autor": "CEphoto, Uwe Aranas",
+   "fichero": "cand/b7_roomba2_2.jpg"
+  },
+  {
+   "title": "File:Roomba e6 underside.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Roomba_e6_underside.jpg/1920px-Roomba_e6_underside.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "w": 3264,
+   "lic": "CC BY-SA 4.0",
+   "autor": "Piperpet",
+   "fichero": "cand/b7_roomba2_3.jpg"
+  }
+ ],
+ "b8_ajedrez3": [
+  {
+   "title": "File:Chess robot Summa.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Chess_robot_Summa.jpg/1920px-Chess_robot_Summa.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "w": 2781,
+   "lic": "CC BY-SA 4.0",
+   "autor": "Sergei Kazantsev",
+   "fichero": "cand/b8_ajedrez3_0.jpg"
+  },
+  {
+   "title": "File:Chess robot.jpg",
+   "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Chess_robot.jpg/1920px-Chess_robot.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "w": 3264,
+   "lic": "CC BY-SA 4.0",
+   "autor": "Sergei Kazantsev",
+   "fichero": "cand/b8_ajedrez3_1.jpg"
+  }
+ ],
+ "b8_rubik2": []
+}

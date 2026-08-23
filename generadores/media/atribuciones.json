@@ -1,0 +1,196 @@
+{
+ "b1_hdd": {
+  "title": "Actuator arm assembly of a hard disk drive.jpg",
+  "autor": "Mk2010",
+  "lic": "CC BY 4.0",
+  "fichero": "fotos/b1_hdd.jpg"
+ },
+ "b1_jacquard": {
+  "title": "NMS Jacquard loom 2.JPG",
+  "autor": "Ad Meskens",
+  "lic": "CC BY-SA 3.0",
+  "fichero": "fotos/b1_jacquard.jpg"
+ },
+ "b1_unimate": {
+  "title": "Unimate pouring coffee for a woman at Biltmore Hotel, 1967.jpg",
+  "autor": "Frank Q. Brown, Los Angeles Times",
+  "lic": "CC BY 4.0",
+  "fichero": "fotos/b1_unimate.jpg"
+ },
+ "b2_cuadrupedo": {
+  "title": "YanDavos on SPOT.jpg",
+  "autor": "ArticCynda",
+  "lic": "CC BY-SA 4.0",
+  "fichero": "fotos/b2_cuadrupedo.jpg"
+ },
+ "b2_delta": {
+  "title": "Delta x robot.jpg",
+  "autor": "Trungdoanhong",
+  "lic": "CC BY-SA 4.0",
+  "fichero": "fotos/b2_delta.jpg"
+ },
+ "b2_humanoide": {
+  "title": "HONDA ASIMO.jpg",
+  "autor": "Gnsin",
+  "lic": "CC BY-SA 3.0",
+  "fichero": "fotos/b2_humanoide.jpg"
+ },
+ "b3_encoder": {
+  "title": "RotaryIncrementalEncoder.jpg",
+  "autor": "Lambtron",
+  "lic": "CC BY-SA 4.0",
+  "fichero": "fotos/b3_encoder.jpg"
+ },
+ "b3_galga": {
+  "title": "Unmounted strain gauge.jpg",
+  "autor": "Pleriche",
+  "lic": "CC BY-SA 4.0",
+  "fichero": "fotos/b3_galga.jpg"
+ },
+ "b3_imu": {
+  "title": "DARPA TIMU Michigan Penny.jpg",
+  "autor": "University of Michigan",
+  "lic": "Public domain",
+  "fichero": "fotos/b3_imu.jpg"
+ },
+ "b3_lidar": {
+  "title": "Velodyne High-Def LIDAR.jpg",
+  "autor": "Steve Jurvetson",
+  "lic": "CC BY 2.0",
+  "fichero": "fotos/b3_lidar.jpg"
+ },
+ "b4_kuka": {
+  "title": "KUKA Industrial Robots IR.jpg",
+  "autor": "Mixabest",
+  "lic": "CC BY-SA 3.0",
+  "fichero": "fotos/b4_kuka.jpg"
+ },
+ "b4_puma": {
+  "title": "Unimate 500 PUMA Deutsches Museum.jpg",
+  "autor": "Theoprakt",
+  "lic": "CC BY-SA 3.0",
+  "fichero": "fotos/b4_puma.jpg"
+ },
+ "b5_motor": {
+  "title": "TMW 50906 Schnittmodell einer Drehstrommaschine (Asynchronmaschine).jpg",
+  "autor": "",
+  "lic": "Public domain",
+  "fichero": "fotos/b5_motor.jpg"
+ },
+ "b6_camara_obscura": {
+  "title": "Jan Verbruggen Foundry Drawing 47 Horizontal Boring Machine.jpg",
+  "autor": "",
+  "lic": "CC BY-SA 3.0",
+  "fichero": "fotos/b6_camara_obscura.jpg"
+ },
+ "b7_turtlebot": {
+  "title": "TurtleBot3 Burger.jpg",
+  "autor": "Kuscu0",
+  "lic": "CC BY-SA 4.0",
+  "fichero": "fotos/b7_turtlebot.jpg"
+ },
+ "b7_almacen": {
+  "title": "Ocado warehouse bots.jpg",
+  "autor": "Techwords",
+  "lic": "CC BY-SA 4.0",
+  "fichero": "fotos/b7_almacen.jpg"
+ },
+ "b8_mano": {
+  "title": "NIST Dexterous Manipulation Testbed (9502902636).jpg",
+  "autor": "National Institute of Standards and Technology",
+  "lic": "Public domain",
+  "fichero": "fotos/b8_mano.jpg"
+ },
+ "b2_scara": {
+  "title": "SCARA robot 2R.png",
+  "autor": "Mitsubishi Electric Automation, Inc. 500 Corporate Woods Pkwy - Vernon",
+  "lic": "CC BY-SA 4.0",
+  "fichero": "fotos/b2_scara.png"
+ },
+ "b2_agv": {
+  "title": "Automated guided vehicle container mover at Port of Rotterdam.JPG",
+  "autor": "Alf van Beem",
+  "lic": "CC0",
+  "fichero": "fotos/b2_agv.jpg"
+ },
+ "b3_harmonic": {
+  "lic": "CC BY-SA 4.0",
+  "autor": "wdwd",
+  "titulo": "File:Harmonic Drive.jpg"
+ },
+ "b4_abb3": {
+  "lic": "CC BY-SA 4.0",
+  "autor": "Dependability",
+  "titulo": "File:ASEA and ABB industrial robots.jpg"
+ },
+ "b6_nube": {
+  "lic": "CC BY 4.0",
+  "autor": "Daniel L. Lu",
+  "titulo": "File:Ouster OS1-64 lidar point cloud of intersection of Folsom and Dore St, San Francisco.png"
+ },
+ "b6_estereo3": {
+  "lic": "CC BY-SA 3.0",
+  "autor": "Timothée Cognard",
+  "titulo": "File:Stereo camera.JPG"
+ },
+ "b7_atlas": {
+  "lic": "Public domain",
+  "autor": "DARPA",
+  "titulo": "File:Atlas frontview 2013.jpg"
+ },
+ "b7_roomba2": {
+  "lic": "CC BY-SA 4.0",
+  "autor": "CEphoto, Uwe Aranas",
+  "titulo": "File:IRobot-Roomba-Top-view-01.jpg"
+ },
+ "b8_ajedrez3": {
+  "lic": "CC BY-SA 4.0",
+  "autor": "Sergei Kazantsev",
+  "titulo": "File:Chess robot.jpg"
+ },
+ "b4_paletizado": {
+  "lic": "CC BY-SA 4.0",
+  "autor": "CollaborativePalletizer",
+  "titulo": "File:Collaborative Palletizer.png"
+ },
+ "b1_rover2": {
+  "lic": "CC BY 2.0",
+  "autor": "semeion.photo Credit: NASA/JPL-Caltech/ASU/Simeon Schmauß",
+  "titulo": "File:NASA's Ingenuity helicopter on Mars by Perseverance Mastcam-Z, Sol 768 (53475637956).jpg"
+ },
+ "b1_watt": {
+  "lic": "CC BY 3.0",
+  "autor": "Andy Dingley",
+  "titulo": "File:Centrifugal flyball governor.jpg"
+ },
+ "b2_davinci": {
+  "lic": "CC BY-SA 4.0",
+  "autor": "Alvarogarciamd",
+  "titulo": "File:New Da Vinci Xi.jpg"
+ },
+ "b2_dron": {
+  "lic": "CC0",
+  "autor": "Josh Sorenson",
+  "titulo": "File:Quadcopter camera drone in flight.jpg"
+ },
+ "b2_auto": {
+  "lic": "CC BY-SA 4.0",
+  "autor": "Dllu",
+  "titulo": "File:Waymo Zeekr Vehicle at Bayshore Depot oblique view dllu.jpg"
+ },
+ "b2_cobot3": {
+  "lic": "CC BY-SA 4.0",
+  "autor": "Auledas",
+  "titulo": "File:UR16e robot arm.png"
+ },
+ "b3_ultrasonido": {
+  "lic": "CC BY-SA 4.0",
+  "autor": "Suyash Dwivedi",
+  "titulo": "File:HC-SR04 ultrasonic distance sensor module pcb.jpg"
+ },
+ "b3_stepper": {
+  "lic": "CC BY-SA 2.0",
+  "autor": "oomlout",
+  "titulo": "File:Nema 17 Stepper Motor.jpg"
+ }
+}

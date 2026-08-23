@@ -1,0 +1,362 @@
+{
+"fotos/b1_hdd.jpg": [
+1920,
+1280
+],
+"fotos/b1_jacquard.jpg": [
+1920,
+2560
+],
+"fotos/b1_rover2.jpg": [
+1920,
+1430
+],
+"fotos/b1_unimate.jpg": [
+1920,
+1768
+],
+"fotos/b1_watt.jpg": [
+618,
+1698
+],
+"fotos/b2_agv.jpg": [
+1920,
+1442
+],
+"fotos/b2_auto.jpg": [
+1920,
+1280
+],
+"fotos/b2_cobot3.png": [
+1920,
+1554
+],
+"fotos/b2_cuadrupedo.jpg": [
+1920,
+1280
+],
+"fotos/b2_davinci.jpg": [
+1920,
+1440
+],
+"fotos/b2_delta.jpg": [
+1000,
+702
+],
+"fotos/b2_dron.jpg": [
+1920,
+1280
+],
+"fotos/b2_humanoide.jpg": [
+960,
+1280
+],
+"fotos/b2_scara.png": [
+1080,
+1037
+],
+"fotos/b3_encoder.jpg": [
+1920,
+1400
+],
+"fotos/b3_galga.jpg": [
+594,
+386
+],
+"fotos/b3_harmonic.jpg": [
+1760,
+1784
+],
+"fotos/b3_imu.jpg": [
+1920,
+1626
+],
+"fotos/b3_lidar.jpg": [
+1920,
+1390
+],
+"fotos/b3_stepper.jpg": [
+1920,
+1280
+],
+"fotos/b3_ultrasonido.jpg": [
+1920,
+1280
+],
+"fotos/b4_abb3.jpg": [
+1920,
+1440
+],
+"fotos/b4_kuka.jpg": [
+1492,
+992
+],
+"fotos/b4_paletizado.png": [
+1222,
+836
+],
+"fotos/b4_puma.jpg": [
+1527,
+1770
+],
+"fotos/b5_motor.jpg": [
+1920,
+1583
+],
+"fotos/b6_camara_obscura.jpg": [
+1920,
+1396
+],
+"fotos/b6_estereo3.jpg": [
+1920,
+1280
+],
+"fotos/b6_nube.png": [
+1920,
+1080
+],
+"fotos/b7_almacen.jpg": [
+1920,
+1321
+],
+"fotos/b7_atlas.jpg": [
+1920,
+2644
+],
+"fotos/b7_roomba2.jpg": [
+1920,
+1920
+],
+"fotos/b7_turtlebot.jpg": [
+1920,
+2621
+],
+"fotos/b8_ajedrez3.jpg": [
+1920,
+1440
+],
+"fotos/b8_mano.jpg": [
+1920,
+1258
+],
+"figs/b3_cuadratura.png": [
+681,
+381
+],
+"figs/b3_histeresis.png": [
+703,
+432
+],
+"figs/b3_par_velocidad.png": [
+717,
+432
+],
+"figs/b4_workspace_elipses.png": [
+660,
+573
+],
+"figs/b5_p_pd_pid.png": [
+720,
+456
+],
+"figs/b6_kalman.png": [
+688,
+432
+],
+"figs/b6_pinhole.png": [
+779,
+383
+],
+"figs/b7_astar_dijkstra.png": [
+1017,
+342
+],
+"figs/b8_gridworld.png": [
+609,
+486
+],
+"gifs/b4_trayectoria.gif": [
+616,
+572
+],
+"gifs/b5_kp.gif": [
+704,
+440
+],
+"gifs/b6_particulas.gif": [
+836,
+319
+],
+"gifs/b7_rrt.gif": [
+616,
+572
+],
+"gifs/b8_valor.gif": [
+704,
+484
+],
+"eq/analog_ele.png": [
+746,
+183
+],
+"eq/analog_mec.png": [
+792,
+78
+],
+"eq/est_deriv.png": [
+1465,
+125
+],
+"eq/estatica.png": [
+519,
+113
+],
+"eq/fk2r.png": [
+2599,
+101
+],
+"eq/jac.png": [
+431,
+101
+],
+"eq/kalman.png": [
+1509,
+111
+],
+"eq/lagrange.png": [
+1419,
+228
+],
+"eq/manip.png": [
+1234,
+101
+],
+"eq/manip_n.png": [
+1234,
+101
+],
+"eq/mdq.png": [
+1030,
+242
+],
+"eq/mdq_j.png": [
+1561,
+111
+],
+"eq/motor3.png": [
+1073,
+534
+],
+"eq/mp.png": [
+1083,
+143
+],
+"eq/par_calc.png": [
+1991,
+240
+],
+"eq/pd_zw.png": [
+1294,
+276
+],
+"eq/pid.png": [
+1148,
+223
+],
+"eq/pinhole.png": [
+954,
+205
+],
+"eq/planta.png": [
+1057,
+113
+],
+"eq/poe.png": [
+1336,
+117
+],
+"eq/poe_c.png": [
+801,
+212
+],
+"eq/qlearn.png": [
+2253,
+180
+],
+"eq/reduccion.png": [
+1211,
+205
+],
+"eq/rodrigues.png": [
+1422,
+111
+],
+"eq/se3_T.png": [
+488,
+240
+],
+"eq/seg_orden.png": [
+896,
+111
+],
+"eq/so3.png": [
+1102,
+107
+],
+"eq/ss.png": [
+1378,
+92
+],
+"eq/t_comp.png": [
+664,
+85
+],
+"eq/t_inv.png": [
+853,
+240
+],
+"eq/tau_kt.png": [
+341,
+85
+],
+"eq/tf_pos.png": [
+828,
+237
+],
+"eq/tf_vel.png": [
+690,
+237
+],
+"eq/vel_res.png": [
+1415,
+111
+],
+"eq/yoshikawa.png": [
+1096,
+120
+],
+"eq/ej_fk.png": [
+3555,
+93
+],
+"eq/ej_c2.png": [
+2507,
+236
+],
+"eq/ej_q1.png": [
+2227,
+101
+],
+"eq/ej_J.png": [
+2492,
+240
+],
+"eq/ej_tau.png": [
+1967,
+240
+],
+"eq/ej_comp.png": [
+3181,
+240
+]
+}
