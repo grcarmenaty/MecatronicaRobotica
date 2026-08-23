@@ -1,0 +1,25 @@
+# Artefactos de construcción y trabajo intermedio
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Renders de control de calidad y PDF intermedios
+qa/
+*_qa*.png
+*_qa*.jpg
+
+# Bibliografía con derechos de autor: no se versiona
+libros/
+fuentes/
+
+# Imágenes candidatas descartadas
+generadores/media/cand/
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Salidas de los generadores: la copia buena vive en entregables/
+generadores/*.docx
+generadores/*.pptx
+generadores/*.pdf
