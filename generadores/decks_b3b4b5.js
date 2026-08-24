@@ -318,7 +318,7 @@ sectionSlide(p3, "S10", "Fuerza, tacto y rango", "Galgas y puente de Wheatstone 
  body: "Célula de carga = elemento elástico + galgas. Los robots con control de par montan sensores de par en las articulaciones o una muñeca de fuerza-par en el efector (Corke, p. 364). Discusión: ¿por qué la manipulación diestra sigue limitada por el tacto?",
  fill: "E3F7EC", bodySize: 12,
  });
- s.addNotes("Escribir el puente de Wheatstone, su condición de equilibrio y la salida desequilibrada; razonar sobre las derivadas de la ec. 5.39 por qué 4 galgas activas compensan temperatura. De los cinco métodos de medir fuerza de Fraden, el dominante es medir la deformación de un elemento elástico (p. 355). Conectar la discusión táctil con los grippers del laboratorio y los humanoides de B2.");
+ s.addNotes("Escribir el puente de Wheatstone, su condición de equilibrio y la salida desequilibrada; razonar sobre las derivadas de la ec. 5.39 por qué 4 galgas activas compensan temperatura. De los cinco métodos de medir fuerza de Fraden, el dominante es medir la deformación de un elemento elástico (p. 355). Conectar la discusión táctil con las pinzas del laboratorio y los humanoides de B2.");
  footer(s, "Fraden, 2016, pp. 215-216 y 355-359 · Corke, 2023, p. 364");
 }
 
@@ -379,7 +379,7 @@ slideFotos(p3, "Tres curvas que hay que saber leer", "S8–S11 · Figuras del bl
  ["DC de escobillas", "Barato y simple; escobillas con desgaste y chispas. Robots pequeños y de hobby."],
  ["BLDC", "Imanes al rotor, bobinados al estátor; conmutación electrónica con sensores Hall o sensorless. Sin desgaste, mejor disipación, más par por volumen: el estándar de los industriales."],
  ["Paso a paso", "Avance en pasos discretos: posiciona en lazo abierto contando pasos; pierde pasos bajo sobrecarga; microstepping para suavizar."],
- ["Servoaccionamiento", "Lazo anidado: velocidad dentro, posición fuera; feedforward de velocidad para reducir el error de seguimiento. El control de par exige medición de par integrada."],
+ ["Servoaccionamiento", "Lazo anidado: velocidad dentro, posición fuera; prealimentación de velocidad para reducir el error de seguimiento. El control de par exige medición de par integrada."],
  ];
  g.forEach((c, i) => {
  const col = i % 2, row = Math.floor(i / 2);
@@ -402,7 +402,7 @@ sectionSlide(p3, "S12", "Hidráulica, neumática y reductoras", "Mapa de actuaci
 slideFotos(p3, "Actuadores y transmisiones, de cerca", "S11–S12 · Hardware", [
  { f: "fotos/b3_stepper.jpg", x: 0.7, y: 1.5, w: 3.85, h: 4.9, cap: "Paso a paso NEMA 17: posicionar en lazo abierto contando pasos" },
  { f: "fotos/b3_harmonic.jpg", x: 4.72, y: 1.5, w: 3.85, h: 4.9, cap: "Harmonic drive: la reductora de las articulaciones robóticas" },
- { f: "fotos/b2_cobot3.png", x: 8.74, y: 1.5, w: 3.9, h: 4.9, cap: "UR16e: seis servoaccionamientos con par medido en cada eje" },
+ { f: "fotos/b2_cobot3.png", x: 8.74, y: 1.5, w: 3.9, h: 4.9, cap: "UR16e: seis servoaccionamientos y un sensor fuerza-par en la brida" },
 ], "Fotos: oomlout CC BY-SA 2.0 · wdwd CC BY-SA 4.0 · Auledas CC BY-SA 4.0 · Wikimedia Commons",
 "Pasar de la foto al concepto: el paso a paso pierde pasos bajo sobrecarga (lazo abierto), el harmonic drive explica la inercia reflejada dividida por G² y el cobot integra motor, reductora, encoder y medición de par en cada eje.");
 
@@ -596,7 +596,7 @@ sectionSlide(p4, "S14", "Cinemática directa", "El problema FK · ETS · Denavit
  eqImg(s, "poe", 8.95, 5.28, 3.35, 0.42);
  card(s, 0.7, 6.02, 11.9, 0.8, {
  title: "",
- body: "Ejercicio por parejas: para el 2R, escribir (i) la ETS, (ii) la tabla DH y (iii) M, S1 y S2 del PoE; comprobar que las tres dan la misma T(q) en q = (30°, 40°): t = (1.21, 1.44), orientación 70° (Corke, p. 258).",
+ body: "Ejercicio por parejas: para el 2R, escribir (i) la ETS, (ii) la tabla DH y (iii) M, S1 y S2 del PoE; comprobar que las tres dan la misma T(q) en el 2R del libro, de eslabones de 1 m, en q = (30°, 40°): t = (1.21, 1.44), orientación 70° (Corke, p. 258).",
  fill: BG_LT, bodySize: 11.5,
  });
  s.addNotes("Derivar la lógica del PoE en pizarra sobre el 2R: cada articulación aplica un giro exponencial al resto de la cadena desde la configuración de casa; conectar con Rodrigues (S13). Discusión de cierre: ETS para leer geometría, DH para intercambiar modelos, PoE para el análisis de velocidad; la relación formal PoE-DH está en el apéndice C de Lynch y Park.");
@@ -657,12 +657,12 @@ sectionSlide(p4, "S16", "Cinemática inversa", "2R analítico · desacoplo con m
  { t: "2R plano en pizarra", h: true },
  { t: "Ley de cosenos para el codo, atan2 de dos argumentos para el hombro (conserva el cuadrante); dos ramas: codo arriba / codo abajo." },
  { t: "6R industrial: condición de forma cerrada = muñeca esférica (tres ejes que se cortan en un punto)." },
- { t: "Desacoplo: la posición del centro de muñeca depende solo de q1-q3; la orientación restante la resuelven q4-q6 (extraer Euler ZYX)." },
+ { t: "Desacoplo: la posición del centro de muñeca depende solo de q1-q3; la orientación restante la resuelven q4-q6 (extraer Euler ZYX, convención de Lynch y Park; la muñeca del 6R genérico de Corke es ZYZ)." },
  { t: "Con offset de hombro: lefty/righty × codo arriba/abajo = 4 soluciones de posición; × muñeca volteada o no = 8 en total (Corke, p. 282)." },
  ], { w: 6.9, size: 13 });
  card(s, 7.9, 1.6, 4.7, 2.85, {
  title: "Casos degenerados",
- body: "Pose fuera de alcance → sin solución. Objetivo con px = py = 0 → infinitas soluciones de theta1. Y «por límites articulares y colisiones no las ocho soluciones son físicamente alcanzables».",
+ body: "Pose fuera de alcance → sin solución. Objetivo con px = py = 0 → infinitas soluciones de theta1. Y «por límites articulares y colisiones no todas las ocho soluciones son físicamente alcanzables».",
  bodySize: 12.5,
  });
  card(s, 7.9, 4.65, 4.7, 2.0, {
@@ -1192,7 +1192,7 @@ sectionSlide(p5, "S24", "Dinámica y par calculado", "Euler-Lagrange · M(q)·q�
  });
  card(s, 6.85, 5.0, 5.75, 1.7, {
  title: "Requisitos y límites",
- body: "Exige estimar masas, centros de masas, inercias y fricción; con error de modelo aparece un forzamiento en la dinámica del error. En la práctica: mejor seguimiento que feedforward o feedback solos, con menos esfuerzo de control.",
+ body: "Exige estimar masas, centros de masas, inercias y fricción; con error de modelo aparece un forzamiento en la dinámica del error. En la práctica: mejor seguimiento que la prealimentación o la realimentación solas, con menos esfuerzo de control.",
  bodySize: 11.5,
  });
  s.addNotes("Contrastar con el feedforward de par: también usa el modelo, pero su dinámica de error sigue acoplada por M no diagonal y depende de la configuración (Corke, ec. 9.15). Conexiones hacia delante: M, C, g reaparecen en simulación (Gazebo/Isaac, B8) y el par calculado es la base de los controladores sobre MoveIt 2 (B7).");

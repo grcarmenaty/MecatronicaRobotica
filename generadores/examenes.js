@@ -37,7 +37,7 @@ function cabecera(titulo, version, fecha, dur) {
 
 function parteTest(test, valor) {
  const out = [h2(`Parte A · Test (${fx(valor)} puntos; ${test.length} preguntas)`)];
- out.push(p(`Marca UNA opción por pregunta en la propia hoja. Acierto: +${fx(valor / test.length)} · error: −${fx(Math.round(valor / test.length / 3 * 100) / 100)} · blanco: 0.`, { run: { color: IQS.grey, size: 20 } }));
+ out.push(p(`Marca UNA opción por pregunta en la propia hoja. Acierto: +${fx(valor / test.length)} · error: −${fx(Math.round(valor / test.length / 3 * 1000) / 1000)} · blanco: 0.`, { run: { color: IQS.grey, size: 20 } }));
  test.forEach((q, i) => {
  out.push(pRuns([
  { text: `${i + 1}. `, bold: true },

@@ -34,7 +34,7 @@ module.exports = {
  // ---------------- Bloque 3 ----------------
  "3|S10|50–55 min": {
  corto: "Por qué la manipulación diestra sigue limitada por el tacto",
- resp: "En tacto, el transductor está resuelto y el sistema no: lo que falta es integración mecánica, cableado, robustez y procesado, no principio físico. Corolario de criterio: cuando una tecnología lleva veinte años prometida y no llega, hay que preguntar por la integración y el procesado, no por el transductor. La conexión queda abierta hacia los grippers del laboratorio y hacia las manos de los humanoides, hoy la parte menos resuelta de la máquina.",
+ resp: "En tacto, el transductor está resuelto y el sistema no: lo que falta es integración mecánica, cableado, robustez y procesado, no principio físico. Corolario de criterio: cuando una tecnología lleva veinte años prometida y no llega, hay que preguntar por la integración y el procesado, no por el transductor. La conexión queda abierta hacia las pinzas del laboratorio y hacia las manos de los humanoides, hoy la parte menos resuelta de la máquina.",
  },
  "3|S10|110–115 min": {
  corto: "Puesta en común del ejercicio de selección de sensores",

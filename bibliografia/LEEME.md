@@ -1,7 +1,9 @@
 # Bibliografía del curso 82514
 
-Los apuntes contienen unas 750 citas con número de página verificado. Esta carpeta no
-guarda los documentos citados, guarda **cómo recuperarlos**.
+Los apuntes contienen unas 750 citas con número de página a los cinco libros de texto, que el
+`Informe_Verificacion_Citas_82514` desglosa en 992 referencias al contar por separado cada una de
+las que comparten paréntesis. Esta carpeta no guarda los documentos citados, guarda **cómo
+recuperarlos**.
 
 ## Qué no está versionado, y por qué
 
@@ -12,13 +14,13 @@ referencia contra tu propio ejemplar.
 
 | Libro | Uso principal en el curso |
 |---|---|
-| Corke (2023), *Robotics, Vision and Control*, 3.ª ed. Python, Springer | Bloques 4, 6 y 7 |
-| Lynch y Park (2017), *Modern Robotics*, Cambridge | Bloques 4 y 5 |
-| Thrun, Burgard y Fox (2005), *Probabilistic Robotics*, MIT Press | Bloque 6 |
+| Corke (2023), *Robotics, Vision and Control*, 3.ª ed. Python, Springer | Bloques 1 a 7 |
+| Lynch y Park (2017), *Modern Robotics*, Cambridge | Bloques 2, 4, 5 y 7 |
+| Thrun, Burgard y Fox (2005), *Probabilistic Robotics*, MIT Press | Bloques 6 y 7 |
 | Fraden (2016), *Handbook of Modern Sensors*, 5.ª ed., Springer | Bloque 3 |
-| De Silva et al. (2016), *Mechatronics: Fundamentals and Applications*, CRC Press | Bloques 1 y 3 |
+| De Silva et al. (2016), *Mechatronics: Fundamentals and Applications*, CRC Press | Bloques 1, 3, 5 y 8 |
 
-**Los 25 artículos de acceso abierto.** Ocupan unos 260 MB, demasiado para versionarlos,
+**Los 22 artículos de acceso abierto.** Ocupan unos 260 MB, demasiado para versionarlos,
 pero son libres y se descargan solos. Abre `Descargar_fuentes_82514.ipynb` con Google
 Colaboratory, ejecuta las dos celdas y aparecen ordenados por bloque y sesión en tu Drive.
 `lista.txt` es la misma lista en texto plano, por si prefieres bajarlos a mano.

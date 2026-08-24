@@ -303,7 +303,7 @@ C.append(md("""---
 
 ## Soluciones
 
-**Ejercicio 1.** El resultado numérico es más fino de lo que uno espera y merece comentarse con cuidado. Con γ = 0,5, `v*(7,0)` vale exactamente −0,0800, que es **el valor de no llegar nunca**: −0,04/(1−0,5). Desde la esquina más lejana, con γ = 0,5 la meta está a quince pasos y 0,5¹⁵ ≈ 3·10⁻⁵ — el muelle es, literalmente, invisible desde allí. Con γ = 0,995 el valor de esa misma celda pasa a ser positivo (+0,169): la meta ya pesa. La regla práctica que hay que dictar: el **horizonte efectivo** es del orden de 1/(1−γ) pasos y debe cubrir la tarea; por eso en robótica γ ≈ 0,99.
+**Ejercicio 1.** El resultado numérico es más fino de lo que uno espera y merece comentarse con cuidado. Con γ = 0,5, `v*(7,0)` vale exactamente −0,0800, que es **el valor de no llegar nunca**: −0,04/(1−0,5). Desde la esquina más lejana, con γ = 0,5 la meta está a dieciséis pasos y 0,5¹⁶ ≈ 1,5·10⁻⁵ — el muelle es, literalmente, invisible desde allí. Con γ = 0,995 el valor de esa misma celda pasa a ser positivo (+0,169): la meta ya pesa. La regla práctica que hay que dictar: el **horizonte efectivo** es del orden de 1/(1−γ) pasos y debe cubrir la tarea; por eso en robótica γ ≈ 0,99.
 
 Ahora la sorpresa: la política apenas cambia (cuatro o cinco estados de setenta). Y tiene sentido — en un mundo donde solo hay una fuente de recompensa, la dirección correcta es la misma seas miope o previsor; lo que γ cambia es **cuánto vale** estar en cada sitio, no hacia dónde ir. En tareas con recompensas en conflicto (un atajo arriesgado frente a un rodeo seguro) γ sí cambia la política, y ese es el experimento que merece proponerse en clase como extensión.
 

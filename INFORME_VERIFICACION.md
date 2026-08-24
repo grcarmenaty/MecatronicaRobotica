@@ -19,6 +19,7 @@ con los PDF regenerados y el paginado verificado contra el original.
 | Calendario del plan 2026-27 | Las 43 fechas contra el calendario real | Días de semana, festivos (11-S, 24-S), sin huecos, 57 h: todo cuadra |
 | Citas con página (1746 extraídas de apuntes, cuadernos, presentaciones y guía) | Anclajes automáticos + índice de página impresa + corroboración + verificación semántica con lectura de la página citada | Ver §3 |
 | Contenido de preguntas (92 de examen + 96 GIFT) | Revisión experta por lotes | 2 errores (corregidos) y ~15 matices, ver §4 y §6 |
+| Revisión técnica línea a línea de todo el material | 38 lotes: apuntes B1-B8, 8 presentaciones (diapositivas y notas), guía del profesor, guion narrado, plan, tareas, análisis y una pasada de coherencia cruzada | **38/38 completados**, ver §5 y §6 |
 | IDs de arXiv | Consulta de arxiv.org/abs de los 21+1 identificadores | Todos corresponden al artículo, autor y año declarados |
 | Atribuciones de imágenes | Cruce decks ↔ atribuciones.json ↔ pies de diapositiva | 34/34 fotos con atribución registrada y crédito visible |
 | Terminología (Convención del curso) | Barrido de variantes desaconsejadas en todo el material | Ver §2 |
@@ -62,11 +63,12 @@ Quedan como **decisión del autor** (no corregido):
 ## 3. Citas: resultado y correcciones
 
 De las **1746 citas con página** extraídas de los entregables finales (apuntes 1178,
-cuadernos 408, presentaciones 133, guía 27), la pasada automática de anclajes confirmó el
-71 % y la corroboración por página compartida otro 16 %. Los 654 casos restantes más
-todas las citas textuales y con datos numéricos (incluida una muestra de control de 80
-confirmadas) pasaron a verificación semántica con lectura de la página citada. Esa pasada
-se completó al 100 %: **652 ítems verificados uno a uno, 611 correctas (93,7 %), 38
+cuadernos 408, presentaciones 133, guía 27), la pasada automática de anclajes confirmó
+1242 (71 %) y la corroboración por página compartida otras 287 (16 %). Los 217 restantes
+(sin ancla, ancla fallida o página adyacente), más todas las citas textuales y con datos
+numéricos y una muestra de control de 80 confirmadas, formaron el conjunto que pasó a
+verificación semántica con lectura de la página citada. Esa pasada se completó al 100 %:
+**652 ítems verificados uno a uno, 611 correctas (93,7 %), 38
 imprecisas (5,8 %: página vecina o matiz) y 3 incorrectas (0,5 %)**. Ninguna de las
 imprecisiones apuntaba a un libro equivocado: todas eran desplazamientos de una o dos
 páginas, o afirmaciones propias del curso que la cita hacía parecer del libro.
@@ -168,11 +170,150 @@ razonable, así que ninguna ejecución los habría delatado.
   literalmente cierta (0 % y retorno medio 18,0 frente a 268,6 del CEM).
 
 Los tres cuadernos se reejecutaron de principio a fin tras el arreglo, sin errores.
+
 * Bibliografía: `gitignore.txt` renombrado a `.gitignore` (no estaba activo); añadido
   arXiv **2503.20020 (Gemini Robotics)** a `lista.txt` (el cuaderno de descarga ya lo
   incluía) y corregido el Checklist, que afirmaba que ese informe no tenía identificador
   de arXiv. Nota: YOLO (1506.02640) es v1 de 2015 y el curso lo data 2016 (CVPR): correcto
   como fecha de publicación.
+
+
+
+### Segunda pasada: presentaciones, guía, guion, plan y coherencia cruzada
+
+Errores técnicos confirmados contra la fuente y corregidos en generador + entregable + PDF.
+
+**Observabilidad de la baliza lejana (B6).** Es el hallazgo de más peso. El cuaderno S29 lo
+tiene bien («una baliza lejana orienta igual de bien pero sitúa mucho peor»), pero los
+apuntes B6 y la guía de discusiones decían lo contrario: «la fila del rumbo decae con la
+distancia, de modo que una baliza lejana casi no informa sobre la orientación», y la
+respuesta prevista para la pregunta trampa daba por buena esa lectura y concluía «para
+observar la orientación hacen falta hitos cercanos». En el jacobiano de rango-rumbo solo
+decaen con la distancia las derivadas respecto de la posición (±Δ/r²): ∂φ/∂θ = −1 no
+depende del rango, y la propia sección 4 del cuaderno lo mide (información sobre θ constante
+e igual a 1/σφ²). Lo que se pierde a 50 m es la posición transversal: 1° de incertidumbre
+angular son 87 cm de error lateral frente a los 5 cm que aporta el rango. Reescritos los
+cuatro pasajes afectados (teoría 29.2, objetivo de la discusión, pregunta trampa y dos
+respuestas previstas) para que digan lo que el cuaderno demuestra.
+
+* **B8, PPO frente a TRPO.** Los apuntes atribuían a PPO las políticas de locomoción de
+  ANYmal de Hwangbo et al. (2019, Science Robotics 4(26)). El artículo entrena con **TRPO**
+  (comprobado en el propio texto del artículo, arXiv 1901.08652). Reescrito en dos sitios:
+  PPO se presenta como el algoritmo por defecto de los flujos actuales, y ANYmal como
+  entrenado con su antecesor de la misma familia de región de confianza.
+* **B7, perfiles de QoS.** «Los perfiles predefinidos *sensor data* y *services* recogen
+  exactamente estos casos» era falso para `/map`: ninguno de los cinco perfiles predefinidos
+  de ROS 2 (default, services, sensor data, parameters, system default) usa durabilidad
+  *transient local*; todos son *volatile* (verificado en docs.ros.org, Jazzy). Reescrito en
+  los dos sitios para decir que esa durabilidad hay que declararla a mano.
+* **B5, ecuación de desaturación del antiwindup.** `e = −(Ti·de/dt + Td·d²e/dt²)` era
+  dimensionalmente inconsistente y no es lo que dice la fuente: De Silva et al. (2016),
+  ec. 4.24, escribe `e = −Ti·(de/dt + Td·d²e/dt²)`. Corregido.
+* **B5, lugar de las raíces.** Los apuntes pedían ver «cómo los polos migran hacia el eje
+  imaginario al subir la ganancia», y el cuaderno S21 demuestra justo lo contrario: tras el
+  punto de ruptura la parte real queda clavada en −K1/(2I) y los polos suben en vertical
+  (por eso el modelo reducido nunca se desestabiliza). Corregido para que coincida con el
+  cuaderno.
+* **B6, `projectPoints`.** «Es la matriz C funcionando al revés» → aplica la proyección en
+  sentido directo, como dice el propio texto unas líneas más abajo.
+* **B4, elipsoide de velocidad.** «Los radios son los recíprocos de las raíces de los
+  autovalores» solo es cierto para la matriz que Corke pasa a `plot_ellipsoid`,
+  `E = (J·Jᵀ)⁻¹`. Explicitada la matriz.
+* **B4, arcocoseno.** Lo que vale ±1 en la frontera del espacio de trabajo es el
+  **argumento** del arcocoseno, no su valor.
+* **B4, numeración de articulaciones.** Añadida la advertencia de que el «q4 = 0» de la
+  singularidad de muñeca del PUMA es la numeración base 0 de Corke (la quinta articulación,
+  ejes 4 y 6 en numeración industrial): el material mezclaba las dos convenciones sin aviso.
+* **B2/B3, el UR16e.** Pies de foto y notas del orador decían «par medido en cada eje». La
+  e-Series de Universal Robots estima el par por corriente y lleva un sensor fuerza-par de
+  seis ejes en la brida; el par medido articulación a articulación es del KUKA LBR iiwa o
+  del Franka. Corregidos los dos pies y las dos notas.
+* **B2, estimación de riesgo (ISO 12100).** «Severidad × exposición × probabilidad de
+  evitación» invierte el papel de la evitabilidad, que resta riesgo. Reescrito como
+  «severidad del daño y probabilidad de que ocurra: exposición, suceso peligroso y
+  posibilidad de evitarlo», en la diapositiva y en los dos pasajes de los apuntes.
+* **B2, taxonomía.** «Fijos (primera generación: la célula va al robot)» → «el trabajo va
+  al robot».
+* **B4, cita de Corke.** «no **todas** las ocho soluciones son físicamente alcanzables»
+  (faltaba la palabra; Corke, p. 282, *not all eight solutions are physically achievable*).
+* **B6, convoluciones.** «La misma que ejecuta cada capa convolucional del bloque
+  siguiente» → de la **sesión** siguiente (S27 es del propio B6).
+* **B6, 3D Gaussian Splatting** agrupado como «representación neuronal»: es explícito, sin
+  red. Reescrito como «representación aprendida (NeRF, neuronal; 3DGS, de primitivas
+  explícitas)». Y «la **mitad** percibir de la tríada» → «la parte de percibir».
+* **B7, A* en 1968** (quedaba un 1966 en las notas del orador) y «AMCL en la sesión
+  siguiente» (S34) → «AMCL en S36». La «retroalimentación» de las acciones de ROS 2 se deja
+  como está: es una de las cuatro apariciones que §2 señala como decisión del autor.
+* **B8, MDQ → MDP** en la diapositiva de qué entra en el examen (ya corregido en apuntes).
+* **B8 y Tareas, el windup bajo un PD.** El resumen del parcial 2 decía «diseño de un PD
+  con sobreoscilación, error de gravedad y windup»; el windup es de la acción integral y el
+  examen lo introduce, correctamente, en el apartado B3-B4 al pasar al PID. Reescrito en los
+  tres sitios.
+* **B1**, «Yasakawa» → «Yaskawa» también en la diapositiva (la errata viene de De Silva,
+  que la escribe así en el original), y «transformador ideal» → «convertidor
+  electromecánico ideal» en las notas de S2 (v·i = ω·τ describe un girador, no un
+  transformador).
+* **B3**, «feedforward de velocidad» → «prealimentación de velocidad» y «grippers» →
+  «pinzas» (la Convención lo fija; 5 apariciones entre apuntes B3, deck, fichas y guía,
+  con su artículo corregido); en la guía, «feedforward de par puro» → «prealimentación de
+  par puro» (3).
+
+Erratas numéricas y de redacción de la guía del profesor y del guion narrado:
+
+* Guía S19: `T ≥ √(10·D/(√3·a_max))` = **2,403 s**, no 2,4495 (que es √6); el cuaderno ya
+  estaba corregido, la guía arrastraba el valor viejo. Guía S21: la regla 4,6/(ζ·ωn) es la
+  banda del **1 %** (4,6 = ln 100) mientras `ct.step_info` mide sobre la del 2 %.
+* Guía S20: «un cambio de inercia de factor dos, reflejado al motor, es cuarenta veces
+  menor que la inercia del rotor» no cuadra con sus propios números: 0,35/100² = 3,5·10⁻⁵
+  frente a 1,2·10⁻⁵ del rotor, es decir unas **tres veces mayor**. Reescrito con el número
+  honesto (el efecto 1/G² atenúa la variación pero con G = 100 no la borra).
+* Guía S38: desde (7,0) la meta está a **dieciséis** pasos, no quince
+  (0,5¹⁶ ≈ 1,5·10⁻⁵). Verificado que el `+0,169` de γ = 0,995 sí es el valor que imprime el
+  cuaderno, y que (7,0) sí existe en una rejilla 8×10.
+* Guía S14: el espacio de trabajo del 2R con α₁ = 90° es el **toro** que genera la
+  circunferencia de radio a₂ al barrerla alrededor del eje de la base, no «la corona
+  circular barrida» (una corona barrida sería un sólido). Guía S15: qn y q_trabajo difieren
+  en **dos** articulaciones (q2 y q3) y en 90° cada una, no en «tres y en ángulos
+  moderados»; y `qtrabajo` del enunciado → `q_trabajo`, el nombre que usa la solución.
+  Guía S16: «es que **es** físicamente imposible de ejecutar». Guía S35: escape de Markdown
+  `A\*` sin resolver en el enunciado (el docx no interpreta escapes; el cuaderno sí, y por
+  eso allí se deja como estaba). Guía B3: «el husillo a ocho mil hercios» → «el husillo, con
+  la vibración a medir hasta ocho mil hercios» (8 kHz es la banda, no el giro).
+* Guía B3: el «óptimo del orden de 420» se atribuía a la regla de adaptación de inercias
+  `G = √(Jl/Jm)`, que con los datos del cuaderno da **173** y cae dentro de la ventana. Los
+  420 son el óptimo que minimiza el par del motor, `G* = √((Jl + τ_g/α)/Jm)`, que es lo que
+  calcula el cuaderno S12. Separados los dos números para que la lección se sostenga.
+* Guion narrado B4: «las tres tienen que dar**lo** mismo» → «dar lo mismo»; «el **par** M,
+  S₁, S₂» → «la terna» (son tres elementos, como dice el propio párrafo siguiente); «la
+  receta del **martes**» → del miércoles (S14 es miércoles 14 de octubre); «Denavit y
+  Hartenberg, la de los años sesenta» → «la del artículo de 1955» (Corke, excurso 7.4).
+  Se comprueba y **se mantiene** la anécdota del Apolo 13: es la que trae Corke en su
+  excurso 2.14, con la transcripción del bucle de control de la misión.
+
+Exámenes, calendario y bibliografía:
+
+* Los 18 enunciados decían «cada error resta un tercio del valor de la pregunta» y a
+  continuación «error: −0,07», cuando un tercio de 0,2 es 0,0667. Corregido a **−0,067** en
+  los 18 y arreglado el redondeo del generador (era a dos decimales).
+* Tareas §3: el calendario maestro **duplicaba las filas S25 y S26** con contenidos
+  contradictorios (la misma S25 como examen parcial 1 y como taller de calibración),
+  resto de una versión anterior a mover el parcial. Eliminadas las dos filas obsoletas y
+  reubicada en S24 la lectura de Corke que encargaban. La preparación de la defensa pasa de
+  la columna «se encarga» de S43 (última sesión, donde se celebra) a la de S42.
+* Tareas §5: la tabla tiene **once** filas y el texto decía diez; el entregable de
+  calibración figuraba en S25 cuando el propio §2 y el calendario lo describen como cuaderno
+  en casa encargado en S26 y entregado antes de S28. Tareas §6: la entrega 2 del proyecto
+  aparecía en «S24 · 5 nov» contra el «S26 · 11 nov» del Plan y del calendario. Tareas §8:
+  el texto hablaba de **tres** deberes críticos y la tabla marca cuatro (S21, S22, S34 y S41).
+* README: B1 = S01-S04 y B2 = S05-S07 (decía S01-S03 y S04-S07, contra el Plan, el
+  calendario y los propios apuntes), y el umbral de recuperación es «un parcial por debajo
+  de 4», no «algún bloque».
+* `bibliografia/LEEME.md`: cuatro de las cinco filas asignaban los libros a bloques
+  distintos de los que realmente los citan (Corke se usa en B1-B7, Lynch y Park en B2, B4,
+  B5 y B7, Thrun en B6 y B7, De Silva en B1, B3, B5 y B8); «25 artículos» → **22**, que son
+  los que tiene `lista.txt`; y el «unas 750 citas» ahora explica su relación con las 992 del
+  Informe de verificación de citas (que cuenta por separado las referencias que comparten
+  paréntesis). En el Checklist, «los veintiún artículos» → veintidós.
 
 ## 6. Señalado para decisión del autor (no corregido)
 
@@ -206,18 +347,22 @@ decisiones pedagógicas):
   la corriente sería infinita» debería ser «quedaría en la de bloqueo u/Ra».
 * S12 (solución ej. 3): con los datos nuevos la ventana de G se estrecha a ≈64-101 pero no
   «se cierra» (G = 100 de la tabla sigue siendo válida). El texto del apartado paralelo en
-  apuntes B3 arrastra lo mismo, más el «óptimo ~420» que con Jl = 3 y Jm = 1e-4 es √30000 ≈ 173,
-  y un «se acerca al máximo» que en realidad lo supera (2,88 > 2,70 N·m).
+  apuntes B3 arrastra lo mismo, más un «se acerca al máximo» que en realidad lo supera
+  (2,88 > 2,70 N·m).
 * Apuntes B3 (guion S8): el diálogo del 10 kHz «porque es más del doble de ocho mil» no se
-  sostiene (2×8 = 16 kHz); habría que cambiar los números o la réplica.
+  sostiene (2×8 = 16 kHz), y hay que elegir entre dos diseños coherentes del mismo cebo, que
+  es decisión pedagógica: (a) el alumno muestrea a 10 kHz y **no** llega a Nyquist, en cuyo
+  caso la justificación que se le pone en boca debe cambiar y la réplica debe preguntar qué
+  hay por encima de 5 kHz; o (b) el alumno muestrea a 20 kHz aplicando bien la regla pero
+  suponiendo que la señal está limitada a 8 kHz, que es lo que encaja con la réplica actual
+  («qué hay en la señal por encima de 8 kHz») y con «ha aplicado correctamente una regla que
+  ha entendido mal». Afecta a tres pasajes de apuntes B3 y a la guía.
 * S13: la comprobación impresa «Inversa = conjugado» no compara inv() con el conjugado.
-* S14: «corona circular barrida» → el conjunto es el **toro** generado por la circunferencia
-  de radio a2; «DH desde los años sesenta» → 1955 (como dice el propio [MD 20]); convendría
-  advertir que spatialmath usa S = (v, ω) mientras L&P escriben (ω, v).
+* S14: convendría advertir que spatialmath usa S = (v, ω) mientras L&P escriben (ω, v).
+  («Corona circular barrida» → toro, y la fecha de DH en el guion, ya corregidos.)
 * S15: la «firma DH» de la muñeca esférica debe ser a4 = a5 = 0 y d5 = 0 (d6 ≠ 0 es
   compatible: el propio IRB 140 tiene d6 = 0,065); el ejemplo de convenciones rpy/eul de
-  [CODE 10] es degenerado (misma terna en las tres convenciones); «tres articulaciones»
-  → son dos (q2, q3) y de 90°.
+  [CODE 10] es degenerado (misma terna en las tres convenciones).
 * S16: «ramas distintas: 6» está inflado por redondeo (son 3); la pista comentada
   `interp1` lanza TypeError (el método es `T_a.interp(T_b, s)`); el «salto de rama» del
   solver no implica pérdida de rango del jacobiano; la solución del ej. 2 minimiza L1
@@ -227,7 +372,6 @@ decisiones pedagógicas):
 * Apuntes B1: el bloque de dinamización de debates está redactado en primera persona para
   el profesor dentro de un documento de apuntes (¿debería vivir en la guía?).
 * Apuntes B2: «funda a la cuchilla» clasificada como eliminación por diseño (es resguardo);
-  la estimación de riesgo de ISO 12100 omite la probabilidad de ocurrencia del suceso;
   la votación «a mano alzada» del guion contradice la mecánica «con dedos» de la guía;
   «cuando yo diga tres… tres, dos, uno» (la señal cae al principio de la cuenta).
 * Apuntes B3: factor de galga «hasta ±150» (guion) vs «−100 a +150» (apartado);
@@ -235,14 +379,83 @@ decisiones pedagógicas):
   «setecientos táctiles» → «tácteles» (el término que el propio texto fija);
   la referencia a «S11» para el lazo de control corresponde al bloque 5.
 
+
+De la segunda pasada, comprobados y **no** corregidos porque la decisión es del autor:
+
+* **Plan, criterio de los talleres.** El apartado 1 declara que «la sesión de 2 h del viernes
+  concentra los talleres con ordenador», y S15 («Taller: cinemática directa con la Robotics
+  Toolbox») y S21 («Respuesta temporal y frecuencial con python-control») son trabajo con
+  ordenador en jueves de 1 h. O se matiza el criterio o se mueven las sesiones.
+* **Cuántos talleres tienen entregable.** Tres recuentos distintos: Tareas §2 dice nueve
+  (S7, S10, S13, S15, S16, S19, S22, S28, S34), Tareas §5 tabula once y la guía del profesor
+  habla de «las nueve sesiones de taller (S10, S13, S15, S16, S19, S22, S25, S28 y S34)».
+  Se ha corregido el «diez» del §5 para que cuadre con su propia tabla, pero hace falta
+  decidir qué cuenta como taller con entregable y unificar las tres listas.
+* **Pesos de la evaluación.** Tareas §1 declara que «este documento usa la propuesta» de
+  modernización (examen al 30 %, proyecto al 20 %) y §9 la deja abierta, mientras el Plan da
+  la decisión por cerrada en 40/30/10/20 y sus propios pesos suman 40. Es la «decisión
+  pendiente» que el propio §9 anuncia; no la he tomado.
+* **Cabeceras de dos cuadernos sobre días de examen.** `82514_S25_Formacion_Imagen_Calibracion`
+  se declara «viernes 6 de noviembre» y `82514_S40_Imitacion_VLA` «viernes 11 de diciembre»,
+  que son el parcial 1 y el parcial 2. Con el calendario vigente esos contenidos caen en S26
+  y S39; renumerar los ficheros afecta al LEEME de cuadernos, a los apuntes y a los enlaces
+  del campus, así que lo dejo señalado.
+* **Checklist, contenido docente en S40.** Cuatro referencias (ISO 23247, artículos de B8,
+  simuladores) sitúan materia en S40, que es el parcial 2; y los talleres de visión en
+  «S25 y S26», cuando S25 es el parcial 1.
+* **B2, el reparto horario de S7.** Las notas planifican «80-105 taller de riesgos»
+  (25 min) para un encargo que la propia diapositiva y sus notas fijan en 30 min más
+  corrección en común, con el cuestionario de bloque ocupando 105-120. La sesión de 120 min
+  no cuadra; hay que recortar el encargo o mover los tramos.
+* **B7, campos potenciales.** Aparecen en la portadilla de S35 y en el plan de la sesión
+  («52-60 campos potenciales y cierre»), pero no hay ninguna diapositiva de contenido ni
+  entrada en la hoja de ruta; la tabla comparativa solo cubre transformada de distancia,
+  A*, PRM y RRT.
+* **B8, alcance del examen final.** Una diapositiva enumera contenido que «entra de forma
+  literal» para los ocho bloques mientras sus notas describen el final como centrado en B8 e
+  integración para quien haya superado los parciales.
+* **Plan y decks, nombre del bloque 8.** «B8. Robot learning, seminario y cierre» en la tabla
+  de materiales frente a «B8. Robótica basada en aprendizaje» en la de horas: el anglicismo
+  no está en la convención. En el Plan quedan además dos notas de proceso del generador
+  («Decisión que cierra la incoherencia pendiente», «(diseño intocado)») dentro del
+  entregable.
+* **Seminario, S41 y S42.** Cinco presentaciones de 10 + 5 min en cada una son 75 min en
+  sesiones de 1 h, y S42 aloja además el cierre del curso.
+
 ## 7. Cobertura
 
+Las tres pasadas están completas al 100 %:
+
+* **Citas**, 55/55 lotes: los 652 ítems seleccionados verificados uno a uno contra la página
+  del libro.
+* **Cuadernos**, 29/29: ejecución completa más revisión técnica línea a línea de cada uno,
+  reejecutados tras cada corrección.
+* **Documentos**, 38/38 lotes: apuntes B1-B8, las ocho presentaciones (diapositivas y notas
+  del orador), la guía del profesor completa, el guion narrado de B4, el plan del curso, el
+  documento de tareas, el análisis de partida y una pasada final de coherencia cruzada entre
+  todos ellos.
+
 Todo lo determinista (ejecución, exámenes, claves, GIFT, calendario, arXiv, terminología,
-atribuciones) está verificado al 100 %. La verificación semántica por agentes cubrió la
-totalidad de las citas de riesgo y de las citas textuales/numéricas en los bloques
-completados; los cuadernos S08-S21 y S23 y los apuntes B1-B6 recibieron además revisión
-técnica línea a línea. El resto de la revisión línea a línea (S24-S40 en profundidad,
-B7-B8, guía completa, guion narrado y las 8 presentaciones como documentos) quedó limitada
-por los cortes del límite de gasto de la sesión; los tres flujos de trabajo quedan
-reanudables con `resumeFromRunId` (véanse los journals en la sesión) si se quiere apurar
-la cola restante.
+atribuciones) está verificado al 100 %.
+
+Queda fuera de esta verificación lo que no es comprobable desde el repositorio: las cuatro
+normas ISO, que son de pago y se citan siempre por designación; el laboratorio, que el
+material declara intocado; y las decisiones pedagógicas y de calendario recogidas en §6,
+que son del autor.
+
+Cada hallazgo de los agentes de revisión se comprobó a mano antes de aplicarlo. Varios no
+sobrevivieron a esa comprobación y se dejan anotados aquí para que no vuelvan a levantarse:
+la anécdota del **Apolo 13** del bloqueo de cardán es la que trae Corke (excurso 2.14); la
+muñeca **ZYX** del desacoplo es la de Lynch y Park (p. 225), distinta de la ZYZ del 6R
+genérico de Corke (p. 260) y de la ZXZ del PUMA (p. 282), y las tres están bien citadas;
+«roboti, raíz de servidumbre» es literalmente lo que dice Corke (p. 2), aunque el sustantivo
+checo sea *robota*; la marca «mechatronics» se data en 1972 porque así lo dice De Silva
+(p. 10), que es la fuente citada, y el registro japonés nº 46-32714 es de Showa 46 (1971): la
+discrepancia es de la fuente, no del curso; el óptimo «~420» de S12 sí es el que calcula el
+cuaderno; el paso 0 del MCL de S30 sí tiene **cinco** cúmulos y no cuatro (las cuatro puertas
+generan hipótesis a ±3 m, de las que sobreviven cinco: ≈2, 8, 12, 18 y 28 m, comprobado
+ejecutando el cuaderno); `v*(7,0) = +0,169` con γ = 0,995 es el valor que imprime el cuaderno S38, y (7,0)
+está dentro de una rejilla de 8×10; y la frase «la traspuesta del jacobiano nunca puede ser
+singular» se conserva donde aparece **como cita de Corke** (p. 325), que es quien la escribe,
+mientras que en la pregunta de examen, donde se enunciaba como afirmación propia, ya se
+reescribió (§4).

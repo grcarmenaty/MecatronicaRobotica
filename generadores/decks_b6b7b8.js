@@ -250,7 +250,7 @@ sectionSlide(p6, "S27", "Procesado clásico y aprendido", "Convolución y bordes
 {
  const s = contentSlide(p6, "Cuatro herramientas clásicas que siguen vigentes", "S27 · Procesado");
  const items = [
- ["Convolución", "Una ventana recorre la imagen combinando vecindarios: suavizado gaussiano, realce, derivadas. Es la operación base, y la misma que ejecuta cada capa convolucional del bloque siguiente."],
+ ["Convolución", "Una ventana recorre la imagen combinando vecindarios: suavizado gaussiano, realce, derivadas. Es la operación base, y la misma que ejecuta cada capa convolucional de la sesión siguiente."],
  ["Bordes", "El gradiente marca discontinuidades de intensidad. Canny añade supresión no máxima e histéresis. Aviso: «los bordes de la imagen no son necesariamente los mismos que los bordes de los objetos» (Corke, 2023, p. 454)."],
  ["Regiones", "Umbralizado y etiquetado de componentes conexas producen blobs con área, centroide y momentos: base de la inspección industrial por visión."],
  ["Puntos", "Esquinas y descriptores invariantes permiten emparejar la misma escena entre vistas: es la materia prima del SLAM visual de S31."],
@@ -430,7 +430,7 @@ sectionSlide(p6, "S31", "SLAM: del EKF a los grafos", "Online y completo · EKF-
  ["GraphSLAM", "La trayectoria y las medidas forman un grafo: nodos son poses y puntos, aristas son restricciones blandas. Resolver el SLAM es minimizar el error de todas las restricciones (Thrun et al., 2005, cap. 11). Es el enfoque dominante en sistemas reales."],
  ["FastSLAM", "Factoriza el problema con un filtro de partículas para la trayectoria y filtros independientes por punto de referencia: escala a mapas grandes (Thrun et al., 2005, cap. 13, pp. 437-439)."],
  ["Mapas de ocupación", "Con la pose ya conocida, el mapeo se reduce a acumular evidencia por celda en log-odds (Thrun et al., 2005, pp. 281-286). Es el mapa que consumirá Nav2 en el bloque 7."],
- ["SLAM visual y neuronal", "Cámaras en lugar de LiDAR; y una frontera de investigación activa donde el mapa es una representación neuronal (NeRF, 3D Gaussian Splatting) en vez de una nube de puntos."],
+ ["SLAM visual y neuronal", "Cámaras en lugar de LiDAR; y una frontera de investigación activa donde el mapa es una representación aprendida (NeRF, neuronal; 3D Gaussian Splatting, de primitivas explícitas) en vez de una nube de puntos."],
  ];
  en.forEach((c, i) => {
  const col = i % 2, row = Math.floor(i / 2);
@@ -593,7 +593,7 @@ sectionSlide(p7, "S34", "Taller: rclpy, Gazebo y TF2", "Nodo en Python · simula
  });
  card(s, 0.7, 4.42, 11.9, 2.2, {
  title: "La convención que ordena la navegación (REP 105)",
- body: "map → odom → base_link → marcos de sensores. La transformada odom→base_link es continua pero deriva; la map→odom la corrige a saltos cuando la localización se actualiza. Entender esta cadena explica por qué el robot «salta» en RViz al cerrar un bucle, y conecta directamente con la localización del bloque 6 y con AMCL en la sesión siguiente.",
+ body: "map → odom → base_link → marcos de sensores. La transformada odom→base_link es continua pero deriva; la map→odom la corrige a saltos cuando la localización se actualiza. Entender esta cadena explica por qué el robot «salta» en RViz al cerrar un bucle, y conecta directamente con la localización del bloque 6 y con AMCL en S36.",
  fill: "E3F7EC", bodySize: 12.5,
  });
  s.addNotes("El árbol roto, un marco desconectado, es el segundo fallo más frecuente del taller después de QoS. Enseñar view_frames como primer diagnóstico. REP 105 se cita por designación, sin página.");
@@ -977,7 +977,7 @@ sectionSlide(p8, "S43", "Defensas del proyecto y cierre", "18 de diciembre · 2 
  });
  card(s, 0.7, 6.4, 11.9, 0.58, {
  title: "",
- body: "No se pregunta de forma literal: manipular la ecuación del MDQ, derivar las ecuaciones del EKF ni reproducir la arquitectura interna de un VLA. Examen de muestra con solución comentada, publicado hoy en el campus.",
+ body: "No se pregunta de forma literal: manipular la ecuación del MDP, derivar las ecuaciones del EKF ni reproducir la arquitectura interna de un VLA. Examen de muestra con solución comentada, publicado hoy en el campus.",
  fill: "E3F7EC", bodySize: 11.5,
  });
  s.addNotes("Terminar el semestre con las dos síntesis visuales: el mapa de artículos por bloque construido en S42 y el diagrama del stack completo de S37. Después, la encuesta anónima de retroalimentación (5 min): qué bloque fue más útil, cuál más difícil, qué debería ocupar más o menos tiempo. Ese es el insumo para revisar la guía docente el curso que viene.");

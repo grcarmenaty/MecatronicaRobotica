@@ -508,7 +508,7 @@ Implementa el **RRT bidireccional**: dos árboles, uno desde el inicio y otro de
 
 ### Ejercicio 3
 
-Completa la tabla comparativa del guion de clase ejecutando lo que necesites: para **transformada de distancia / A\\***, **PRM** y **RRT**, rellena ¿completo?, ¿óptimo?, coste de planificación frente a coste de consulta, ¿sirve con 6 gdl?, ¿sirve con mapa cambiante? Justifica cada casilla con un número medido en este cuaderno, no con una impresión."""))
+Completa la tabla comparativa del guion de clase ejecutando lo que necesites: para **transformada de distancia / A\***, **PRM** y **RRT**, rellena ¿completo?, ¿óptimo?, coste de planificación frente a coste de consulta, ¿sirve con 6 gdl?, ¿sirve con mapa cambiante? Justifica cada casilla con un número medido en este cuaderno, no con una impresión."""))
 
 C.append(code("""# Ejercicio 2: espacio de trabajo (RRT bidireccional)
 # arbol_a desde INICIO, arbol_b desde META; alterna e intenta conectar

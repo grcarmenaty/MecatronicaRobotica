@@ -23,3 +23,7 @@ Thumbs.db
 generadores/*.docx
 generadores/*.pptx
 generadores/*.pdf
+
+# Dependencias de npm de los generadores (docx, pptxgenjs)
+node_modules/
+package-lock.json

@@ -71,11 +71,9 @@ const cal = [
  ["S21", "jue 29 oct", "Traer portátil con python-control · releer De Silva pp. 93-95", "-"],
  ["S22", "vie 30 oct", "-", "Taller de PID: tabla de ganancias y métricas por pareja"],
  ["S23", "mié 4 nov", "Leer Lynch y Park pp. 271-275", "-"],
- ["S24", "jue 5 nov", "Preparar el parcial 1 (formulario A4 manuscrito)", "Cuestionario B5 · último día lectivo antes del parcial"],
+ ["S24", "jue 5 nov", "Preparar el parcial 1 (formulario A4 manuscrito) · leer Corke cap. 11, pp. 440-452 para S26", "Cuestionario B5 · último día lectivo antes del parcial"],
  ["S25", "vie 6 nov", "-", "EXAMEN PARCIAL 1 (bloques 1–4) · 2 h · 6 versiones"],
  ["S26", "mié 11 nov", "ENTREGA 2 del proyecto: control (movida por el parcial) · empezar el cuaderno de calibración", "Encargo del cuaderno de calibración (entrega antes de S28)"],
- ["S25", "vie 6 nov", "Leer Corke cap. 11, pp. 440-452", "Ficheros de calibración de cámara (se reutilizan en el proyecto)"],
- ["S26", "mié 11 nov", "-", "-"],
  ["S27", "jue 12 nov", "-", "-"],
  ["S28", "vie 13 nov", "-", "Entregable ligero: gráfica del filtro de Kalman al campus"],
  ["S29", "mié 18 nov", "-", "-"],
@@ -91,8 +89,8 @@ const cal = [
  ["S39", "jue 10 dic", "-", "-"],
  ["S40", "vie 11 dic", "Preparar la presentación del seminario · cuestionario B8 en Moodle (hasta el 15 dic)", "EXAMEN PARCIAL 2 (bloques 5–7) · 2 h · 6 versiones"],
  ["S41", "mié 16 dic", "-", "Seminario: 5 presentaciones con rúbrica"],
- ["S42", "jue 17 dic", "-", "Seminario: 5 presentaciones con rúbrica · cierre"],
- ["S43", "vie 18 dic", "Preparar la defensa del proyecto", "DEFENSA del proyecto (5 equipos) · encuesta de retroalimentación"],
+ ["S42", "jue 17 dic", "Preparar la defensa del proyecto", "Seminario: 5 presentaciones con rúbrica · cierre"],
+ ["S43", "vie 18 dic", "-", "DEFENSA del proyecto (5 equipos) · encuesta de retroalimentación"],
 ];
 C.push(tabla(["Ses.", "Fecha", "Se encarga para la siguiente", "Se recoge o evalúa"], cal, [700, 1150, 3800, 3710]));
 
@@ -121,13 +119,13 @@ C.push(pRuns([
 
 // ---------- 4bis ----------
 C.push(h1("4 bis. Los exámenes: dos parciales y un final, en seis versiones"));
-C.push(p("Parcial 1 (S25, viernes 6 de noviembre, 2 h): bloques 1–4. Parte A, test de 10 preguntas ABCD (2,0 pt, extraídas de los bancos de B1–B4); parte B, Nyquist/aliasing y MDQ (2,0 pt); parte C, cinemática directa del 2R con tabla DH y espacio de trabajo (3,0 pt); parte D, cinemática inversa, jacobiano y estática (3,0 pt). Parcial 2 (S40, viernes 11 de diciembre, 2 h): bloques 5–7. Parte A, test (2,0 pt); parte B, diseño PD con gravedad y windup (3,0 pt); parte C, un paso completo de filtro de Kalman 1D (2,5 pt); parte D, A* sobre rejilla y diagnóstico de QoS (2,5 pt). Examen final (enero, 3 h): bloques 1–8; test de 12 preguntas (2,4 pt), caso de seguridad ISO (1,6 pt), cinemática y control (3,0 pt), Bayes discreto (1,5 pt) y Q-learning con actualización numérica (1,5 pt); incluye la recuperación por bloques de los parciales."));
+C.push(p("Parcial 1 (S25, viernes 6 de noviembre, 2 h): bloques 1–4. Parte A, test de 10 preguntas ABCD (2,0 pt, extraídas de los bancos de B1–B4); parte B, Nyquist/aliasing y MDQ (2,0 pt); parte C, cinemática directa del 2R con tabla DH y espacio de trabajo (3,0 pt); parte D, cinemática inversa, jacobiano y estática (3,0 pt). Parcial 2 (S40, viernes 11 de diciembre, 2 h): bloques 5–7. Parte A, test (2,0 pt); parte B, diseño PD con gravedad y paso al PID con windup (3,0 pt); parte C, un paso completo de filtro de Kalman 1D (2,5 pt); parte D, A* sobre rejilla y diagnóstico de QoS (2,5 pt). Examen final (enero, 3 h): bloques 1–8; test de 12 preguntas (2,4 pt), caso de seguridad ISO (1,6 pt), cinemática y control (3,0 pt), Bayes discreto (1,5 pt) y Q-learning con actualización numérica (1,5 pt); incluye la recuperación por bloques de los parciales."));
 C.push(p("Cada examen existe en seis versiones (A–F) con idéntica estructura y dificultad: cambian los parámetros numéricos y el subconjunto de test, y las soluciones de cada versión están calculadas y publicadas en los documentos de corrección (Correccion_82514_Parcial1, _Parcial2 y _Final), que incluyen además la rúbrica de corrección por apartados con los errores frecuentes y su descuento. Regla de reparto: versiones en damero para que dos vecinos nunca compartan números."));
 C.push(box("Pesos", "Parcial 1: 15 % · Parcial 2: 15 % · Final: 10 % (partida de exámenes, 40 % de la guía docente). Los parciales no liberan materia del final, pero quien tenga los dos parciales aprobados afronta un final centrado en B8 e integración; quien tenga un parcial por debajo de 4 recupera ese bloque de materia dentro del final."));
 
 // ---------- 5 ----------
 C.push(h1("5. Talleres con entregable"));
-C.push(p("Diez sesiones producen algo tangible que sale del aula. Conviene distinguir los dos tipos: el entregable de registro, que solo sirve para constatar que el equipo ha hecho el trabajo y se puntúa como presente o ausente dentro de las actividades de seguimiento, y el entregable con corrección, que se revisa y devuelve con comentarios."));
+C.push(p("Once sesiones producen algo tangible que sale del aula. Conviene distinguir los dos tipos: el entregable de registro, que solo sirve para constatar que el equipo ha hecho el trabajo y se puntúa como presente o ausente dentro de las actividades de seguimiento, y el entregable con corrección, que se revisa y devuelve con comentarios."));
 C.push(tabla(
  ["Sesión", "Qué se entrega", "Tipo", "Cuándo"],
  [
@@ -139,13 +137,13 @@ C.push(tabla(
  ["S16", "Cuaderno de cinemática inversa con las ocho ramas", "Registro", "Campus, fin de semana"],
  ["S19", "Trayectoria articular y cartesiana del 2R", "Registro", "Campus, fin de semana"],
  ["S22", "Tabla de ganancias finales y métricas (Mp, ts) por pareja", "Con corrección", "En el aula, para la puesta en común"],
- ["S25", "Ficheros de calibración de la cámara", "Con corrección", "Campus, mismo día"],
+ ["S28", "Ficheros de calibración de la cámara (cuaderno encargado en S26)", "Con corrección", "Campus, antes de la sesión"],
  ["S28", "Gráfica de mu ± 2 sigma frente a la trayectoria verdadera", "Registro", "Campus, al acabar"],
  ["S34", "Paquete de ROS 2 funcionando con su captura de rqt_graph", "Con corrección", "Campus, fin de semana"],
  ],
  [900, 4300, 1700, 2460]
 ));
-C.push(box("Los ficheros de calibración de S25", "Son el único entregable que se reutiliza más adelante: la calibración que cada equipo obtenga es la que usará en la parte de percepción del proyecto. Conviene recogerlos con nombre de equipo y guardarlos, porque rehacer una calibración en diciembre cuesta una sesión entera."));
+C.push(box("Los ficheros de calibración del cuaderno S26→S28", "Son el único entregable que se reutiliza más adelante: la calibración que cada equipo obtenga es la que usará en la parte de percepción del proyecto. Conviene recogerlos con nombre de equipo y guardarlos, porque rehacer una calibración en diciembre cuesta una sesión entera."));
 
 // ---------- 6 ----------
 C.push(new Paragraph({ children: [new PageBreak()] }));
@@ -157,7 +155,7 @@ C.push(tabla(
  ["Formación de equipos", "S5 · 18 sep", "Composición propuesta", "Tamaño y mezcla de perfiles"],
  ["Equipos cerrados", "S7 · 25 sep", "Composición definitiva y tema elegido", "Que el alcance sea abarcable en el semestre"],
  ["Entrega 1", "S19 · 23 oct", "Modelo cinemático del robot elegido, con su verificación numérica", "Que el modelo esté validado, no solo escrito"],
- ["Entrega 2", "S24 · 5 nov", "Control implementado sobre el modelo, con respuesta medida", "Que haya al menos una métrica de desempeño"],
+ ["Entrega 2", "S26 · 11 nov", "Control implementado sobre el modelo, con respuesta medida", "Que haya al menos una métrica de desempeño"],
  ["Entrega 3", "S37 · 4 dic", "Percepción o navegación en simulación, integrada con lo anterior", "Que los módulos hablen entre sí"],
  ["Defensa", "S43 · 18 dic", "12 min de defensa y 5 de preguntas, más memoria", "Integración, resultados medidos, análisis crítico"],
  ],
@@ -210,7 +208,7 @@ C.push(h2("Los 87 ejercicios de los cuadernos"));
 C.push(p("Los veintinueve cuadernos de Colab llevan tres ejercicios cada uno, con sus soluciones al final del propio cuaderno. Son de autocorrección deliberadamente: su función es que el estudiante compruebe si ha entendido, no generar trabajo de corrección. En las sesiones de taller se hacen en clase; en las de teoría con cuaderno de apoyo quedan como trabajo personal de la semana."));
 C.push(p("Vale la pena saber cuáles son los cinco que más discusión generan, porque son los que conviene reservar para hacer en común en lugar de dejarlos sueltos: en S28, el sensor con probabilidad de acierto 0,5 que no cambia la creencia; en S18, que el óptimo de isotropía del 2R no está donde dice la intuición; en S12, que el óptimo teórico de la relación de transmisión cae fuera de la ventana viable del motor; en S35, que una heurística inadmisible expande menos nodos pero devuelve un camino un 20% peor; y en S40, que la política condicionada por una instrucción resuelve la multimodalidad que el regresor simple no puede, que es el puente conceptual hacia los modelos VLA."));
 C.push(h2("Los dieciséis deberes previos"));
-C.push(p("No se corrigen. Su cumplimiento se comprueba con la pregunta de recuperación de los primeros cinco minutos de la sesión siguiente, que es más eficaz que recogerlos y cuesta la décima parte. Los tres que son condición necesaria y no simple recomendación, porque sin ellos la sesión no se puede dar, están marcados en la tabla."));
+C.push(p("No se corrigen. Su cumplimiento se comprueba con la pregunta de recuperación de los primeros cinco minutos de la sesión siguiente, que es más eficaz que recogerlos y cuesta la décima parte. Los cuatro que son condición necesaria y no simple recomendación, porque sin ellos la sesión no se puede dar, están marcados en la tabla."));
 C.push(tabla(
  ["Para", "Qué hay que traer hecho", "¿Crítico?"],
  [
@@ -233,7 +231,7 @@ C.push(tabla(
  ],
  [800, 6700, 1860]
 ));
-C.push(box("Los tres críticos y cómo protegerlos", "S21, S22 y S34 dependen de que el software esté instalado antes de entrar en el aula. La medida que funciona es dedicar los últimos dos minutos de la sesión anterior a que cada estudiante ejecute la comprobación delante de ti y levante la mano si falla, en lugar de anunciarlo y confiar. Para ROS 2 el cuaderno de S34 incluye una celda de diagnóstico pensada exactamente para eso, y conviene publicarla en el campus una semana antes."));
+C.push(box("Los cuatro críticos y cómo protegerlos", "S21, S22 y S34 dependen de que el software esté instalado antes de entrar en el aula, y S41 de que la presentación del seminario esté preparada. La medida que funciona es dedicar los últimos dos minutos de la sesión anterior a que cada estudiante ejecute la comprobación delante de ti y levante la mano si falla, en lugar de anunciarlo y confiar. Para ROS 2 el cuaderno de S34 incluye una celda de diagnóstico pensada exactamente para eso, y conviene publicarla en el campus una semana antes."));
 
 // ---------- 9 ----------
 C.push(h1("9. Dos decisiones pendientes antes de septiembre"));

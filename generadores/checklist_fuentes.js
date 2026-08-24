@@ -17,7 +17,7 @@ children.push(
 );
 
 children.push(h1("1. Cómo usar esta lista"));
-children.push(p("Los apuntes de los ocho bloques contienen unas 750 citas con página verificada sobre cinco libros, más un conjunto de fuentes que se citan por designación o identificador y que no tienen paginación en los apuntes: normas, artículos de investigación y documentación oficial de software. Esta lista separa lo que ya tienes de lo que falta, y ordena lo que falta por urgencia real."));
+children.push(p("Los apuntes de los ocho bloques contienen unas 750 citas con página verificada sobre cinco libros (992 referencias en el desglose del Informe, que separa las que comparten paréntesis), más un conjunto de fuentes que se citan por designación o identificador y que no tienen paginación en los apuntes: normas, artículos de investigación y documentación oficial de software. Esta lista separa lo que ya tienes de lo que falta, y ordena lo que falta por urgencia real."));
 children.push(box("Criterio de urgencia", "Imprescindible significa que sin ese documento no puedes preparar la sesión con rigor. Recomendable significa que el contenido de los apuntes es suficiente para dar la clase, pero tener la fuente mejora tus respuestas a preguntas y te sirve para el seminario. Opcional significa que basta con conocer su existencia: son referencias que los estudiantes pueden querer seguir."));
 
 children.push(h1("2. Ya lo tienes: los cinco libros de la carpeta"));
@@ -123,7 +123,7 @@ children.push(box("Sugerencia práctica", "Fija ahora la versión LTS de ROS 2 c
 
 children.push(h1("7. Resumen de lo que hay que conseguir"));
 children.push(bullet("las cuatro normas de seguridad (ISO 10218-1 y -2:2025, ISO/TS 15066:2016, ISO 12100:2010) por vía de biblioteca, con margen porque la gestión tarda. Sostienen la sesión S7.", "Con antelación: "));
-children.push(bullet("los veintiún artículos de arXiv, en una subcarpeta de la carpeta Mecatronica. Son gratuitos, se descargan en una sesión y dejan autocontenidos el bloque 8 y la parte moderna del 6.", "Cuando tengas un rato: "));
+children.push(bullet("los veintidós artículos de arXiv, en una subcarpeta de la carpeta Mecatronica. Son gratuitos, se descargan en una sesión y dejan autocontenidos el bloque 8 y la parte moderna del 6.", "Cuando tengas un rato: "));
 children.push(bullet("el PDF gratuito de Sutton y Barto (2018). Es lo único que convertiría citas por capítulo en citas con página.", "Fácil y con recompensa: "));
 children.push(bullet("la ISO 23247 de gemelos digitales, que solo se menciona de pasada en S40.", "Puede esperar: "));
 children.push(p("Si añades material a la carpeta, dímelo y actualizo los apuntes afectados: con Sutton y Barto puedo pasar las citas del bloque 8 de capítulo a página, y con las normas puedo incorporar los valores concretos del anexo A al taller de análisis de riesgos de S7."));

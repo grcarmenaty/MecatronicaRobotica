@@ -168,7 +168,7 @@ sectionSlide(p1, "S1", "¿Qué es la mecatrónica?", "Definición · sistemas mu
  { t: "…al desarrollo de productos electromecánicos mediante un enfoque de diseño integrado (De Silva, cap. 1)." },
  { t: "Sinergia: los subsistemas se conciben y optimizan juntos, no se yuxtaponen." },
  { t: "Integrado: las interacciones dinámicas entran en el diseño desde la primera fase." },
- { t: "El término lo acuñó Yasakawa Electric (Japón) en 1969; marca registrada en 1972, liberada en 1982." },
+ { t: "El término lo acuñó Yaskawa Electric (Japón) en 1969; marca registrada en 1972, liberada en 1982." },
  ], { w: 6.6 });
  card(s, 7.6, 1.7, 5.0, 4.6, {
  title: "Sistema multidominio: el ABS",
@@ -446,7 +446,7 @@ slideFotos(p2, "La taxonomía, en imágenes", "S5 · Tipos de robots", [
  const s = contentSlide(p2, "Dos taxonomías complementarias", "S5 · Clasificación");
  card(s, 0.7, 1.75, 5.9, 2.2, {
  title: "Por movilidad",
- body: "• Fijos («primera generación»: la célula va al robot)\n• Móviles: ruedas o patas (tierra), alas o rotores (aire), superficie o inmersión (agua)",
+ body: "• Fijos («primera generación»: el trabajo va al robot)\n• Móviles: ruedas o patas (tierra), alas o rotores (aire), superficie o inmersión (agua)",
  bodySize: 13,
  });
  card(s, 0.7, 4.15, 5.9, 2.5, {
@@ -554,7 +554,7 @@ slideFotos(p2, "Robots de servicio, entre personas", "S6 · Servicio", [
  footer(s, "Transición AGV→AMR = valor añadido por software");
 }
 
-sectionSlide(p2, "S7", "Cobots, seguridad y normativa", "ISO 10218:2025 · cuatro métodos colaborativos · análisis de riesgos", "0-10 recuperación; 10-40 marco normativo; 40-70 métodos colaborativos con vídeos; 70-80 descanso; 80-105 taller de análisis de riesgos; 105-120 cuestionario B2 en Moodle (15 min) y cierre de equipos.", { f: "fotos/b2_cobot3.png", cap: "UR16e: fuerza limitada y par medido en cada eje", credito: "Foto: Auledas CC BY-SA 4.0 · Wikimedia Commons" });
+sectionSlide(p2, "S7", "Cobots, seguridad y normativa", "ISO 10218:2025 · cuatro métodos colaborativos · análisis de riesgos", "0-10 recuperación; 10-40 marco normativo; 40-70 métodos colaborativos con vídeos; 70-80 descanso; 80-105 taller de análisis de riesgos; 105-120 cuestionario B2 en Moodle (15 min) y cierre de equipos.", { f: "fotos/b2_cobot3.png", cap: "UR16e: fuerza limitada por corriente y sensor fuerza-par en la muñeca", credito: "Foto: Auledas CC BY-SA 4.0 · Wikimedia Commons" });
 
 {
  const s = contentSlide(p2, "El marco normativo: ISO 10218:2025", "S7 · Normativa");
@@ -603,7 +603,7 @@ sectionSlide(p2, "S7", "Cobots, seguridad y normativa", "ISO 10218:2025 · cuatr
  const steps = [
  ["Límites", "Espacio, tareas, quién interactúa y cómo"],
  ["Peligros", "Por tarea, incluidos modos degradados: limpieza, mantenimiento, recuperación de fallos"],
- ["Estimación", "Severidad × exposición × probabilidad de evitación"],
+ ["Estimación", "Severidad del daño y probabilidad de que ocurra: exposición, suceso peligroso y posibilidad de evitarlo"],
  ["Reducción", "Jerarquía: eliminar por diseño → proteger → informar (en ese orden)"],
  ["Validación", "Comprobar que las medidas funcionan y documentarlo"],
  ];

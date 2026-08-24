@@ -102,7 +102,7 @@ foto_seccion("decks.js", 'sectionSlide(p2, "S5", "Taxonomía y configuraciones"'
 foto_seccion("decks.js", 'sectionSlide(p2, "S6", "Robots móviles"',
   '{ f: "fotos/b2_dron.jpg", cap: "Multirrotor: locomoción aérea", credito: "Foto: J. Sorenson CC0 — Wikimedia Commons" }')
 foto_seccion("decks.js", 'sectionSlide(p2, "S7", "Cobots, seguridad y normativa"',
-  '{ f: "fotos/b2_cobot3.png", cap: "UR16e: fuerza limitada y par medido en cada eje", credito: "Foto: Auledas CC BY-SA 4.0 — Wikimedia Commons" }')
+  '{ f: "fotos/b2_cobot3.png", cap: "UR16e: fuerza limitada por corriente y sensor fuerza-par en la muñeca", credito: "Foto: Auledas CC BY-SA 4.0 — Wikimedia Commons" }')
 foto_seccion("decks_b3b4b5.js", 'sectionSlide(p3, "S8", "Arquitectura de instrumentación"',
   '{ f: "fotos/b3_ultrasonido.jpg", cap: "HC-SR04: sensor y acondicionamiento en la misma placa", credito: "Foto: S. Dwivedi CC BY-SA 4.0 — Wikimedia Commons" }')
 foto_seccion("decks_b3b4b5.js", 'sectionSlide(p3, "S10", "Fuerza, tacto y rango"',
@@ -160,7 +160,7 @@ antes_de("decks_b3b4b5.js", 'contentSlide(p3, "Hidráulica y neumática"', '''
 slideFotos(p3, "Actuadores y transmisiones, de cerca", "S11–S12 · Hardware", [
   { f: "fotos/b3_stepper.jpg", x: 0.7, y: 1.5, w: 3.85, h: 4.9, cap: "Paso a paso NEMA 17: posicionar en lazo abierto contando pasos" },
   { f: "fotos/b3_harmonic.jpg", x: 4.72, y: 1.5, w: 3.85, h: 4.9, cap: "Harmonic drive: la reductora de las articulaciones robóticas" },
-  { f: "fotos/b2_cobot3.png", x: 8.74, y: 1.5, w: 3.9, h: 4.9, cap: "UR16e: seis servoaccionamientos con par medido en cada eje" },
+  { f: "fotos/b2_cobot3.png", x: 8.74, y: 1.5, w: 3.9, h: 4.9, cap: "UR16e: seis servoaccionamientos y un sensor fuerza-par en la brida" },
 ], "Fotos: oomlout CC BY-SA 2.0 · wdwd CC BY-SA 4.0 · Auledas CC BY-SA 4.0 — Wikimedia Commons",
 "Pasar de la foto al concepto: el paso a paso pierde pasos bajo sobrecarga (lazo abierto), el harmonic drive explica la inercia reflejada dividida por G² y el cobot integra motor, reductora, encoder y medición de par en cada eje.");
 ''')
@@ -254,11 +254,11 @@ rep("decks_b3b4b5.js", '''    ["Denavit-Hartenberg", "4 parámetros por eslabón
   eqImg(s, "poe", 8.95, 5.28, 3.35, 0.42);''')
 rep("decks_b3b4b5.js", '''  card(s, 0.7, 5.9, 11.9, 0.85, {
     title: "",
-    body: "Ejercicio por parejas: para el 2R, escribir (i) la ETS, (ii) la tabla DH y (iii) M, S1 y S2 del PoE; comprobar que las tres dan la misma T(q) en q = (30°, 40°): t = (1.21, 1.44), orientación 70° (Corke, p. 258).",
+    body: "Ejercicio por parejas: para el 2R, escribir (i) la ETS, (ii) la tabla DH y (iii) M, S1 y S2 del PoE; comprobar que las tres dan la misma T(q) en el 2R del libro, de eslabones de 1 m, en q = (30°, 40°): t = (1.21, 1.44), orientación 70° (Corke, p. 258).",
     fill: BG_LT, bodySize: 11.5,
   });''', '''  card(s, 0.7, 6.02, 11.9, 0.8, {
     title: "",
-    body: "Ejercicio por parejas: para el 2R, escribir (i) la ETS, (ii) la tabla DH y (iii) M, S1 y S2 del PoE; comprobar que las tres dan la misma T(q) en q = (30°, 40°): t = (1.21, 1.44), orientación 70° (Corke, p. 258).",
+    body: "Ejercicio por parejas: para el 2R, escribir (i) la ETS, (ii) la tabla DH y (iii) M, S1 y S2 del PoE; comprobar que las tres dan la misma T(q) en el 2R del libro, de eslabones de 1 m, en q = (30°, 40°): t = (1.21, 1.44), orientación 70° (Corke, p. 258).",
     fill: BG_LT, bodySize: 11.5,
   });''')
 

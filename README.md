@@ -29,8 +29,8 @@ Ocho bloques, 43 sesiones, con laboratorio propio que no se ha modificado.
 
 | Bloque | Tema | Sesiones |
 |---|---|---|
-| B1 | Introducción a la mecatrónica | S01 a S03 |
-| B2 | Tipología de robots y seguridad | S04 a S07 |
+| B1 | Introducción a la mecatrónica | S01 a S04 |
+| B2 | Tipología de robots y seguridad | S05 a S07 |
 | B3 | Sensores y actuadores | S08 a S12 |
 | B4 | Cinemática y estática de manipuladores | S13 a S19 |
 | B5 | Modelado y control en Python | S20 a S24 |
@@ -49,7 +49,7 @@ Ocho bloques, 43 sesiones, con laboratorio propio que no se ha modificado.
 
 Parcial 1 el viernes 6 de noviembre de 2026 (2 h, bloques 1 a 4). Parcial 2 el viernes
 11 de diciembre (2 h, bloques 5 a 7). Final en enero (3 h) con recuperación por bloques
-para quien tenga alguno por debajo de 4.
+para quien tenga un parcial por debajo de 4.
 
 ---
 
