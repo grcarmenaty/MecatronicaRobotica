@@ -35,7 +35,7 @@ El 2R plano contiene toda la esencia del método analítico. Dado el objetivo (x
 
 Dos disciplinas de cálculo que deben quedar automatizadas desde este ejemplo:
 
-1. **Usar siempre `atan2` de dos argumentos**, que conserva el cuadrante, y nunca arcotangentes de cocientes (Lynch y Park, 2017, p. 220 y ss.).
+1. **Usar siempre `atan2` de dos argumentos**, que conserva el cuadrante, y nunca arcotangentes de cocientes (Lynch y Park, 2017, p. 219 y ss.).
 2. **Discutir la existencia antes de calcular**: el argumento del arcocoseno debe estar en [−1, 1], y su valor límite delimita exactamente la frontera del espacio de trabajo."""))
 
 C.append(code("""A1, A2 = 1.0, 0.8      # longitudes de los eslabones (m)

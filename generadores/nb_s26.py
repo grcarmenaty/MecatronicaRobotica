@@ -7,7 +7,7 @@ C.append(cabecera(
     "S26", "Procesado clásico de imagen", "6",
     "miércoles 11 de noviembre de 2026", "1 h",
     "Recorre la cadena clásica completa sobre una escena sintética generada aquí mismo: convolución a mano y filtro gaussiano, gradiente y Canny, umbralizado con componentes conexas y sus momentos (área y centroide), y detección de esquinas de Harris.",
-    "Corke (2023), caps. 11 y 12 — convolución (p. 441), galería de núcleos (p. 444), suavizado media frente a gaussiana (pp. 442-443), bordes (p. 446), Sobel y derivada de gaussiana (p. 448), Canny (p. 450), comparación (p. 452), blobs y sus descriptores (pp. 502-504), puntos de interés (p. 514), criterio de Harris (p. 516), SIFT (p. 523).",
+    "Corke (2023), caps. 11 y 12 — convolución (p. 441), galería de núcleos (p. 444), suavizado media frente a gaussiana (pp. 442-443), bordes (p. 446), Sobel y derivada de gaussiana (p. 448), Canny (p. 450), comparación (p. 452), blobs y sus descriptores (pp. 499-504), puntos de interés (p. 514), criterio de Harris (p. 516), SIFT (p. 523).",
     "los apuntes del bloque 6"))
 
 C.append(instalacion(PKG, """import numpy as np

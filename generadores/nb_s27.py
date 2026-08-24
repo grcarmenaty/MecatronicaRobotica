@@ -90,7 +90,7 @@ C.append(code("""def aprender_nucleo(I, objetivo, k):
     w, *_ = np.linalg.lstsq(A, objetivo.ravel(), rcond=None)
     nucleo, sesgo = w[:-1].reshape(k, k), w[-1]
     salida = cv2.filter2D(I, -1, nucleo, borderType=cv2.BORDER_REPLICATE) + sesgo
-    acierto = float(((salida > 0.5) == (PIEZAS > 0.5)).mean())
+    acierto = float(((salida > 0.5) == (objetivo > 0.5)).mean())
     return nucleo, salida, acierto
 
 tallas = [1, 3, 5, 9, 13]

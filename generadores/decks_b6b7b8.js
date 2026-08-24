@@ -852,7 +852,7 @@ sectionSlide(p8, "S39", "RL profundo, imitación y VLA", "PPO y sim-to-real · b
  });
  card(s, 6.85, 1.72, 5.75, 2.55, {
  title: "Eco del bloque 1",
- body: "Es la evolución de diseño de De Silva llevada a su consecuencia: un modelo del sistema real que se monitoriza, se optimiza y devuelve mejoras al sistema (De Silva et al., 2016, p. 7).\n\nLa idea tenía diez años; hoy tiene herramientas.",
+ body: "Es la evolución de diseño de De Silva llevada a su consecuencia: un modelo del sistema real que se monitoriza, se optimiza y devuelve mejoras al sistema (De Silva et al., 2016, p. 8).\n\nLa idea tenía diez años; hoy tiene herramientas.",
  bodySize: 12.5,
  });
  card(s, 0.7, 4.47, 11.9, 2.15, {
@@ -861,7 +861,7 @@ sectionSlide(p8, "S39", "RL profundo, imitación y VLA", "PPO y sim-to-real · b
  fill: "E3F7EC", bodySize: 12.5,
  });
  s.addNotes("Esta es la diapositiva de cierre conceptual de la asignatura completa. Dedicarle tiempo: es la respuesta a la pregunta que muchos traen desde septiembre, «¿para qué estudio cinemática si ya existe la IA?». El cuestionario B8 se hace en Moodle, en casa, en la ventana del 11 al 15 de diciembre; recordarlo aquí.");
- footer(s, "De Silva et al., 2016, p. 7 · Síntesis del curso");
+ footer(s, "De Silva et al., 2016, p. 8 · Síntesis del curso");
 }
 
 sectionSlide(p8, "S40", "Examen parcial 2", "Bloques 5-7 · test y tres problemas · 2 horas",

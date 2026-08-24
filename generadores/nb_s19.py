@@ -406,7 +406,7 @@ La conexión con el bloque 3 es directa y conviene explicitarla: el par que hay 
 **Ejercicio 2.** Con `D = 90° = 1.5708 rad`, el quíntico en 1,5 s da `v_pico = 15·D/(8·1.5) = 1.9635 rad/s = 112.5 grados/s` y `a_pico = 10·D/(√3·1.5²) = 4.031 rad/s² = 231 grados/s²`. **Viola los dos límites.** Los tiempos mínimos son:
 
 - por velocidad: `T ≥ 15·D/(8·v_max) = 2.8125` s
-- por aceleración: `T ≥ sqrt(10·D/(√3·a_max)) = 2.4495` s
+- por aceleración: `T ≥ sqrt(10·D/(√3·a_max)) = 2.4028` s
 
 luego manda la velocidad: `T_min ≈ 2.81 s`.
 
