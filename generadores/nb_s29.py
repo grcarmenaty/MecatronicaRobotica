@@ -142,7 +142,7 @@ def elipse(ax, mu, P, color, n_sigma=2.4477, **kw):
     \"\"\"Elipse de covarianza al 95 % en el plano (x, y): sqrt(chi2_2gl(0.95)) = 2.4477.\"\"\"
     vals, vecs = np.linalg.eigh(P[:2, :2])
     ang = np.degrees(np.arctan2(vecs[1, -1], vecs[0, -1]))
-    e = Ellipse(mu[:2], *(2*n_sigma*np.sqrt(np.maximum(vals, 0))), angle=ang,
+    e = Ellipse(mu[:2], *(2*n_sigma*np.sqrt(np.maximum(vals[::-1], 0))), angle=ang,
                 facecolor='none', edgecolor=color, lw=1.3, **kw)
     ax.add_patch(e)
 

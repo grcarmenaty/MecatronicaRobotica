@@ -200,8 +200,9 @@ def episodio_red(theta, semilla, max_pasos=MAX_PASOS):
 
 ajustar_fisica(env)
 rng_e = np.random.default_rng(3)
-puntos = np.array([np.mean([episodio_red(rng_e.normal(size=DIM), 100*k + i) for i in range(3)])
-                   for k in range(150)])
+pol_az = rng_e.normal(size=(150, DIM))   # una politica por candidato, fija en sus 3 episodios
+puntos = np.array([np.mean([episodio_red(w, 100*k + i) for i in range(3)])
+                   for k, w in enumerate(pol_az)])
 print(f'Busqueda aleatoria en {DIM} dimensiones: retorno medio {puntos.mean():5.1f}, '
       f'fraccion que supera 200 pasos: {100*np.mean(puntos > 200):.0f} %')
 

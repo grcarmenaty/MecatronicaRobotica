@@ -144,9 +144,30 @@ Señalado sin corregir (defendible o requiere decisión del autor):
   ángulos» (el print comparaba ternas rpy, no parejas).
 * S19: tiempo mínimo por aceleración de la solución del ejercicio 2, 2,4495 → **2,4028 s**
   (√(10/√3), no √6). S21: la regla 4,6/(ζ·ωn) es la banda del **1 %**, no del 2 % (e^−4,6 ≈ 0,010).
-* S27: **bug real de código**: `aprender_nucleo` medía el acierto contra la variable global
-  `PIEZAS` en lugar del parámetro `objetivo`, de modo que el ejercicio 2 (aprender otro
-  objetivo) no medía lo que decía medir. Corregido y el cuaderno reejecutado.
+### Bugs de código encontrados y corregidos
+
+Los tres son silenciosos: el cuaderno se ejecutaba sin error y producía salidas de aspecto
+razonable, así que ninguna ejecución los habría delatado.
+
+* **S27** (`aprender_nucleo`): medía el acierto contra la variable global `PIEZAS` en lugar
+  del parámetro `objetivo`, de modo que el ejercicio 2 (aprender otro objetivo) no medía lo
+  que decía medir: devolvía 72,5 % cuando el acierto real contra la máscara pedida es 90,4 %.
+* **S29** (`elipse`): `np.linalg.eigh` devuelve los autovalores en orden **ascendente**, pero
+  el ángulo se tomaba del autovector del **mayor** (`vecs[:, -1]`) mientras `width` recibía el
+  autovalor menor. En matplotlib el eje `width` se alinea con `angle`, así que **todas las
+  elipses de covarianza del cuaderno se dibujaban giradas 90°** (comprobado: con P = diag(1, 100)
+  el eje largo salía en x en vez de en y). Justo lo contrario de lo que la sesión quiere
+  enseñar, porque la lectura de la geometría de las elipses es el objetivo del cuaderno.
+  Corregido invirtiendo el orden de los ejes (`vals[::-1]`).
+* **S39** (búsqueda aleatoria): el vector de pesos `rng_e.normal(size=DIM)` se sorteaba
+  **dentro** del bucle de los tres episodios, de modo que cada episodio usaba una política
+  distinta: se evaluaban 450 políticas de un episodio en lugar de 150 políticas de tres
+  (el bloque del CEM justo debajo sí fija `w` por candidato, lo que hacía la comparación
+  desigual). Corregido sorteando una política por candidato. Con el arreglo, la afirmación
+  del texto «ninguna de **las 150** políticas aleatorias supera los 200 pasos» pasa a ser
+  literalmente cierta (0 % y retorno medio 18,0 frente a 268,6 del CEM).
+
+Los tres cuadernos se reejecutaron de principio a fin tras el arreglo, sin errores.
 * Bibliografía: `gitignore.txt` renombrado a `.gitignore` (no estaba activo); añadido
   arXiv **2503.20020 (Gemini Robotics)** a `lista.txt` (el cuaderno de descarga ya lo
   incluía) y corregido el Checklist, que afirmaba que ese informe no tenía identificador
