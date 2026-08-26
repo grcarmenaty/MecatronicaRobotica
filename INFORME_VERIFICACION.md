@@ -399,7 +399,9 @@ De la segunda pasada, comprobados y **no** corregidos porque la decisión es del
   se declara «viernes 6 de noviembre» y `82514_S40_Imitacion_VLA` «viernes 11 de diciembre»,
   que son el parcial 1 y el parcial 2. Con el calendario vigente esos contenidos caen en S26
   y S39; renumerar los ficheros afecta al LEEME de cuadernos, a los apuntes y a los enlaces
-  del campus, así que lo dejo señalado.
+  del campus, así que lo dejo señalado. Los enlaces «Abrir en Colab» que ahora llevan las
+  portadillas de sesión rotulan siempre el número del cuaderno al que saltan, precisamente
+  para que el desfase se vea en lugar de quedar tapado.
 * **Checklist, contenido docente en S40.** Cuatro referencias (ISO 23247, artículos de B8,
   simuladores) sitúan materia en S40, que es el parcial 2; y los talleres de visión en
   «S25 y S26», cuando S25 es el parcial 1.

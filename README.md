@@ -69,6 +69,12 @@ python3 notas.py
 python3 arreglar_content_types.py
 python3 transiciones.py
 
+# Enlaces «Abrir en Colab» en las portadillas de sesión (desde entregables/presentaciones/,
+# con la rama del repositorio desde la que deben abrirse los cuadernos)
+cd ../entregables/presentaciones
+python3 ../../generadores/enlaces_colab.py main
+cd ../../generadores
+
 # Apuntes (b1 y b2 usan la versión _v2, que es la vigente)
 node apuntes_b1_v2.js && node apuntes_b2_v2.js
 for b in 3 4 5 6 7 8; do node apuntes_b$b.js; done
@@ -95,6 +101,13 @@ Notas del pipeline de presentaciones, por si algo falla:
   después de `notas.py`.
 * Las ecuaciones se generan con LaTeX en `media/ecuaciones.py` y se guardan como PNG
   transparentes en `media/eq/`, con sus dimensiones en `media/dims.json`.
+* `enlaces_colab.py` pone el enlace al cuaderno en la portadilla de cada sesión que lo tiene,
+  y llama solo a `arreglar_content_types.py` al acabar. Es idempotente. El enlace cuelga de la
+  forma, no del texto: un hipervínculo de texto hace que PowerPoint y LibreOffice repinten el
+  rótulo del azul del tema, ilegible sobre el azul marino de la portadilla. Hay que pasarle la
+  rama desde la que se sirven los cuadernos, porque la URL de Colab la lleva dentro; si se
+  renombran o renumeran ficheros de `cuadernos/`, hay que revisar el mapa de sesiones del
+  propio script.
 
 ---
 

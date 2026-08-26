@@ -12,6 +12,11 @@ uno: botón derecho sobre el fichero → Abrir con → Google Colaboratory. La p
 instala lo que falte; en Colab tarda uno o dos minutos, y en los del bloque 4 algo más
 porque instala la Robotics Toolbox.
 
+En clase no hace falta pasar por Drive: la portadilla de cada sesión de las presentaciones
+lleva un enlace **Abrir en Colab** que salta al cuaderno de esa sesión desde el propio
+`.pptx` (y desde el PDF exportado). El rótulo indica siempre qué cuaderno abre, porque en
+B6 y B8 la numeración de los ficheros no coincide con la de las sesiones del calendario.
+
 Todos se han ejecutado de principio a fin sin errores antes de entregarse. Ninguno
 descarga datos de internet ni necesita GPU: todo es sintético y offline, de modo que
 funcionan aunque el aula tenga mala conexión.
